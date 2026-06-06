@@ -23526,6 +23526,14 @@ function renderHome(main) {
       meta ? el('span', { class: 'meta' }, meta) : null
     );
   }
+  function linkTile(href, icon, tt, desc, meta) {
+    return el('button', { class: 'module-tile', onclick: () => { location.href = href; } },
+      el('span', { class: 'icon' }, icon),
+      el('div', { class: 'tt' }, tt),
+      el('div', { class: 'desc' }, desc),
+      meta ? el('span', { class: 'meta' }, meta) : null
+    );
+  }
   grid.appendChild(tile('vocab',     'A', '词汇',    '高频 A2 词汇,主题分组', `${C.VOCAB.length} 词`));
   grid.appendChild(tile('pattern',   '¶', '句型',    'V2、动词句尾、否定等',   `${C.PATTERNS.length} 句型`));
   grid.appendChild(tile('reading',   '☰', '阅读',    `邮件、广告、通知 (${(C.READING||[]).reduce((s,p)=>s+p.questions.length,0)} 题)`, `${C.READING.length} 篇`));
@@ -23533,6 +23541,7 @@ function renderHome(main) {
   grid.appendChild(tile('listening', '◐', '听力',    `技巧 + ${(C.LISTENING_DIALOGUES||[]).length} 篇对话`, `${(C.LISTENING_DIALOGUES||[]).reduce((s,d)=>s+d.questions.length,0)} 题`));
   grid.appendChild(tile('speaking',  '◑', '口语技巧',  '万能模板',           `${C.SPEAKING.scenarios.length} 场景`));
   grid.appendChild(tile('knm',       '?', 'KNM 题',  '社会知识',           `${C.KNM.length} 题`));
+  grid.appendChild(linkTile('knm-exam/', '◉', 'KNM 真题', '真实考试界面仿真 · 荷兰语朗读', '40 题 · 实战'));
   grid.appendChild(tile('mock',      '⏱', '模拟考',  `限时仿真,${(C.MOCK_EXAMS||[]).length} 套卷`, '考试模式'));
   grid.appendChild(tile('strategy',  '★', '应试技巧',  '陷阱词、排除法',      `${C.STRATEGIES.length} 类`));
   grid.appendChild(tile('plan',      '◗', '75 天计划', '每天该做什么',       '5 周'));

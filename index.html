@@ -23567,6 +23567,268 @@ window.CONTENT.SPEAKING_TASKS = [
 </script>
 <script>
 /* ===========================================================
+   SPK_ART  ·  自绘矢量插图
+   -----------------------------------------------------------
+   DUO 官方练习卷用的是有版权的照片,不能打包进这个公开页面。
+   这里按官方每道题的画面内容自己重画了同题材的扁平插图,
+   信息点(能说出什么词、能做什么对比)与原图一致。
+=========================================================== */
+const SPK_ART = {
+  saladebar: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#eef0ea"/><rect x="20" y="120" width="360" height="150" rx="8" fill="#b9bfc4"/><rect x="20" y="120" width="360" height="18" fill="#cfd5d9"/><g><rect x="38" y="146" width="102" height="52" rx="5" fill="#8d949a"/><rect x="44" y="152" width="90" height="40" rx="4" fill="#e8a33d"/><circle cx="60" cy="166" r="6" fill="#f2be6a"/><circle cx="80" cy="176" r="6" fill="#f2be6a"/><circle cx="105" cy="164" r="6" fill="#f2be6a"/></g><g><rect x="150" y="146" width="102" height="52" rx="5" fill="#8d949a"/><rect x="156" y="152" width="90" height="40" rx="4" fill="#4c8b3f"/><circle cx="172" cy="166" r="7" fill="#6fae5c"/><circle cx="196" cy="178" r="7" fill="#6fae5c"/><circle cx="222" cy="164" r="7" fill="#6fae5c"/></g><g><rect x="262" y="146" width="100" height="52" rx="5" fill="#8d949a"/><rect x="268" y="152" width="88" height="40" rx="4" fill="#c0392b"/><circle cx="284" cy="166" r="7" fill="#e05c4b"/><circle cx="308" cy="178" r="7" fill="#e05c4b"/><circle cx="332" cy="165" r="7" fill="#e05c4b"/></g><g><rect x="38" y="208" width="102" height="50" rx="5" fill="#8d949a"/><rect x="44" y="214" width="90" height="38" rx="4" fill="#8e44ad"/><circle cx="62" cy="230" r="6" fill="#a95fc4"/><circle cx="92" cy="238" r="6" fill="#a95fc4"/><circle cx="116" cy="228" r="6" fill="#a95fc4"/></g><g><rect x="150" y="208" width="102" height="50" rx="5" fill="#8d949a"/><rect x="156" y="214" width="90" height="38" rx="4" fill="#7fb069"/><ellipse cx="178" cy="232" rx="12" ry="7" fill="#a5cd90"/><ellipse cx="212" cy="236" rx="12" ry="7" fill="#a5cd90"/></g><g><rect x="262" y="208" width="100" height="50" rx="5" fill="#8d949a"/><rect x="268" y="214" width="88" height="38" rx="4" fill="#e6b422"/><rect x="278" y="224" width="24" height="8" rx="3" fill="#f0cc5c"/><rect x="312" y="234" width="24" height="8" rx="3" fill="#f0cc5c"/></g><path d="M200 96 l0 26" stroke="#7d848a" stroke-width="5"/><ellipse cx="200" cy="92" rx="22" ry="12" fill="#a8afb5"/></svg>`,
+
+  file: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="140" fill="#b9c9d6"/><rect y="140" width="400" height="160" fill="#7d8388"/><path d="M0 300 L150 140 L250 140 L400 300 Z" fill="#8f9599"/><path d="M200 140 L200 300" stroke="#e8e8e8" stroke-width="3" stroke-dasharray="14 12"/><g fill="#3d4a55"><rect x="150" y="250" width="42" height="30" rx="6"/><rect x="158" y="205" width="34" height="26" rx="5"/><rect x="164" y="172" width="28" height="22" rx="4"/><rect x="170" y="152" width="22" height="17" rx="4"/></g><g fill="#c0392b"><rect x="208" y="258" width="42" height="30" rx="6"/><rect x="208" y="212" width="36" height="26" rx="5"/></g><g fill="#e9e5dc"><rect x="212" y="176" width="28" height="22" rx="4"/><rect x="208" y="148" width="24" height="18" rx="4"/></g><rect x="286" y="120" width="6" height="80" fill="#6b7177"/><rect x="252" y="96" width="74" height="42" rx="4" fill="#1f5aa8"/><rect x="258" y="104" width="62" height="7" rx="2" fill="#dfe8f5"/><rect x="258" y="116" width="44" height="7" rx="2" fill="#dfe8f5"/><rect x="258" y="128" width="30" height="5" rx="2" fill="#f2c94c"/><rect x="60" y="150" width="6" height="60" fill="#6b7177"/><rect x="46" y="140" width="34" height="16" rx="3" fill="#f2c94c"/><circle cx="63" cy="148" r="5" fill="#3d4a55"/></svg>`,
+
+  tandenpoetsen: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#dfe3e6"/><path d="M150 60 q70 -20 100 40 q18 55 -6 100 q-20 40 -60 46 q-46 6 -66 -34 q-16 -34 -8 -84 q6 -50 40 -68 Z" fill="#f0c9a8"/><path d="M146 62 q60 -34 108 6 q22 22 16 44 q-30 -30 -72 -26 q-38 4 -56 24 q-6 -32 4 -48 Z" fill="#4a4340"/><circle cx="196" cy="150" r="6" fill="#3b332e"/><path d="M176 196 q34 -14 62 2 q-24 22 -62 -2 Z" fill="#8c4a3f"/><path d="M180 198 q30 -10 54 2 q-26 8 -54 -2 Z" fill="#fff"/><g><rect x="96" y="196" width="96" height="13" rx="6" fill="#e8e8e8" transform="rotate(-14 144 202)"/><rect x="168" y="182" width="34" height="17" rx="7" fill="#fafafa" transform="rotate(-14 185 190)"/></g><path d="M120 250 q30 -26 66 -18 l-8 34 q-40 8 -58 -16 Z" fill="#f0c9a8"/><path d="M108 268 q80 -34 160 -6 l0 38 l-176 0 Z" fill="#2f4b8f"/></svg>`,
+
+  gordijnen: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f3f0ea"/><rect y="252" width="400" height="48" fill="#d9c9ae"/><rect x="70" y="54" width="180" height="170" fill="#cfe3ef"/><g stroke="#fff" stroke-width="9" fill="none"><rect x="70" y="54" width="180" height="170"/><path d="M160 54 L160 224"/><path d="M70 140 L250 140"/></g><rect x="46" y="38" width="300" height="10" rx="5" fill="#9c7f5c"/><circle cx="46" cy="43" r="8" fill="#9c7f5c"/><circle cx="346" cy="43" r="8" fill="#9c7f5c"/><path d="M56 48 q-12 100 2 176 l50 0 q-16 -96 -4 -176 Z" fill="#d9c7a8"/><path d="M56 48 q-12 100 2 176" stroke="#c4b192" stroke-width="2" fill="none"/><path d="M262 48 q26 60 12 120 l52 12 q-6 -76 -14 -132 Z" fill="#efe9dd"/><path d="M262 48 q26 60 12 120" stroke="#ddd6c6" stroke-width="2" fill="none"/><g stroke="#b9bfc4" stroke-width="9" stroke-linecap="round"><path d="M222 262 L246 132"/><path d="M292 262 L268 132"/></g><g stroke="#a8aeb4" stroke-width="7"><path d="M240 168 L274 168"/><path d="M232 202 L282 202"/><path d="M226 234 L288 234"/></g><g><circle cx="258" cy="86" r="20" fill="#e8b48f"/><path d="M240 78 q18 -22 38 -4 q-6 -14 -20 -14 q-16 0 -18 18 Z" fill="#5a3a26"/><path d="M240 106 q18 -8 36 0 l6 58 l-48 0 Z" fill="#4a6fa8"/><path d="M244 108 L232 52 l12 -4 l14 52 Z" fill="#e8b48f"/><path d="M274 108 L288 54 l12 4 l-16 54 Z" fill="#e8b48f"/><ellipse cx="230" cy="48" rx="9" ry="7" fill="#f0c9a8"/><ellipse cx="296" cy="52" rx="9" ry="7" fill="#f0c9a8"/><rect x="242" y="164" width="34" height="42" rx="6" fill="#2c3e6b"/><rect x="242" y="204" width="14" height="30" rx="5" fill="#2c3e6b"/><rect x="262" y="204" width="14" height="30" rx="5" fill="#2c3e6b"/></g><g><circle cx="150" cy="176" r="19" fill="#c98b63"/><path d="M132 168 q18 -20 36 -2 q-4 -16 -18 -16 q-16 0 -18 18 Z" fill="#3b2a20"/><path d="M132 196 q18 -8 36 0 l8 56 l-52 0 Z" fill="#c0392b"/><path d="M168 200 L214 216 l-4 12 l-46 -14 Z" fill="#c98b63"/><ellipse cx="218" cy="222" rx="9" ry="7" fill="#c98b63"/><rect x="128" y="252" width="18" height="34" rx="5" fill="#3a4a5e"/><rect x="154" y="252" width="18" height="34" rx="5" fill="#3a4a5e"/></g></svg>`,
+
+  oudgebouw: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#bcd6ea"/><ellipse cx="70" cy="52" rx="34" ry="16" fill="#fff" opacity=".8"/><ellipse cx="320" cy="40" rx="40" ry="15" fill="#fff" opacity=".7"/><rect y="210" width="400" height="90" fill="#7fa860"/><rect x="40" y="112" width="320" height="106" fill="#cfa06a"/><rect x="40" y="104" width="320" height="12" fill="#b8875a"/><rect x="176" y="52" width="48" height="60" fill="#cfa06a"/><path d="M176 52 L200 22 L224 52 Z" fill="#a8734a"/><circle cx="200" cy="76" r="12" fill="#f2ead8"/><path d="M200 76 l0 -8 M200 76 l6 4" stroke="#5c4632" stroke-width="2"/><g fill="#6b4f38"><rect x="60" y="140" width="20" height="58" rx="10"/><rect x="98" y="140" width="20" height="58" rx="10"/><rect x="136" y="140" width="20" height="58" rx="10"/><rect x="244" y="140" width="20" height="58" rx="10"/><rect x="282" y="140" width="20" height="58" rx="10"/><rect x="320" y="140" width="20" height="58" rx="10"/></g><rect x="182" y="146" width="36" height="72" rx="18" fill="#5a4230"/><rect x="150" y="218" width="100" height="82" fill="#d8d2c4"/><g fill="#5d874a"><circle cx="120" cy="248" r="16"/><circle cx="280" cy="248" r="16"/><circle cx="96" cy="282" r="14"/><circle cx="304" cy="282" r="14"/></g></svg>`,
+
+  moderngebouw: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#cfe0ec"/><rect y="238" width="400" height="62" fill="#cbc6bd"/><rect x="40" y="74" width="150" height="168" fill="#8fb4c9"/><rect x="190" y="52" width="90" height="190" fill="#6f97ad"/><rect x="280" y="96" width="86" height="146" fill="#c4a98c"/><g fill="#dceaf2" opacity=".85"><rect x="50" y="86" width="130" height="20"/><rect x="50" y="116" width="130" height="20"/><rect x="50" y="146" width="130" height="20"/><rect x="50" y="176" width="130" height="20"/><rect x="50" y="206" width="130" height="20"/></g><g fill="#a8cbdd" opacity=".9"><rect x="200" y="64" width="70" height="24"/><rect x="200" y="98" width="70" height="24"/><rect x="200" y="132" width="70" height="24"/><rect x="200" y="166" width="70" height="24"/><rect x="200" y="200" width="70" height="24"/></g><g fill="#efe4d4"><rect x="290" y="110" width="30" height="26"/><rect x="330" y="110" width="26" height="26"/><rect x="290" y="150" width="30" height="26"/><rect x="330" y="150" width="26" height="26"/><rect x="290" y="190" width="30" height="26"/><rect x="330" y="190" width="26" height="26"/></g><rect x="196" y="42" width="78" height="12" fill="#e8eef2"/><rect x="210" y="212" width="34" height="30" fill="#3f5c6b"/><g fill="#5d874a"><circle cx="30" cy="228" r="14"/><circle cx="382" cy="230" r="13"/></g><rect y="286" width="400" height="14" fill="#b3aea5"/></svg>`,
+
+  lampenwinkel: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#2b2b2f"/><g stroke="#6a6a70" stroke-width="2"><path d="M60 0 L60 40"/><path d="M130 0 L130 60"/><path d="M200 0 L200 34"/><path d="M270 0 L270 56"/><path d="M340 0 L340 44"/></g><path d="M36 40 L84 40 L74 74 L46 74 Z" fill="#f0e6d2"/><circle cx="130" cy="76" r="18" fill="#f7f1e2"/><path d="M176 34 L224 34 L212 72 L188 72 Z" fill="#e8d9b8"/><circle cx="270" cy="72" r="16" fill="#f7f1e2"/><path d="M318 44 L362 44 L352 76 L328 76 Z" fill="#f0e6d2"/><g opacity=".22" fill="#ffd98a"><path d="M46 74 L74 74 L100 150 L20 150 Z"/><path d="M188 72 L212 72 L236 150 L164 150 Z"/><path d="M328 76 L352 76 L376 150 L304 150 Z"/></g><rect y="216" width="400" height="84" fill="#3a3a3f"/><g><rect x="52" y="196" width="8" height="60" fill="#8a8a90"/><path d="M28 178 L84 178 L74 200 L38 200 Z" fill="#f2ead8"/><rect x="34" y="252" width="44" height="8" rx="3" fill="#8a8a90"/></g><g><rect x="188" y="188" width="8" height="68" fill="#8a8a90"/><path d="M160 164 L224 164 L212 192 L172 192 Z" fill="#e6dcc4"/><rect x="168" y="252" width="48" height="8" rx="3" fill="#8a8a90"/></g><g><rect x="316" y="200" width="8" height="56" fill="#8a8a90"/><path d="M296 184 L344 184 L336 204 L304 204 Z" fill="#f2ead8"/><rect x="300" y="252" width="40" height="8" rx="3" fill="#8a8a90"/></g><rect x="104" y="222" width="80" height="34" rx="4" fill="#4a4a50"/><rect x="240" y="222" width="60" height="34" rx="4" fill="#4a4a50"/></svg>`,
+
+  brillenwinkel: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#e9e2d4"/><g fill="#fbf8f2"><rect x="20" y="66" width="360" height="12" rx="3"/><rect x="20" y="146" width="360" height="12" rx="3"/><rect x="20" y="226" width="360" height="12" rx="3"/></g><g id="r1"><g fill="none" stroke="#3f6f7d" stroke-width="4"><circle cx="66" cy="48" r="15"/><circle cx="104" cy="48" r="15"/><path d="M81 48 L89 48 M51 44 L38 38 M119 44 L132 38"/></g><g fill="none" stroke="#8a6a3a" stroke-width="4"><circle cx="176" cy="48" r="15"/><circle cx="214" cy="48" r="15"/><path d="M191 48 L199 48 M161 44 L148 38 M229 44 L242 38"/></g><g fill="none" stroke="#4a4a4a" stroke-width="4"><circle cx="288" cy="48" r="15"/><circle cx="326" cy="48" r="15"/><path d="M303 48 L311 48 M273 44 L260 38 M341 44 L354 38"/></g></g><g><g fill="none" stroke="#7a8b3f" stroke-width="4"><rect x="50" y="114" width="32" height="24" rx="6"/><rect x="90" y="114" width="32" height="24" rx="6"/><path d="M82 126 L90 126 M50 118 L36 112 M122 118 L136 112"/></g><g fill="none" stroke="#b06a4a" stroke-width="4"><circle cx="176" cy="126" r="16"/><circle cx="216" cy="126" r="16"/><path d="M192 126 L200 126 M160 122 L146 116 M232 122 L246 116"/></g><g fill="none" stroke="#3f5f8f" stroke-width="4"><rect x="272" y="114" width="32" height="24" rx="6"/><rect x="312" y="114" width="32" height="24" rx="6"/><path d="M304 126 L312 126 M272 118 L258 112 M344 118 L358 112"/></g></g><g><g fill="none" stroke="#6a6a6a" stroke-width="4"><circle cx="66" cy="204" r="16"/><circle cx="106" cy="204" r="16"/><path d="M82 204 L90 204 M50 200 L36 194 M122 200 L136 194"/></g><g fill="none" stroke="#a83f5f" stroke-width="4"><circle cx="176" cy="204" r="16"/><circle cx="216" cy="204" r="16"/><path d="M192 204 L200 204 M160 200 L146 194 M232 200 L246 194"/></g><g fill="none" stroke="#c9a227" stroke-width="4"><circle cx="288" cy="204" r="16"/><circle cx="328" cy="204" r="16"/><path d="M304 204 L312 204 M272 200 L258 194 M344 200 L358 194"/></g></g><rect y="256" width="400" height="44" fill="#d6cdba"/></svg>`,
+
+  jusdorange: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#fdfbf6"/><rect y="236" width="400" height="64" fill="#f0ece2"/><circle cx="126" cy="196" r="52" fill="#e8842a"/><circle cx="126" cy="196" r="52" fill="none" stroke="#cf6f1e" stroke-width="3"/><path d="M126 148 q-8 -18 6 -26 q10 12 2 26 Z" fill="#5d874a"/><ellipse cx="108" cy="176" rx="12" ry="9" fill="#f0a05a" opacity=".5"/><path d="M232 116 l84 0 l-10 132 q-2 14 -32 14 q-30 0 -32 -14 Z" fill="#f7f3ea"/><path d="M236 140 l76 0 l-8 108 q-2 12 -30 12 q-28 0 -30 -12 Z" fill="#f2a11e"/><path d="M236 140 l76 0 l-2 24 l-72 0 Z" fill="#f7b542"/><ellipse cx="274" cy="140" rx="38" ry="7" fill="#f9c164"/><path d="M244 168 l4 74 q1 8 12 9 l-6 -84 Z" fill="#f9c164" opacity=".7"/></svg>`,
+
+  melk: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#eef1f4"/><rect y="238" width="400" height="62" fill="#e0e5ea"/><path d="M116 100 l84 0 l0 148 l-84 0 Z" fill="#fdfdfd"/><path d="M116 100 l42 -36 l42 36 Z" fill="#f2f4f6"/><path d="M116 100 l42 -36 l42 36 Z" fill="none" stroke="#d5dae0" stroke-width="2"/><path d="M116 100 l84 0 l0 148 l-84 0 Z" fill="none" stroke="#d5dae0" stroke-width="2"/><path d="M150 66 l16 0 l0 -12 l-16 0 Z" fill="#e2e7ec"/><rect x="116" y="140" width="84" height="72" fill="#fff"/><g stroke="#3f7fc4" stroke-width="5" opacity=".55"><path d="M116 152 L200 152"/><path d="M116 172 L200 172"/><path d="M116 192 L200 192"/><path d="M128 140 L128 212"/><path d="M148 140 L148 212"/><path d="M168 140 L168 212"/><path d="M188 140 L188 212"/></g><rect x="116" y="140" width="84" height="72" fill="none" stroke="#3f7fc4" stroke-width="2" opacity=".6"/><rect x="132" y="222" width="52" height="7" rx="3" fill="#c9d2da"/><path d="M244 128 l72 0 l-8 116 q-2 12 -28 12 q-26 0 -28 -12 Z" fill="#f4f6f8"/><path d="M248 150 l64 0 l-7 94 q-1 10 -25 10 q-24 0 -25 -10 Z" fill="#fdfdfd"/><ellipse cx="280" cy="150" rx="32" ry="6" fill="#fff"/><ellipse cx="280" cy="150" rx="32" ry="6" fill="none" stroke="#e4e8ec" stroke-width="2"/><path d="M254 170 l4 68 q1 8 10 9 l-5 -77 Z" fill="#fff" opacity=".8"/></svg>`,
+
+  duinpad: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="150" fill="#a8bfd0"/><ellipse cx="300" cy="46" rx="52" ry="18" fill="#fff" opacity=".6"/><rect y="132" width="400" height="26" fill="#8fa9b8"/><rect y="150" width="400" height="150" fill="#c2b98a"/><path d="M158 150 q-14 60 -60 150 l150 0 q-38 -84 -34 -150 Z" fill="#e8dfc0"/><g fill="#9aa860"><path d="M0 158 q30 -34 46 4 q22 -30 40 6 l0 40 l-90 0 Z"/><path d="M300 156 q34 -32 50 6 q26 -26 50 8 l0 40 l-104 0 Z"/></g><g stroke="#8b9a52" stroke-width="3" fill="none"><path d="M40 300 q6 -60 -6 -96"/><path d="M64 300 q0 -66 14 -100"/><path d="M96 300 q-4 -58 6 -88"/><path d="M310 300 q6 -66 -6 -100"/><path d="M340 300 q0 -70 14 -104"/><path d="M372 300 q-6 -60 4 -92"/></g><g stroke="#b3c176" stroke-width="2" fill="none"><path d="M52 300 q-8 -50 2 -80"/><path d="M84 300 q10 -46 0 -76"/><path d="M326 300 q-8 -54 4 -86"/><path d="M358 300 q10 -50 0 -80"/></g><ellipse cx="200" cy="270" rx="60" ry="14" fill="#efe7cc"/></svg>`,
+
+  stadsstraat: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#dfe6ea"/><path d="M0 0 L130 0 L160 210 L0 300 Z" fill="#e8e2d6"/><path d="M400 0 L280 0 L250 210 L400 300 Z" fill="#ded7c8"/><path d="M160 210 L250 210 L268 300 L142 300 Z" fill="#b9b3a6"/><g fill="#9c958a"><path d="M142 300 q60 -18 126 0 l0 -8 q-64 -16 -126 0 Z"/><path d="M150 268 q52 -14 110 0 l0 -6 q-56 -12 -110 0 Z"/><path d="M158 240 q44 -12 92 0 l0 -5 q-48 -10 -92 0 Z"/></g><g fill="#c4bcae"><rect x="14" y="60" width="34" height="46"/><rect x="66" y="76" width="32" height="44"/><rect x="316" y="66" width="34" height="46"/><rect x="264" y="82" width="32" height="42"/></g><g fill="#7fa856"><path d="M0 6 q40 30 24 90 q-30 40 -24 -6 Z"/><path d="M60 10 q46 40 30 96 q-34 30 -30 -10 Z"/><path d="M400 4 q-44 32 -28 92 q32 38 28 -8 Z"/><path d="M336 12 q-48 42 -32 98 q36 28 32 -12 Z"/></g><g fill="#5d874a"><circle cx="40" cy="46" r="20"/><circle cx="86" cy="60" r="17"/><circle cx="356" cy="50" r="20"/><circle cx="312" cy="64" r="16"/></g><rect x="118" y="146" width="26" height="64" fill="#6b5a44"/><rect x="256" y="150" width="26" height="60" fill="#6b5a44"/><g fill="#4a6b3a"><rect x="106" y="218" width="26" height="26" rx="3"/><rect x="272" y="222" width="26" height="24" rx="3"/></g><g fill="#7fa856"><circle cx="119" cy="212" r="14"/><circle cx="285" cy="216" r="13"/></g><rect x="176" y="176" width="58" height="34" rx="3" fill="#8a8378"/><circle cx="205" cy="164" r="7" fill="#3f4a52"/></svg>`,
+
+  schoolbord: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f2f0ec"/><rect x="40" y="52" width="320" height="180" rx="6" fill="#2f2f33"/><rect x="48" y="60" width="304" height="164" rx="3" fill="#fdfdfb"/><g stroke="#3f6f9f" stroke-width="4" fill="none" stroke-linecap="round"><path d="M76 96 L150 96"/><path d="M76 118 L206 118"/><path d="M76 140 L170 140"/></g><g stroke="#c0392b" stroke-width="4" fill="none" stroke-linecap="round"><path d="M240 100 L306 100"/><path d="M240 122 L286 122"/></g><rect x="40" y="232" width="320" height="14" rx="4" fill="#4a4a50"/><g fill="#8a8a90"><rect x="120" y="236" width="30" height="6" rx="2"/><rect x="160" y="236" width="20" height="6" rx="2" fill="#c0392b"/><rect x="190" y="236" width="20" height="6" rx="2" fill="#3f6f9f"/><rect x="220" y="236" width="30" height="6" rx="2"/></g><rect x="186" y="246" width="28" height="42" fill="#6b6b70"/><rect x="160" y="288" width="80" height="10" rx="4" fill="#6b6b70"/></svg>`,
+
+  landkaart: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#efece4"/><g fill="#e3ded2"><rect x="0" y="30" width="400" height="22"/><rect x="0" y="82" width="400" height="22"/><rect x="0" y="134" width="400" height="22"/><rect x="0" y="186" width="400" height="22"/><rect x="0" y="238" width="400" height="22"/></g><rect x="30" y="44" width="340" height="212" fill="#dceaf2"/><g fill="#8fae6a"><path d="M74 78 q52 -18 84 4 q16 12 -6 22 q-16 8 -44 4 q-30 -4 -38 -14 q-8 -10 4 -16 Z"/><path d="M96 112 q30 -12 40 4 q8 12 -4 22 q-18 14 -22 -2 q-4 -12 -14 -24 Z"/><path d="M112 148 q26 -10 30 12 q4 22 -6 44 q-12 26 -20 2 q-8 -34 -4 -58 Z"/><path d="M186 92 q34 -14 60 0 q14 8 2 18 q-24 16 -56 4 q-16 -8 -6 -22 Z"/><path d="M196 126 q34 -8 40 16 q6 26 -8 48 q-14 22 -24 -4 q-10 -34 -8 -60 Z"/><path d="M242 74 q46 -14 78 6 q20 14 -4 26 q-40 18 -76 -4 q-18 -12 2 -28 Z"/><path d="M268 112 q40 -10 56 12 q14 20 -10 32 q-38 16 -56 -10 q-10 -18 10 -34 Z"/><path d="M308 190 q28 -12 40 6 q10 18 -10 28 q-26 10 -36 -10 q-6 -14 6 -24 Z"/></g><g fill="#f2f4f6" opacity=".9"><path d="M30 236 q170 -14 340 0 l0 20 l-340 0 Z"/></g><g stroke="#b6cdd8" stroke-width="1.5" fill="none"><path d="M30 150 L370 150"/><path d="M200 44 L200 256"/><path d="M30 98 L370 98"/><path d="M30 202 L370 202"/><path d="M116 44 L116 256"/><path d="M284 44 L284 256"/></g><rect x="30" y="44" width="340" height="212" fill="none" stroke="#d8d2c4" stroke-width="8"/></svg>`,
+
+  klok: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f4f2ee"/><circle cx="200" cy="150" r="108" fill="#e8842a"/><circle cx="200" cy="150" r="96" fill="#fdfcf9"/><circle cx="200" cy="150" r="96" fill="none" stroke="#e0dbd0" stroke-width="2"/><g fill="#2f2f33" font-family="Helvetica,Arial" font-size="19" text-anchor="middle"><text x="200" y="76">12</text><text x="248" y="90">1</text><text x="278" y="122">2</text><text x="288" y="158">3</text><text x="276" y="194">4</text><text x="246" y="222">5</text><text x="200" y="234">6</text><text x="154" y="222">7</text><text x="124" y="194">8</text><text x="112" y="158">9</text><text x="122" y="122">10</text><text x="152" y="90">11</text></g><path d="M200 150 L200 96" stroke="#2f2f33" stroke-width="7" stroke-linecap="round"/><path d="M200 150 L246 178" stroke="#2f2f33" stroke-width="5" stroke-linecap="round"/><path d="M200 150 L166 200" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/><circle cx="200" cy="150" r="7" fill="#2f2f33"/></svg>`,
+
+  haarwassen: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#e9e0d2"/><rect y="214" width="400" height="86" fill="#a8846052"/><rect y="214" width="400" height="86" fill="#b08a62"/><path d="M40 150 q0 -14 16 -14 l150 0 q16 0 16 14 l-8 56 q-4 20 -32 20 l-102 0 q-28 0 -32 -20 Z" fill="#f7f7f5"/><path d="M56 152 l142 0 l-8 50 q-3 14 -26 14 l-74 0 q-23 0 -26 -14 Z" fill="#e4e8ea"/><ellipse cx="126" cy="200" rx="16" ry="6" fill="#c9d0d2"/><rect x="222" y="176" width="150" height="24" rx="10" fill="#3f4a52"/><rect x="238" y="196" width="18" height="60" rx="6" fill="#3f4a52"/><rect x="330" y="196" width="18" height="60" rx="6" fill="#3f4a52"/><path d="M214 178 q40 -16 76 -2 l0 24 l-84 0 Z" fill="#4a5b66"/><circle cx="150" cy="146" r="34" fill="#f0c9a8"/><path d="M124 128 q22 -26 52 -10 q16 10 14 26 q-10 -18 -34 -18 q-22 0 -32 12 Z" fill="#6b4630"/><path d="M116 152 q-16 -6 -22 -22 q-8 -22 14 -26 q18 -2 24 20 Z" fill="#6b4630"/><circle cx="164" cy="146" r="3.5" fill="#3b332e"/><path d="M176 158 q10 4 0 10" stroke="#c98b63" stroke-width="3" fill="none"/><g><path d="M120 96 q30 -16 56 -2 q10 6 4 16 q-28 12 -58 0 q-10 -6 -2 -14 Z" fill="#f0c9a8"/><g stroke="#e0b493" stroke-width="2"><path d="M132 96 L130 84"/><path d="M144 92 L143 80"/><path d="M156 92 L158 80"/><path d="M168 96 L172 86"/></g><path d="M184 110 q28 -14 50 0 q10 6 0 14 q-26 12 -52 0 q-8 -6 2 -14 Z" fill="#f0c9a8"/><g stroke="#e0b493" stroke-width="2"><path d="M194 108 L190 96"/><path d="M206 104 L204 92"/><path d="M218 104 L222 94"/></g></g><g fill="#fff"><circle cx="128" cy="112" r="11" opacity=".95"/><circle cx="150" cy="104" r="13" opacity=".95"/><circle cx="174" cy="112" r="11" opacity=".95"/><circle cx="196" cy="124" r="9" opacity=".9"/><circle cx="112" cy="126" r="9" opacity=".9"/><circle cx="162" cy="122" r="8" opacity=".85"/></g><rect x="14" y="86" width="16" height="70" rx="8" fill="#b9bfc4"/><path d="M22 86 q0 -22 26 -22 l16 0 l0 16 l-16 0 q-10 0 -10 6 Z" fill="#cfd5d9"/><g stroke="#9ec7e0" stroke-width="3" fill="none" opacity=".85"><path d="M60 82 q4 24 -4 40"/><path d="M70 82 q6 26 -2 44"/></g></svg>`,
+
+  knippen: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#ece2d2"/><rect y="238" width="400" height="62" fill="#8a6a4a"/><rect x="16" y="30" width="140" height="150" rx="6" fill="#dfe8ec"/><rect x="16" y="30" width="140" height="150" rx="6" fill="none" stroke="#c9c4b8" stroke-width="6"/><rect x="300" y="60" width="84" height="120" rx="5" fill="#6b5a44"/><g fill="#8a7a62"><rect x="308" y="72" width="68" height="12" rx="3"/><rect x="308" y="96" width="68" height="12" rx="3"/><rect x="308" y="120" width="68" height="12" rx="3"/></g><rect x="186" y="238" width="26" height="52" fill="#4a4a50"/><rect x="156" y="288" width="86" height="12" rx="6" fill="#4a4a50"/><rect x="160" y="206" width="78" height="34" rx="8" fill="#3f4a52"/><path d="M150 208 q50 -20 98 0 l10 34 l-118 0 Z" fill="#2f2f36"/><circle cx="199" cy="150" r="40" fill="#f0c9a8"/><path d="M162 142 q-8 -48 38 -50 q48 -2 46 46 q-22 -24 -46 -20 q-28 4 -38 24 Z" fill="#6b4630"/><circle cx="184" cy="152" r="4" fill="#3b332e"/><circle cx="214" cy="152" r="4" fill="#3b332e"/><path d="M188 172 q12 8 24 0 q-4 12 -12 12 q-8 0 -12 -12 Z" fill="#c98b63"/><g><path d="M246 178 q34 -6 44 -40 l16 6 q-10 46 -56 52 Z" fill="#e05c4b"/><path d="M240 118 q34 -12 52 4 q10 8 -2 16 q-32 12 -56 -4 q-8 -8 6 -16 Z" fill="#f0c9a8"/><g stroke="#e0b493" stroke-width="2"><path d="M252 116 L250 104"/><path d="M264 112 L263 100"/><path d="M276 114 L280 104"/></g></g><g stroke="#8a8f95" stroke-width="5" fill="none" stroke-linecap="round"><path d="M232 96 L280 72"/><path d="M232 84 L280 108"/></g><g fill="none" stroke="#8a8f95" stroke-width="4"><circle cx="286" cy="68" r="8"/><circle cx="286" cy="112" r="8"/></g><g fill="#5a3a26"><ellipse cx="120" cy="266" rx="26" ry="9"/><ellipse cx="286" cy="272" rx="20" ry="7"/></g></svg>`,
+
+  vegen: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#c99a63"/><g stroke="#a87c4a" stroke-width="3"><path d="M0 60 L400 60"/><path d="M0 130 L400 130"/><path d="M0 200 L400 200"/><path d="M0 264 L400 264"/></g><g fill="#3a2f26"><ellipse cx="250" cy="212" rx="62" ry="30"/><ellipse cx="212" cy="196" rx="30" ry="16"/><ellipse cx="296" cy="200" rx="26" ry="14"/></g><g stroke="#2b221c" stroke-width="2" fill="none"><path d="M196 190 q22 -14 46 -6"/><path d="M290 186 q20 -6 30 8"/><path d="M232 236 q26 10 52 -2"/></g><rect x="70" y="14" width="12" height="150" rx="6" fill="#a8734a" transform="rotate(12 76 90)"/><rect x="86" y="156" width="96" height="18" rx="5" fill="#3f4a52" transform="rotate(12 134 165)"/><g stroke="#1f2933" stroke-width="3" transform="rotate(12 134 165)"><path d="M94 174 L92 200"/><path d="M106 174 L104 200"/><path d="M118 174 L116 200"/><path d="M130 174 L128 200"/><path d="M142 174 L140 200"/><path d="M154 174 L152 200"/><path d="M166 174 L164 200"/></g><path d="M40 250 q30 -22 66 -8 l-8 30 q-38 8 -58 -22 Z" fill="#f2f2f0"/><path d="M46 258 q28 -16 54 -4 l-4 18 q-30 6 -50 -14 Z" fill="#c0392b"/></svg>`,
+
+  zeep: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#e8dcc8"/><g stroke="#d8c9b0" stroke-width="2"><path d="M0 70 L400 70"/><path d="M0 150 L400 150"/><path d="M0 230 L400 230"/><path d="M100 0 L100 300"/><path d="M300 0 L300 300"/></g><path d="M40 236 q160 -30 320 0 l0 64 l-320 0 Z" fill="#fbfbf9"/><path d="M56 240 q148 -24 288 0 l0 12 q-146 -20 -288 0 Z" fill="#eceae4"/><rect x="176" y="150" width="56" height="86" rx="8" fill="#2f5fa8"/><rect x="182" y="166" width="44" height="34" rx="4" fill="#e8eef7"/><rect x="188" y="174" width="32" height="5" rx="2" fill="#8fa8cc"/><rect x="188" y="184" width="24" height="5" rx="2" fill="#8fa8cc"/><rect x="192" y="130" width="24" height="22" rx="4" fill="#dfe3e8"/><rect x="186" y="118" width="36" height="14" rx="6" fill="#eceff2"/><path d="M186 124 l-34 0 l0 10 l34 0 Z" fill="#eceff2"/><path d="M96 118 q34 -14 58 4 q10 10 -4 16 q-30 10 -58 -4 q-8 -8 4 -16 Z" fill="#f0c9a8"/><path d="M100 138 q30 8 54 -2 l4 22 q-32 12 -62 0 Z" fill="#f0c9a8"/><path d="M60 150 q44 26 96 8 l6 40 q-56 20 -110 -12 Z" fill="#e8b48f"/><g fill="#fff" opacity=".9"><circle cx="168" cy="152" r="6"/><circle cx="180" cy="146" r="4"/><circle cx="158" cy="144" r="4"/></g></svg>`,
+
+  handenwassen: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#e4e9ea"/><path d="M30 190 q170 -34 340 0 l0 110 l-340 0 Z" fill="#fbfbfa"/><path d="M60 200 q142 -26 280 0 q-10 60 -140 60 q-130 0 -140 -60 Z" fill="#eef2f3"/><ellipse cx="200" cy="252" rx="18" ry="7" fill="#c9d0d2"/><rect x="182" y="60" width="16" height="70" rx="8" fill="#b9c0c4"/><path d="M182 62 q-40 4 -42 40 l18 0 q2 -22 24 -24 Z" fill="#cfd5d8"/><rect x="150" y="98" width="18" height="22" rx="6" fill="#b9c0c4"/><rect x="186" y="52" width="34" height="12" rx="6" fill="#cfd5d8"/><g stroke="#9ec7e0" stroke-width="4" fill="none" opacity=".9"><path d="M156 122 L152 168"/><path d="M164 122 L162 170"/><path d="M172 122 L172 166"/></g><path d="M112 176 q46 -30 92 -6 q16 10 2 22 q-46 26 -96 4 q-14 -10 2 -20 Z" fill="#f0c9a8"/><path d="M120 196 q42 18 82 2 l6 26 q-48 22 -96 -2 Z" fill="#e8b48f"/><path d="M96 210 q56 34 118 8 l0 34 q-66 26 -128 -14 Z" fill="#f0c9a8"/><g fill="#fff"><circle cx="140" cy="182" r="9" opacity=".95"/><circle cx="164" cy="172" r="7" opacity=".95"/><circle cx="188" cy="180" r="8" opacity=".95"/><circle cx="126" cy="198" r="7" opacity=".9"/><circle cx="206" cy="196" r="6" opacity=".9"/><circle cx="152" cy="204" r="6" opacity=".85"/></g></svg>`,
+
+  handdoek: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#e4dccc"/><rect x="40" y="24" width="320" height="14" rx="7" fill="#b9bfc4"/><path d="M96 38 l208 0 l0 190 q-104 26 -208 0 Z" fill="#2f8f8a"/><g stroke="#57a8a4" stroke-width="3" opacity=".8"><path d="M126 38 L126 224"/><path d="M166 38 L166 230"/><path d="M206 38 L206 232"/><path d="M246 38 L246 230"/><path d="M286 38 L286 224"/></g><g stroke="#257a76" stroke-width="4"><path d="M96 70 q104 20 208 0"/><path d="M96 196 q104 22 208 0"/></g><g><path d="M104 138 q42 -30 84 -6 q14 8 2 20 q-40 26 -88 4 q-12 -8 2 -18 Z" fill="#f0c9a8"/><g stroke="#e0b493" stroke-width="3" stroke-linecap="round"><path d="M120 132 L112 108"/><path d="M140 122 L136 98"/><path d="M160 120 L162 96"/><path d="M180 130 L190 110"/></g><path d="M112 160 q46 20 88 -4 l10 26 q-52 30 -108 4 Z" fill="#e8b48f"/></g><g><path d="M212 152 q42 -28 84 -4 q14 8 2 20 q-40 26 -88 4 q-12 -8 2 -20 Z" fill="#f0c9a8"/><g stroke="#e0b493" stroke-width="3" stroke-linecap="round"><path d="M228 146 L220 122"/><path d="M248 136 L244 112"/><path d="M268 134 L270 110"/><path d="M288 144 L298 124"/></g><path d="M220 174 q46 20 88 -4 l8 26 q-52 30 -106 4 Z" fill="#e8b48f"/></g><path d="M96 196 q104 22 208 0 l0 32 q-104 26 -208 0 Z" fill="#2f8f8a" opacity=".92"/></svg>`,
+
+  laptoptas: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#fbfaf7"/><ellipse cx="200" cy="256" rx="120" ry="14" fill="#eceae4"/><path d="M112 66 q88 -30 176 0" stroke="#9a9a96" stroke-width="9" fill="none" stroke-linecap="round"/><rect x="70" y="96" width="260" height="152" rx="16" fill="#8f8f8a"/><rect x="70" y="96" width="260" height="152" rx="16" fill="none" stroke="#7a7a75" stroke-width="3"/><rect x="86" y="112" width="228" height="120" rx="10" fill="#a3a39e"/><rect x="70" y="150" width="260" height="10" fill="#7a7a75"/><rect x="150" y="86" width="100" height="14" rx="6" fill="#7a7a75"/><rect x="240" y="196" width="60" height="30" rx="6" fill="#7a7a75"/><circle cx="270" cy="211" r="8" fill="#c9c9c4"/><g stroke="#6f6f6a" stroke-width="2"><path d="M92 240 L308 240"/></g></svg>`,
+
+  toilettas: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#fdfaf9"/><ellipse cx="200" cy="238" rx="118" ry="14" fill="#f2e8ea"/><path d="M74 130 q126 -34 252 0 l-14 100 q-112 20 -224 0 Z" fill="#f0a8b4"/><path d="M74 130 q126 -34 252 0 l-4 26 q-124 -30 -244 0 Z" fill="#f7bdc7"/><g stroke="#e08b9c" stroke-width="2" opacity=".8"><path d="M110 140 L140 226"/><path d="M150 132 L172 228"/><path d="M190 128 L200 230"/><path d="M230 130 L226 228"/><path d="M268 136 L254 226"/><path d="M300 146 L282 222"/></g><g stroke="#e08b9c" stroke-width="2" opacity=".8"><path d="M80 164 q120 -26 240 0"/><path d="M78 192 q122 -22 244 0"/></g><rect x="82" y="118" width="236" height="18" rx="9" fill="#d97a8c"/><circle cx="318" cy="127" r="12" fill="#c96a7c"/><rect x="316" y="127" width="6" height="26" rx="3" fill="#c96a7c"/></svg>`,
+
+  koffer: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#fbfaf8"/><ellipse cx="200" cy="272" rx="94" ry="12" fill="#eeece7"/><rect x="176" y="18" width="12" height="56" rx="6" fill="#8f979c"/><rect x="212" y="18" width="12" height="56" rx="6" fill="#8f979c"/><rect x="170" y="14" width="60" height="12" rx="6" fill="#a8b0b5"/><rect x="96" y="70" width="208" height="190" rx="22" fill="#2b2b33"/><rect x="96" y="70" width="208" height="190" rx="22" fill="none" stroke="#1f1f26" stroke-width="3"/><g stroke="#3f3f4a" stroke-width="3"><path d="M148 74 L148 256"/><path d="M252 74 L252 256"/></g><g fill="#f7f4ec"><g><circle cx="128" cy="112" r="11"/><circle cx="118" cy="126" r="8"/><circle cx="140" cy="128" r="8"/><circle cx="128" cy="112" r="4" fill="#e8c46a"/></g><g><circle cx="200" cy="150" r="13"/><circle cx="186" cy="166" r="9"/><circle cx="214" cy="166" r="9"/><circle cx="200" cy="150" r="5" fill="#e8c46a"/></g><g><circle cx="272" cy="106" r="10"/><circle cx="262" cy="120" r="7"/><circle cx="282" cy="121" r="7"/><circle cx="272" cy="106" r="4" fill="#e8c46a"/></g><g><circle cx="160" cy="206" r="11"/><circle cx="149" cy="221" r="8"/><circle cx="171" cy="221" r="8"/><circle cx="160" cy="206" r="4" fill="#e8c46a"/></g><g><circle cx="262" cy="200" r="12"/><circle cx="250" cy="216" r="8"/><circle cx="274" cy="216" r="8"/><circle cx="262" cy="200" r="4" fill="#e8c46a"/></g></g><rect x="112" y="256" width="30" height="16" rx="7" fill="#4a4a52"/><rect x="258" y="256" width="30" height="16" rx="7" fill="#4a4a52"/></svg>`
+};
+
+/* ===========================================================
+   真题改编套 1  ·  DUO Oefenexamen Spreken A2 nr.1 的 16 道题
+   题目文字、任务要求、评分要点来自官方练习卷;
+   所有配图为自绘替代图(官方照片有版权,不打包进来);
+   视频题的画面就是一个人在说话,这里用 TTS 朗读对白代替。
+=========================================================== */
+window.CONTENT.SPEAKING_TASKS.push(
+  {
+    id: 'duo1-01', set: '真题套 1', type: 'video',
+    situatie_nl: 'Een vrouw kijkt u aan en zegt: "Ik maak graag huiswerk op mijn slaapkamer."',
+    situatie_cn: '视频里一个女人对你说:"我喜欢在卧室里写作业。"',
+    vraag_nl: 'Waar maakt u graag huiswerk?',
+    vraag_cn: '你喜欢在哪里写作业/学习?',
+    prepSec: 10, answerSec: 60,
+    must: ['直接回答"在哪里"', '说明为什么是那里', '加一个细节(什么时候 / 多久)', '说满时间,别一句话就停'],
+    model_nl: 'Ik maak mijn huiswerk het liefst aan de eettafel in de woonkamer. Daar is de tafel groot genoeg voor mijn boeken en mijn laptop. Ik doe dat meestal \'s avonds, als het rustig is in huis. Op mijn slaapkamer werkt het voor mij niet zo goed, want dan word ik snel moe en wil ik gaan liggen.',
+    model_cn: '我最喜欢在客厅的餐桌上写作业。那儿的桌子够大,能放下书和笔记本电脑。我一般晚上写,家里安静的时候。在卧室对我不太行,因为很容易犯困,想躺下。',
+    keywords: [{ nl: 'het huiswerk', cn: '作业' }, { nl: 'de eettafel', cn: '餐桌' }, { nl: 'rustig', cn: '安静' }]
+  },
+  {
+    id: 'duo1-02', set: '真题套 1', type: 'video',
+    situatie_nl: 'Een man zegt: "Ik neem elke dag twee keer pauze op mijn werk."',
+    situatie_cn: '视频里一个男人说:"我每天在单位休息两次。"',
+    vraag_nl: 'Hoe vaak neemt u pauze?',
+    vraag_cn: '你多久休息一次?',
+    prepSec: 10, answerSec: 60,
+    must: ['说出频率(几次 / 多长时间)', '说在什么时间', '说你休息时做什么', '加一句对比或看法'],
+    model_nl: 'Ik neem meestal drie keer pauze op een werkdag. \'s Ochtends om een uur of tien drink ik snel een kop koffie, tussen de middag heb ik een half uur voor mijn lunch, en \'s middags loop ik even naar buiten. Die korte pauze buiten vind ik het belangrijkst, want daarna kan ik weer beter opletten.',
+    model_cn: '工作日我一般休息三次。上午十点左右快速喝杯咖啡,中午有半小时吃午饭,下午出去走一小会儿。下午那次出门对我最重要,因为之后注意力能集中得多。',
+    keywords: [{ nl: 'de pauze', cn: '休息' }, { nl: 'tussen de middag', cn: '中午' }, { nl: 'opletten', cn: '集中注意力' }]
+  },
+  {
+    id: 'duo1-03', set: '真题套 1', type: 'video',
+    situatie_nl: 'Een man zegt: "Ik doe meestal op vrijdag de boodschappen."',
+    situatie_cn: '视频里一个男人说:"我一般周五买菜。"',
+    vraag_nl: 'Wat vindt u een fijne dag om boodschappen te doen?',
+    vraag_cn: '你觉得哪天买东西最舒服?',
+    prepSec: 10, answerSec: 60,
+    must: ['说出是哪天', '说明理由(为什么那天好)', '说说哪天不好、为什么', '加一个具体细节'],
+    model_nl: 'Ik doe het liefst op maandagochtend boodschappen. Dan is de supermarkt bijna leeg en hoef ik niet in de rij te staan bij de kassa. De groente is dan ook nog vers. Op zaterdag ga ik nooit, want dan is het echt heel druk en kun je bijna niet met je karretje door de winkel.',
+    model_cn: '我最喜欢周一上午买菜。那时候超市几乎没人,收银台也不用排队,蔬菜也还新鲜。周六我从来不去,因为特别挤,推着车都走不动。',
+    keywords: [{ nl: 'in de rij staan', cn: '排队' }, { nl: 'vers', cn: '新鲜' }, { nl: 'het karretje', cn: '购物车' }]
+  },
+  {
+    id: 'duo1-04', set: '真题套 1', type: 'video',
+    situatie_nl: 'Een vrouw zegt: "Ik praat elke dag met mijn buren."',
+    situatie_cn: '视频里一个女人说:"我每天都和邻居说话。"',
+    vraag_nl: 'Hoe vaak praat u met uw buren?',
+    vraag_cn: '你多久和邻居说一次话?',
+    prepSec: 10, answerSec: 60,
+    must: ['说出频率', '说在哪里遇到他们', '说你们聊什么', '加一句你的感受'],
+    model_nl: 'Ik praat ongeveer twee of drie keer per week met mijn buren. Meestal zie ik ze bij de voordeur of beneden bij de brievenbussen. Dan hebben we het over het weer, over de vuilnisbakken of over de kinderen. Het zijn korte gesprekjes, maar ik vind het wel prettig, want zo ken je de mensen in je straat.',
+    model_cn: '我大概一周和邻居说两三次话。一般是在门口或者楼下信箱那儿碰到。我们聊聊天气、垃圾桶的事,或者孩子。都是简短的几句,但我挺喜欢的,这样才认识住在同一条街的人。',
+    keywords: [{ nl: 'de buren', cn: '邻居' }, { nl: 'de brievenbus', cn: '信箱' }, { nl: 'het gesprekje', cn: '简短交谈' }]
+  },
+
+  {
+    id: 'duo1-05', set: '真题套 1', type: 'foto1', art: ['saladebar'],
+    beeld_nl: 'Een saladebar met bakken groente: paprika, tomaatjes, sla, komkommer, rode kool en wortel.',
+    beeld_cn: '一个沙拉吧,几个盘子里装着蔬菜:彩椒、小番茄、生菜、黄瓜、紫甘蓝、胡萝卜。',
+    vraag_nl: 'Sem luncht op school. Vertel wat Sem kan eten. Vertel ook wat u van dit eten vindt. Gebruik het plaatje.',
+    vraag_cn: 'Sem 在学校吃午饭。说说 Sem 能吃到什么,再说说你对这些吃的怎么看。要用到图。',
+    prepSec: 10, answerSec: 60,
+    must: ['说出图里能吃到什么(至少三样)', '说出你对这些吃的的看法', '加一句理由或对比', '把图里看得见的东西说出来'],
+    model_nl: 'Op het plaatje zie ik een saladebar met verschillende soorten groente. Sem kan sla eten, en ook tomaatjes, paprika, komkommer en rode kool. Hij kan dus zelf een grote salade maken. Ik vind dat heel gezond en het ziet er ook vers uit. Zelf zou ik er wel graag wat brood of rijst bij willen, want anders heb ik na een uur weer honger.',
+    model_cn: '图上我看到一个沙拉吧,有各种蔬菜。Sem 可以吃生菜,还有小番茄、彩椒、黄瓜和紫甘蓝,所以他能自己配一大盘沙拉。我觉得这很健康,看起来也新鲜。不过我自己会想再加点面包或米饭,不然一小时后又饿了。',
+    keywords: [{ nl: 'de saladebar', cn: '沙拉吧' }, { nl: 'de komkommer', cn: '黄瓜' }, { nl: 'de rode kool', cn: '紫甘蓝' }, { nl: 'gezond', cn: '健康' }]
+  },
+  {
+    id: 'duo1-06', set: '真题套 1', type: 'foto1', art: ['file'],
+    beeld_nl: 'Een file op de snelweg: twee rijen auto\'s staan stil, met borden boven de weg.',
+    beeld_cn: '高速公路上堵车:两排车停着不动,路上方有指示牌。',
+    vraag_nl: 'Jafar komt te laat op zijn werk. Waarom komt hij te laat? Vertel ook wat hij nu moet doen.',
+    vraag_cn: 'Jafar 上班要迟到了。他为什么会迟到?再说说他现在该怎么办。',
+    prepSec: 10, answerSec: 60,
+    must: ['说出迟到的原因(看图)', '说出他现在应该做什么', '给一个具体的做法', '用 want / omdat 说理由'],
+    model_nl: 'Jafar komt te laat omdat hij in de file staat. Op het plaatje zie ik dat alle auto\'s op de snelweg stilstaan, waarschijnlijk is het spits of er is een ongeluk gebeurd. Hij kan nu niets aan het verkeer doen. Ik denk dat hij zijn chef moet bellen om te zeggen dat hij later komt. Hij kan ook een berichtje sturen als bellen in de auto niet veilig is.',
+    model_cn: 'Jafar 迟到是因为堵车了。图上高速公路的车全停着,可能是高峰期,也可能出了事故。他现在对路况无能为力。我觉得他应该给上司打电话说会晚到。如果开车打电话不安全,也可以发条消息。',
+    keywords: [{ nl: 'de file', cn: '堵车' }, { nl: 'stilstaan', cn: '停滞不动' }, { nl: 'het ongeluk', cn: '事故' }, { nl: 'een berichtje sturen', cn: '发消息' }]
+  },
+  {
+    id: 'duo1-07', set: '真题套 1', type: 'foto1', art: ['tandenpoetsen'],
+    beeld_nl: 'Een oudere vrouw poetst haar tanden met een witte tandenborstel.',
+    beeld_cn: '一位年长的女性正在用白色牙刷刷牙。',
+    vraag_nl: 'Wat doet de vrouw? Vertel ook hoe vaak ze dat doet.',
+    vraag_cn: '这个女人在做什么?再说说她多久做一次。',
+    prepSec: 10, answerSec: 60,
+    must: ['说出她在做什么', '说出频率(一天几次)', '说什么时候做', '加一句为什么重要'],
+    model_nl: 'Op het plaatje zie ik een oudere vrouw. Zij is haar tanden aan het poetsen met een witte tandenborstel. Ik denk dat zij dat twee keer per dag doet, \'s ochtends na het ontbijt en \'s avonds voor het slapen. Dat is ook wat de tandarts altijd zegt. Zelf poets ik ook twee keer per dag, en één keer per jaar ga ik voor controle naar de tandarts.',
+    model_cn: '图上我看到一位年长的女性。她正在用白色牙刷刷牙。我觉得她一天刷两次,早上吃完早饭刷一次,晚上睡前刷一次。牙医也一直是这么说的。我自己也是一天刷两次,每年去牙医那儿检查一次。',
+    keywords: [{ nl: 'tanden poetsen', cn: '刷牙' }, { nl: 'de tandenborstel', cn: '牙刷' }, { nl: 'de tandarts', cn: '牙医' }, { nl: 'de controle', cn: '检查' }]
+  },
+  {
+    id: 'duo1-08', set: '真题套 1', type: 'foto1', art: ['gordijnen'],
+    beeld_nl: 'Een vrouw staat op een trapje bij het raam en hangt een gordijn op. Een man houdt het gordijn en de trap vast.',
+    beeld_cn: '一个女人站在梯子上挂窗帘,一个男人扶着窗帘和梯子。',
+    vraag_nl: 'Dit zijn Megan en Koen. Vertel wat over Megan en Koen. Noem drie dingen. Gebruik het plaatje.',
+    vraag_cn: '这是 Megan 和 Koen。说说他们俩,至少说三件事。要用到图。',
+    prepSec: 10, answerSec: 60,
+    must: ['说出他们在哪里', '说出 Megan 在做什么', '说出 Koen 在做什么', '一共至少三个信息点'],
+    model_nl: 'Op het plaatje zie ik Megan en Koen in de woonkamer. Ten eerste staat Megan op een trapje bij het grote raam. Ten tweede is zij een gordijn aan het ophangen. En ten derde helpt Koen haar: hij houdt de onderkant van het gordijn vast en let op de trap. Ik denk dat zij pas in dit huis zijn komen wonen, want de kamer is nog vrij leeg.',
+    model_cn: '图上我看到 Megan 和 Koen 在客厅。第一,Megan 站在大窗户旁的梯子上。第二,她在挂窗帘。第三,Koen 在帮她:他扶着窗帘下摆,还看着梯子。我觉得他们刚搬进这个房子,因为屋里还挺空的。',
+    keywords: [{ nl: 'het gordijn ophangen', cn: '挂窗帘' }, { nl: 'het trapje', cn: '梯子' }, { nl: 'vasthouden', cn: '扶住' }, { nl: 'ten eerste / ten tweede', cn: '第一 / 第二' }]
+  },
+
+  {
+    id: 'duo1-09', set: '真题套 1', type: 'foto2', art: ['oudgebouw', 'moderngebouw'],
+    beeld_nl: 'A: een oud, klassiek schoolgebouw van steen met zuilen en een toren. B: een modern gebouw van glas en staal.',
+    beeld_cn: 'A:古典的老校舍,石头外墙、柱子和钟塔。B:玻璃钢结构的现代楼。',
+    vraag_nl: 'U volgt een opleiding. In welk gebouw hebt u liever les? Vertel ook waarom. Kies één van de plaatjes.',
+    vraag_cn: '你在读一个课程。你更想在哪栋楼里上课?说明理由。选其中一张图。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选 A 还是 B', '给出至少一个理由', '说说另一栋楼的缺点', '描述图里看得见的细节'],
+    model_nl: 'Ik kies plaatje B, het moderne gebouw. Ik heb liever les in zo\'n gebouw, want alles is er nieuw: grote ramen, veel licht en waarschijnlijk goede verwarming en snel internet. Dat is prettig als je de hele dag in een lokaal zit. Het oude gebouw op plaatje A is natuurlijk mooi om te zien, maar zulke gebouwen zijn vaak koud en donker, en de trappen zijn smal.',
+    model_cn: '我选 B,那栋现代楼。我更想在这种楼里上课,因为一切都是新的:大窗户、光线足,暖气和网络应该也好。整天待在教室里,这些很重要。A 那栋老楼当然好看,但这种楼往往又冷又暗,楼梯还窄。',
+    keywords: [{ nl: 'de opleiding', cn: '课程、专业' }, { nl: 'het lokaal', cn: '教室' }, { nl: 'de verwarming', cn: '暖气' }, { nl: 'smal', cn: '窄' }]
+  },
+  {
+    id: 'duo1-10', set: '真题套 1', type: 'foto2', art: ['lampenwinkel', 'brillenwinkel'],
+    beeld_nl: 'A: een lampenwinkel met veel hanglampen en staande lampen. B: een brillenwinkel met rijen brillen op witte schappen.',
+    beeld_cn: 'A:灯具店,很多吊灯和落地灯。B:眼镜店,白色架子上一排排眼镜。',
+    vraag_nl: 'U zoekt werk in een winkel. In welke winkel werkt u liever? Vertel ook waarom. Kies één van de plaatjes.',
+    vraag_cn: '你在找一份店里的工作。你更想在哪家店工作?说明理由。选一张图。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选 A 还是 B', '给出至少一个理由', '说说这份工作要做什么', '说说另一家为什么不选'],
+    model_nl: 'Ik kies plaatje B, de brillenwinkel. Ik werk liever daar, want je helpt mensen met iets persoonlijks: je zoekt samen een bril die goed staat en die past bij hun gezicht. Dat lijkt me leuk werk en je praat de hele dag met klanten. In de lampenwinkel op plaatje A is het ook mooi, met al die lampen, maar ik denk dat je daar vooral zware dozen moet tillen.',
+    model_cn: '我选 B,眼镜店。我更想在那儿工作,因为你帮的是很个人的事:一起挑一副合适又好看的眼镜。我觉得这活儿有意思,而且整天都在和顾客说话。A 那家灯具店也漂亮,那么多灯,但我觉得在那儿主要得搬重箱子。',
+    keywords: [{ nl: 'de klant', cn: '顾客' }, { nl: 'past bij', cn: '适合、搭配' }, { nl: 'tillen', cn: '搬、抬' }, { nl: 'het schap', cn: '货架' }]
+  },
+  {
+    id: 'duo1-11', set: '真题套 1', type: 'foto2', art: ['jusdorange', 'melk'],
+    beeld_nl: 'A: een sinaasappel naast een glas jus d\'orange. B: een pak melk naast een glas melk.',
+    beeld_cn: 'A:一个橙子和一杯橙汁。B:一盒牛奶和一杯牛奶。',
+    vraag_nl: 'Kijk naar de plaatjes. Wat drinkt u liever? Vertel ook wanneer u dit graag drinkt.',
+    vraag_cn: '看图。你更喜欢喝哪个?再说说你什么时候喜欢喝。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选哪个', '说出你什么时候喝', '给一个理由', '说说另一个你什么时候会喝'],
+    model_nl: 'Ik drink liever jus d\'orange, dus plaatje A. Ik neem elke ochtend bij het ontbijt een glas, want dan word ik goed wakker en het smaakt lekker fris. In de zomer drink ik het ook \'s middags, met een paar ijsblokjes erin. Melk drink ik bijna nooit zomaar uit een glas. Die gebruik ik alleen in mijn koffie of in de pap.',
+    model_cn: '我更喜欢橙汁,也就是 A。我每天早饭喝一杯,能让人清醒,味道也清爽。夏天下午也喝,加几块冰。牛奶我几乎不单独喝,只用来兑咖啡或者煮粥。',
+    keywords: [{ nl: 'de jus d\'orange', cn: '橙汁' }, { nl: 'het ijsblokje', cn: '冰块' }, { nl: 'fris', cn: '清爽' }, { nl: 'wakker worden', cn: '清醒过来' }]
+  },
+  {
+    id: 'duo1-12', set: '真题套 1', type: 'foto2', art: ['duinpad', 'stadsstraat'],
+    beeld_nl: 'A: een zandpad door de duinen met hoog gras en de zee in de verte. B: een oude stadsstraat met klinkers, planten tegen de gevels en cafétafeltjes.',
+    beeld_cn: 'A:沙丘间的沙土小路,高高的草,远处是海。B:老城街道,石板路,墙上爬着绿植,还有咖啡桌椅。',
+    vraag_nl: 'U gaat op vakantie met de fiets. Waar fietst u liever? Vertel ook waarom. Kies één van de plaatjes.',
+    vraag_cn: '你要骑车去度假。你更喜欢在哪儿骑?说明理由。选一张图。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选 A 还是 B', '给出至少一个理由', '描述图里看得见的东西', '说一个会改变选择的情况'],
+    model_nl: 'Ik kies plaatje A, fietsen in de natuur. Op het plaatje zie ik een zandpad door de duinen, met hoog gras en de zee in de verte. Daar fiets ik liever, want het is rustig, de lucht is fris en je hoort geen auto\'s. In de stad op plaatje B is het gezelliger, met de terrasjes en de oude huizen, maar je moet er steeds stoppen voor stoplichten en voetgangers. Als het heel hard waait, kies ik trouwens toch de stad.',
+    model_cn: '我选 A,在自然里骑车。图上是穿过沙丘的沙土小路,草很高,远处是海。我更喜欢在那儿骑,因为安静、空气好,也听不到汽车。B 里的城市更热闹,有露天座和老房子,但得不停地为红灯和行人停下来。不过要是风特别大,我还是会选城市。',
+    keywords: [{ nl: 'het zandpad', cn: '沙土小路' }, { nl: 'de duinen', cn: '沙丘' }, { nl: 'het stoplicht', cn: '红绿灯' }, { nl: 'de voetganger', cn: '行人' }, { nl: 'waaien', cn: '刮风' }]
+  },
+
+  {
+    id: 'duo1-13', set: '真题套 1', type: 'foto3', art: ['schoolbord', 'landkaart', 'klok'],
+    beeld_nl: '1: een wit schoolbord aan de muur. 2: een wereldkaart aan de muur. 3: een ronde klok aan de muur.',
+    beeld_cn: '1:墙上的白板。2:墙上的世界地图。3:墙上的圆挂钟。',
+    vraag_nl: 'Deze spullen hangen in een leslokaal. Vertel wat voor spullen dat zijn. Vertel ook wat cursisten met de spullen kunnen doen. Gebruik alle plaatjes.',
+    vraag_cn: '这些东西挂在教室里。说说它们是什么,再说说学员能用它们做什么。三张图都要说到。',
+    prepSec: 15, answerSec: 60,
+    must: ['三样东西都要说出名字', '每样都说出能用来做什么', '三张图都提到', '用连接词串起来'],
+    model_nl: 'In dit leslokaal hangen drie dingen aan de muur. Op het eerste plaatje zie ik een groot wit schoolbord. Daar kan de docent woorden op schrijven en cursisten kunnen er zelf ook een zin op zetten. Op het tweede plaatje hangt een wereldkaart. Daarmee kunnen cursisten laten zien uit welk land zij komen en waar de steden liggen. Op het derde plaatje zie ik een ronde klok. Daaraan kunnen zij zien hoe laat het is en hoeveel tijd de les nog duurt.',
+    model_cn: '这间教室墙上挂着三样东西。第一张图是一块大白板,老师可以在上面写单词,学员也可以自己写句子。第二张图是世界地图,学员可以指出自己来自哪个国家、城市在哪儿。第三张图是一个圆挂钟,他们可以看时间,还能知道课还剩多久。',
+    keywords: [{ nl: 'het schoolbord', cn: '黑板 / 白板' }, { nl: 'de wereldkaart', cn: '世界地图' }, { nl: 'de cursist', cn: '学员' }, { nl: 'aanwijzen', cn: '指出' }]
+  },
+  {
+    id: 'duo1-14', set: '真题套 1', type: 'foto3', art: ['haarwassen', 'knippen', 'vegen'],
+    beeld_nl: '1: een kapper wast het haar van een klant bij de wasbak. 2: de kapper knipt het haar met een schaar. 3: afgeknipt haar op de vloer en een bezem.',
+    beeld_cn: '1:理发师在洗头池给顾客洗头。2:理发师用剪刀剪发。3:地上的碎发和一把扫把。',
+    vraag_nl: 'Ricardo werkt als kapper. Kijk naar de plaatjes. Vertel wat Ricardo doet. Vertel iets over alle plaatjes.',
+    vraag_cn: 'Ricardo 是理发师。看图,说说他在做什么。三张图都要说到。',
+    prepSec: 15, answerSec: 60,
+    must: ['三张图都讲到', '按顺序讲(先/然后/最后)', '每张图说出具体动作', '可以加一句结果或评价'],
+    model_nl: 'Ricardo werkt in een kapsalon. Op het eerste plaatje wast hij eerst het haar van een klant bij de wasbak. De klant ligt achterover en Ricardo gebruikt warm water en shampoo. Daarna, op het tweede plaatje, knipt hij het haar van de man met een schaar. Hij werkt heel precies en de klant kijkt in de spiegel. Ten slotte zie ik op het derde plaatje het afgeknipte haar op de vloer liggen. Ricardo veegt dat op met een bezem, zodat de salon weer schoon is voor de volgende klant.',
+    model_cn: 'Ricardo 在理发店工作。第一张图里,他先在洗头池给顾客洗头,顾客仰躺着,他用温水和洗发水。然后第二张图里,他用剪刀给这位男士剪发,剪得很仔细,顾客照着镜子。最后第三张图里,地上是剪下来的碎发,Ricardo 用扫把扫干净,好让店里迎接下一位顾客。',
+    keywords: [{ nl: 'de kapper', cn: '理发师' }, { nl: 'de kapsalon', cn: '理发店' }, { nl: 'de schaar', cn: '剪刀' }, { nl: 'de bezem', cn: '扫把' }, { nl: 'opvegen', cn: '扫起来' }]
+  },
+  {
+    id: 'duo1-15', set: '真题套 1', type: 'foto3', art: ['zeep', 'handenwassen', 'handdoek'],
+    beeld_nl: '1: een hand drukt op een zeeppompje. 2: twee handen met zeep onder de kraan. 3: handen worden afgedroogd aan een handdoek.',
+    beeld_cn: '1:一只手按压洗手液。2:两只手打着泡沫在水龙头下。3:用毛巾擦干手。',
+    vraag_nl: 'Ayla gaat haar handen schoonmaken. Kijk naar de plaatjes. Vertel wat Ayla doet. Vertel iets over alle plaatjes.',
+    vraag_cn: 'Ayla 要洗手。看图,说说她在做什么。三张图都要说到。',
+    prepSec: 15, answerSec: 60,
+    must: ['三张图都讲到', '用 eerst / daarna / ten slotte', '每步说出用什么东西', '可以加一句为什么要这么做'],
+    model_nl: 'Ayla gaat haar handen wassen. Eerst drukt zij op het zeeppompje bij de wasbak en doet zij wat vloeibare zeep in haar hand. Daarna houdt zij haar handen onder de kraan en wrijft zij ze goed over elkaar, zodat er overal schuim komt. Dat doet zij ongeveer twintig seconden. Ten slotte droogt zij haar handen af met een schone handdoek. Zij doet dit natuurlijk omdat je met schone handen minder snel ziek wordt.',
+    model_cn: 'Ayla 要洗手。她先按洗手池边的洗手液泵,挤一点在手上。然后把手放到水龙头下,来回搓,搓出泡沫,大概搓二十秒。最后用干净的毛巾把手擦干。她这么做当然是因为手干净就不容易生病。',
+    keywords: [{ nl: 'het zeeppompje', cn: '洗手液泵' }, { nl: 'de kraan', cn: '水龙头' }, { nl: 'het schuim', cn: '泡沫' }, { nl: 'afdrogen', cn: '擦干' }, { nl: 'de handdoek', cn: '毛巾' }]
+  },
+  {
+    id: 'duo1-16', set: '真题套 1', type: 'foto3', art: ['laptoptas', 'toilettas', 'koffer'],
+    beeld_nl: '1: een grijze laptoptas. 2: een roze toilettasje. 3: een koffer met bloemen erop.',
+    beeld_cn: '1:灰色电脑包。2:粉色洗漱包。3:带花纹的行李箱。',
+    vraag_nl: 'Lucie heeft deze spullen gekocht. Vertel welke spullen dat zijn. Vertel ook wat Lucie erin kan doen. Gebruik alle plaatjes.',
+    vraag_cn: 'Lucie 买了这些东西。说说是什么,再说说她能往里面装什么。三张图都要说到。',
+    prepSec: 15, answerSec: 60,
+    must: ['三样东西都说出名字', '每样都说出能装什么', '三张图都提到', '可以加一句她要去哪儿'],
+    model_nl: 'Lucie heeft drie tassen gekocht. Op het eerste plaatje zie ik een grijze laptoptas. Daar kan zij haar laptop in doen, en ook haar oplader en wat papieren voor haar werk. Op het tweede plaatje ligt een klein roze toilettasje. Daarin kan zij haar tandenborstel, haar shampoo en haar make-up meenemen. Op het derde plaatje staat een grote koffer met bloemen erop. Daar passen haar kleren en haar schoenen in. Ik denk dat zij binnenkort op reis gaat.',
+    model_cn: 'Lucie 买了三个包。第一张图是灰色电脑包,可以装笔记本电脑、充电器和工作要用的文件。第二张图是一个粉色小洗漱包,可以装牙刷、洗发水和化妆品。第三张图是一个带花的大行李箱,能装衣服和鞋。我猜她快要出门旅行了。',
+    keywords: [{ nl: 'de laptoptas', cn: '电脑包' }, { nl: 'het toilettasje', cn: '洗漱包' }, { nl: 'de koffer', cn: '行李箱' }, { nl: 'de oplader', cn: '充电器' }, { nl: 'op reis gaan', cn: '出门旅行' }]
+  }
+);
+</script>
+<script>
+/* ===========================================================
    STATE & STORAGE
 =========================================================== */
 const state = {
@@ -25054,6 +25316,23 @@ function renderSpeakingPractice(main) {
       task.images.forEach(src => row.appendChild(el('img', {
         src, style: { maxWidth: '100%', width: task.images.length > 1 ? '48%' : '100%', borderRadius: '10px' }
       })));
+      bodyBox.appendChild(row);
+    }
+    // 自绘矢量插图(SPK_ART 里的 key)
+    if (task.art && task.art.length) {
+      const n = task.art.length;
+      const w = n === 1 ? '100%' : (n === 2 ? 'calc(50% - 4px)' : 'calc(33.33% - 6px)');
+      const row = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '12px' } });
+      task.art.forEach((key, i) => {
+        const box = el('div', {
+          style: { width: w, minWidth: '150px', flexGrow: '1', borderRadius: '10px', overflow: 'hidden', background: '#fff', border: '1px solid var(--line, #e8e0cb)', position: 'relative' },
+          html: SPK_ART[key] || '<div style="padding:20px;text-align:center;color:#999">?</div>'
+        });
+        if (n > 1) box.appendChild(el('div', {
+          style: { position: 'absolute', top: '6px', left: '6px', background: 'rgba(0,0,0,.6)', color: '#fff', fontSize: '11px', padding: '1px 7px', borderRadius: '20px' }
+        }, n === 2 ? 'AB'[i] : String(i + 1)));
+        row.appendChild(box);
+      });
       bodyBox.appendChild(row);
     }
     const beeld = task.situatie_nl || task.beeld_nl;

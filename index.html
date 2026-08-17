@@ -13905,14 +13905,16 @@ window.CONTENT = {
     ]
   },
   "SPEAKING": {
-    "intro": "Spreken 考试对着电脑录音。题型:重复句子、回答问题、看图说话、给建议。每题有限时(几秒到 30 秒)。",
+    "intro": "Spreken A2 是电脑考,戴耳麦录音,没有真人考官。全场约 35 分钟,大约 16 题,分四类:视频情境题、单图描述、双图选择、三图叙述。每题录音约 1 分钟,答案录下来后由人工评分(任务完成度、词汇、语法、流利度、结构、发音)。",
     "general_tips": [
-      "<b>说完整的句子</b>。不要只回答『ja/nee』。系统给完整句子高分。",
-      "<b>简单句子也行,不要怕</b>。一句对的简单句比半句复杂句强。",
-      "<b>开头不要沉默</b>。可以用 <b>『Eh... Nou...』</b> 或重复问题来争取思考时间。",
-      "<b>不会的词换个说法</b>。比如不会说『fietspad』,说『de weg voor fietsen』。",
-      "<b>清晰说话</b>,不要太快。电脑录音质量重要。",
-      "<b>错了不要重来太多次</b>,继续说下去。"
+      "<b>任务完成度权重最大</b>。开口前用两秒定位题目要的信息点:谁、什么、哪里、什么时候、<b>为什么</b>。缺『为什么』是最常见的失分。",
+      "<b>说满时间</b>。一句话就停,评分员没有材料给你打分。说完后强制自己再加一句 <b>want / omdat</b> 的理由,或一句自己的经验。",
+      "<b>不要沉默</b>。录音里的空白是纯扣分,宁可说 <b>『Even denken… / Nou, … / Ik bedoel…』</b>。",
+      "<b>语速放慢</b>。紧张时飙速会让发音糊掉、语法崩掉。慢到你觉得『有点太慢』正好。",
+      "<b>连接词就是结构分</b>。每个回答至少塞两个:en, maar, want, omdat, daarom, dus, eerst, daarna, ten slotte, bijvoorbeeld。",
+      "<b>对陌生人用 u</b>。视频题里的店员、医生、房东、邻居一律用 <b>u</b>,不要用 je。",
+      "<b>三图题必用过去时</b>。这是最大的坑,先背熟:was/waren, had, ging, kwam, zag, deed, kon, moest, wilde, ben geweest, heb gekocht。",
+      "<b>不会的词换个说法</b>。比如不会说『fietspad』,说『de weg voor fietsen』。说错了别重来,继续说下去。"
     ],
     "safe_sentences": [
       {
@@ -23388,6 +23390,183 @@ window.CONTENT = {
 </script>
 <script>
 /* ===========================================================
+   SPEAKING TASKS  ·  口语练习题库
+   -----------------------------------------------------------
+   题目 schema(官网真题按同样格式加进来即可):
+     id         唯一 id
+     set        所属套卷,用于分组
+     type       'video' | 'foto1' | 'foto2' | 'foto3'
+     situatie_nl/cn  情境描述(video 题是对方说的话,朗读出来)
+     beeld_nl/cn     图片文字描述(没有真图时用)
+     images     ['path/a.jpg', ...] 有真图时填,优先于 beeld
+     audio      'path/q1.mp3' 有真音频时填,优先于 TTS
+     vraag_nl/cn     题目问句
+     prepSec    准备秒数    answerSec 录音秒数
+     must       信息点清单(录完自查用)
+     model_nl/cn     参考答案
+     keywords   [{nl, cn}] 关键词
+=========================================================== */
+window.CONTENT.SPEAKING_TASKS = [
+  {
+    id: 'spk-v1', set: '模拟套 1', type: 'video',
+    situatie_nl: 'Uw buurvrouw belt aan. Ze zegt: "Sorry dat ik stoor, maar gisteravond was het bij u heel laat nog erg druk. Ik kon niet slapen."',
+    situatie_cn: '邻居来敲门:"抱歉打扰,昨晚您那边到很晚还很吵,我睡不着。"',
+    vraag_nl: 'Wat zegt u tegen haar?',
+    vraag_cn: '你怎么回应她?',
+    prepSec: 10, answerSec: 60,
+    must: ['先道歉', '解释原因(昨晚发生了什么)', '提出具体的解决办法', '全程用 u 不用 je'],
+    model_nl: 'Oh, wat vervelend, het spijt me echt. Ik had gisteren een klein feestje voor mijn verjaardag en we zijn veel te lang doorgegaan. Dat was niet handig van mij. De volgende keer zet ik de muziek om elf uur uit, en ik zeg het van tevoren even tegen u. Sorry nogmaals voor de overlast.',
+    model_cn: '哦,真不好意思,非常抱歉。昨天我过生日办了个小聚会,我们玩得太晚了,是我考虑不周。下次我十一点就把音乐关掉,而且会提前跟您说一声。再次为打扰您道歉。',
+    keywords: [{ nl: 'de overlast', cn: '扰民、打扰' }, { nl: 'van tevoren', cn: '提前' }, { nl: 'Dat was niet handig van mij.', cn: '是我考虑不周。' }]
+  },
+  {
+    id: 'spk-v2', set: '模拟套 1', type: 'video',
+    situatie_nl: 'Een collega komt binnen en vraagt: "Goedemorgen! Hoe was je weekend? Heb je nog iets leuks gedaan?"',
+    situatie_cn: '同事进来问:"早上好!周末怎么样?做了什么好玩的吗?"',
+    vraag_nl: 'Geef antwoord op de vraag van uw collega.',
+    vraag_cn: '回答同事的问题。',
+    prepSec: 10, answerSec: 60,
+    must: ['用过去时说做了什么', '说和谁一起 / 在哪里', '说一句感受', '最后反问对方'],
+    model_nl: 'Goedemorgen! Ja hoor, het was een leuk weekend. Zaterdag ben ik met een vriendin naar de markt geweest en daarna hebben we koffie gedronken in het centrum. Zondag was ik gewoon thuis, want het regende de hele dag. Ik heb toen lekker gelezen. En jij, wat heb jij gedaan?',
+    model_cn: '早上好!挺好的,周末很愉快。周六我和一个朋友去了市集,之后在市中心喝了咖啡。周日就待在家里,因为下了一整天雨,我看了会儿书。你呢,你做了什么?',
+    keywords: [{ nl: 'ben … geweest', cn: '去过(完成时)' }, { nl: 'gewoon thuis', cn: '就待在家' }, { nl: 'En jij?', cn: '你呢?' }]
+  },
+  {
+    id: 'spk-v3', set: '模拟套 1', type: 'video',
+    situatie_nl: 'U belt de huisarts. De assistente zegt: "De dokter is deze week helaas helemaal vol. Wilt u een afspraak in de week erna?"',
+    situatie_cn: '你打电话给家庭医生,助理说:"医生这周已经排满了,您要约下周吗?"',
+    vraag_nl: 'Wat zegt u?',
+    vraag_cn: '你怎么说?',
+    prepSec: 10, answerSec: 60,
+    must: ['说明你的症状和严重程度', '提出具体的日期和时间段', '说明为什么这个时间', '问一句确认'],
+    model_nl: 'Ja, dat is goed. Ik heb al ruim een week last van mijn keel, maar het is gelukkig niet heel erg. Kan het volgende week dinsdag in de ochtend? Voor twaalf uur komt het mij het beste uit, want daarna moet ik werken. Krijg ik nog een bevestiging per sms?',
+    model_cn: '好的,可以。我嗓子不舒服一个多星期了,不过还好不严重。能约下周二上午吗?十二点之前对我最方便,因为之后我要上班。会有短信确认吗?',
+    keywords: [{ nl: 'last hebben van', cn: '(某处)不舒服' }, { nl: 'Het komt mij goed uit.', cn: '这个时间对我合适。' }, { nl: 'de bevestiging', cn: '确认' }]
+  },
+  {
+    id: 'spk-v4', set: '模拟套 1', type: 'video',
+    situatie_nl: 'U staat in een schoenenwinkel. De verkoper zegt: "Zegt u het maar, waarmee kan ik u helpen?"',
+    situatie_cn: '你在鞋店,店员说:"您说吧,有什么可以帮您?"',
+    vraag_nl: 'Leg uit wat het probleem is en wat u wilt.',
+    vraag_cn: '说明问题是什么,以及你想要怎么解决。',
+    prepSec: 10, answerSec: 60,
+    must: ['说明什么时候买的', '说明具体问题', '说明你的诉求(换 / 退款 / 修)', '提到小票'],
+    model_nl: 'Ik heb deze schoenen hier ongeveer twee weken geleden gekocht, maar de zool laat nu al los. Kijkt u maar, hier aan de zijkant. Ik heb de bon meegenomen. Ik zou ze graag willen ruilen voor een nieuw paar. En als dat niet meer op voorraad is, krijg ik dan mijn geld terug?',
+    model_cn: '这双鞋我大概两周前在这儿买的,可是鞋底已经开胶了。您看,就这边侧面。小票我带来了。我想换一双新的。如果没货了,能退款吗?',
+    keywords: [{ nl: 'de bon', cn: '小票' }, { nl: 'ruilen', cn: '更换' }, { nl: 'op voorraad', cn: '有库存' }, { nl: 'de zool laat los', cn: '鞋底开胶' }]
+  },
+  {
+    id: 'spk-f1a', set: '模拟套 1', type: 'foto1',
+    beeld_nl: 'Een vrouw staat bij de kassa in de supermarkt. Ze legt haar boodschappen op de band. Achter haar wachten twee mensen met een volle kar.',
+    beeld_cn: '一个女人在超市收银台前,把东西放上传送带。她后面有两个人推着满车在排队。',
+    vraag_nl: 'Wat ziet u op de foto? Vertel er iets over.',
+    vraag_cn: '图上你看到什么?说说这张图。',
+    prepSec: 10, answerSec: 60,
+    must: ['说地点', '说有谁、在做什么', '猜一个细节(时间/天气/原因)', '加一句自己的习惯或看法'],
+    model_nl: 'Op de foto zie ik een supermarkt. Een vrouw staat bij de kassa en zij legt haar boodschappen op de band. Achter haar wachten twee mensen met een volle kar op hun beurt. Ik denk dat het rond vijf uur \'s middags is, want dan is het altijd druk in de winkel. Zelf doe ik mijn boodschappen liever \'s ochtends, want dan hoef ik niet lang te wachten bij de kassa.',
+    model_cn: '图上我看到一家超市。一个女人在收银台前,把商品放上传送带。她身后有两个人推着满车在等。我猜大概是下午五点左右,因为那时候店里总是很挤。我自己更喜欢早上买东西,这样在收银台就不用等很久。',
+    keywords: [{ nl: 'de kassa', cn: '收银台' }, { nl: 'de band', cn: '传送带' }, { nl: 'op hun beurt wachten', cn: '排队等' }]
+  },
+  {
+    id: 'spk-f1b', set: '模拟套 1', type: 'foto1',
+    beeld_nl: 'Een man zit op een bankje in het park en leest een boek. Naast hem speelt een kind met een hond. De bomen zijn groen.',
+    beeld_cn: '一个男人坐在公园长椅上看书。旁边有个孩子在和狗玩。树是绿的。',
+    vraag_nl: 'Beschrijf wat u op de foto ziet.',
+    vraag_cn: '描述你在图上看到的。',
+    prepSec: 10, answerSec: 60,
+    must: ['说地点', '说每个人在做什么', '根据画面推测季节或天气', '加一句自己的经验'],
+    model_nl: 'Op de foto zie ik een park. Er zit een man op een bankje en hij is een boek aan het lezen. Naast hem speelt een kind met een hond. Ik denk dat het lente of zomer is, want de bomen zijn helemaal groen en de mensen dragen geen jas. Het lijkt me daar heel rustig. Ik ga zelf ook graag naar het park als het mooi weer is, meestal in het weekend.',
+    model_cn: '图上我看到一个公园。一个男人坐在长椅上看书。旁边有个孩子在和狗玩。我觉得是春天或夏天,因为树全绿了,人们也没穿外套。那里看起来很安静。天气好的时候我自己也爱去公园,一般是周末去。',
+    keywords: [{ nl: 'het bankje', cn: '长椅' }, { nl: 'aan het lezen zijn', cn: '正在读' }, { nl: 'Het lijkt me…', cn: '在我看来…' }]
+  },
+  {
+    id: 'spk-f1c', set: '模拟套 1', type: 'foto1',
+    beeld_nl: 'Vier collega\'s zitten om een tafel in een kantoor. Eén vrouw staat en wijst naar een scherm. De anderen luisteren en schrijven iets op.',
+    beeld_cn: '四个同事围坐在办公室的桌子旁。一个女人站着指着屏幕。其他人在听并记笔记。',
+    vraag_nl: 'Wat gebeurt er op de foto? Vertel er iets over.',
+    vraag_cn: '图上发生了什么?说说看。',
+    prepSec: 10, answerSec: 60,
+    must: ['说地点和场合', '说每个人的动作', '猜他们在谈什么', '联系自己的工作'],
+    model_nl: 'Op de foto zie ik een kantoor. Vier collega\'s zitten aan een grote tafel en zij hebben een vergadering. Eén vrouw staat en zij legt iets uit op het scherm. De anderen luisteren goed en maken aantekeningen. Ik denk dat zij het over een nieuw project hebben, of misschien over de planning. Op mijn werk hebben wij ook elke maandagochtend een vergadering, en dat duurt meestal een uur.',
+    model_cn: '图上我看到一间办公室。四个同事围着一张大桌子在开会。一个女人站着在屏幕上讲解。其他人认真听并记笔记。我觉得他们在谈一个新项目,也可能是在谈计划。我们公司每周一上午也开会,一般开一小时。',
+    keywords: [{ nl: 'de vergadering', cn: '会议' }, { nl: 'aantekeningen maken', cn: '记笔记' }, { nl: 'de planning', cn: '计划安排' }]
+  },
+  {
+    id: 'spk-f2a', set: '模拟套 1', type: 'foto2',
+    beeld_nl: 'Foto A: iemand stapt in de trein. Foto B: iemand fietst naar het werk.',
+    beeld_cn: '图 A:有人上火车。图 B:有人骑车上班。',
+    vraag_nl: 'Hoe gaat u het liefst naar uw werk? Kies A of B en leg uit waarom.',
+    vraag_cn: '你最喜欢怎么去上班?选 A 或 B 并解释原因。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选哪个', '给至少两个理由', '说另一个为什么不选', '说一个例外情况'],
+    model_nl: 'Ik kies voor B, de fiets. Ik ga het liefst met de fiets naar mijn werk, want het is goedkoop en ik krijg meteen een beetje beweging. Bovendien hoef ik nooit te wachten en ben ik altijd op tijd. Met de trein reis ik minder graag, omdat het in de spits vaak heel vol is en je soms moet staan. Maar als het hard regent of als de afstand te groot is, neem ik natuurlijk toch de trein.',
+    model_cn: '我选 B,自行车。我最喜欢骑车上班,因为便宜,而且顺便就运动了。再说也不用等车,总能准时到。火车我不太喜欢,因为高峰期常常很挤,有时候还得站着。不过要是下大雨或者路太远,我当然还是坐火车。',
+    keywords: [{ nl: 'de spits', cn: '高峰期' }, { nl: 'bovendien', cn: '而且、再者' }, { nl: 'de beweging', cn: '运动量' }]
+  },
+  {
+    id: 'spk-f2b', set: '模拟套 1', type: 'foto2',
+    beeld_nl: 'Foto A: een gezin kookt samen thuis. Foto B: mensen eten in een restaurant.',
+    beeld_cn: '图 A:一家人在家一起做饭。图 B:人们在餐厅吃饭。',
+    vraag_nl: 'Wat doet u liever: thuis koken of uit eten gaan? Leg uit waarom.',
+    vraag_cn: '你更喜欢哪个:在家做饭还是出去吃?解释原因。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选哪个', '给至少两个理由', '说另一个什么时候才会做', '用 want/omdat 至少一次'],
+    model_nl: 'Ik kies voor A, thuis koken. Dat doe ik omdat het veel goedkoper is en ik zelf precies weet wat er in het eten zit. Ik vind koken ook gezellig, zeker als je het samen doet. Uit eten gaan is natuurlijk lekker en makkelijk, maar dat doen wij alleen op een verjaardag of als we iets te vieren hebben. Een keer per maand is voor mij genoeg.',
+    model_cn: '我选 A,在家做饭。因为便宜得多,而且我清楚饭里放了什么。做饭我也觉得挺有意思,尤其是一起做的时候。出去吃当然好吃又省事,但我们只在过生日或者有事庆祝的时候去。对我来说一个月一次就够了。',
+    keywords: [{ nl: 'gezellig', cn: '温馨、有气氛' }, { nl: 'iets te vieren hebben', cn: '有事要庆祝' }, { nl: 'goedkoper', cn: '更便宜' }]
+  },
+  {
+    id: 'spk-f2c', set: '模拟套 1', type: 'foto2',
+    beeld_nl: 'Foto A: mensen liggen op het strand. Foto B: toeristen lopen door een oude stad.',
+    beeld_cn: '图 A:人们躺在海滩上。图 B:游客在老城里走。',
+    vraag_nl: 'Wat voor vakantie past het beste bij u? Kies A of B en leg uit waarom.',
+    vraag_cn: '哪种假期最适合你?选 A 或 B 并解释原因。',
+    prepSec: 10, answerSec: 60,
+    must: ['明确说出选哪个', '给理由', '说另一个的缺点', '说一个会改变选择的情况'],
+    model_nl: 'Ik kies voor B, de stad. Op vakantie wil ik graag musea zien en gewoon door de straten lopen, want zo leer ik iets over het land en de mensen. Ik vind het ook leuk om het eten daar te proberen. Alleen maar op het strand liggen vind ik na twee dagen een beetje saai. Maar als ik heel moe ben van mijn werk, kies ik toch liever het strand, want daar kan ik echt uitrusten.',
+    model_cn: '我选 B,城市。度假时我喜欢看博物馆、在街上随便走走,这样能了解这个国家和这里的人。我也喜欢尝当地的吃的。光躺在海滩上,过两天我就觉得有点无聊了。不过要是工作特别累,我还是会选海滩,因为在那儿才能真正休息。',
+    keywords: [{ nl: 'uitrusten', cn: '休息、恢复' }, { nl: 'saai', cn: '无聊' }, { nl: 'proberen', cn: '尝试' }]
+  },
+  {
+    id: 'spk-f3a', set: '模拟套 1', type: 'foto3',
+    beeld_nl: '1: Een man wordt wakker en schrikt van de wekker: het is kwart over acht. 2: Hij rent naar de bushalte, maar de bus rijdt net weg. 3: Hij komt op kantoor aan en praat met zijn chef.',
+    beeld_cn: '1:男人醒来,被闹钟吓一跳——已经八点一刻了。2:他跑向公交站,但车刚好开走。3:他到了办公室,和上司说话。',
+    vraag_nl: 'Vertel wat er op de drie foto\'s gebeurt. Gebruik de verleden tijd.',
+    vraag_cn: '讲述三张图里发生的事,用过去时。',
+    prepSec: 15, answerSec: 60,
+    must: ['三张图都要讲到', '全程用过去时', '用 eerst / daarna / ten slotte', '给一个结尾(结果如何)'],
+    model_nl: 'Eerst werd de man wakker. Hij schrok, want het was al kwart over acht en hij moest om negen uur op kantoor zijn. Hij kleedde zich snel aan en nam geen ontbijt. Daarna rende hij naar de bushalte, maar de bus reed net weg. Hij moest tien minuten op de volgende bus wachten en werd steeds zenuwachtiger. Ten slotte kwam hij een half uur te laat op kantoor aan. Hij ging meteen naar zijn chef en zei sorry. Gelukkig was zijn chef niet boos.',
+    model_cn: '首先,男人醒了。他吓了一跳,因为已经八点一刻了,而他九点得到办公室。他飞快穿好衣服,没吃早饭。然后他跑向公交站,可是车刚好开走了。他得等十分钟坐下一班,越等越紧张。最后他迟到半小时才到办公室。他马上去找上司道歉。还好上司没生气。',
+    keywords: [{ nl: 'schrikken → schrok', cn: '吓一跳(过去式)' }, { nl: 'zich aankleden', cn: '穿衣服' }, { nl: 'zenuwachtig', cn: '紧张' }]
+  },
+  {
+    id: 'spk-f3b', set: '模拟套 1', type: 'foto3',
+    beeld_nl: '1: Een vrouw fietst en krijgt een lekke band. 2: Ze loopt met de fiets naar de fietsenmaker. 3: Ze fietst weer verder en lacht.',
+    beeld_cn: '1:一个女人骑车时爆胎。2:她推着车走到修车铺。3:她重新骑上车,笑着继续走。',
+    vraag_nl: 'Vertel het verhaal van de drie foto\'s in de verleden tijd.',
+    vraag_cn: '用过去时讲这三张图的故事。',
+    prepSec: 15, answerSec: 60,
+    must: ['三张图都要讲到', '全程用过去时', '加一个细节(价格/时间/天气)', '用连接词串起来'],
+    model_nl: 'Eerst fietste een vrouw op weg naar huis. Onderweg kreeg zij ineens een lekke band en zij moest stoppen. Dat was heel vervelend, want het was al donker. Daarna liep zij met haar fiets naar de fietsenmaker in de buurt. De man daar hielp haar meteen en maakte de band. Het kostte vijftien euro en het duurde ongeveer een half uur. Ten slotte kon zij weer verder fietsen. Zij was heel blij, want zij was maar een klein beetje te laat thuis.',
+    model_cn: '首先,一个女人骑车回家。半路上突然爆胎,她只好停下。这很麻烦,因为天已经黑了。然后她推着车走到附近的修车铺。那儿的师傅马上帮她补了胎,花了十五欧,大概用了半小时。最后她又能骑车走了。她很高兴,因为只比平时晚到家一点点。',
+    keywords: [{ nl: 'een lekke band', cn: '爆胎' }, { nl: 'de fietsenmaker', cn: '修车铺' }, { nl: 'onderweg', cn: '在路上' }]
+  },
+  {
+    id: 'spk-f3c', set: '模拟套 1', type: 'foto3',
+    beeld_nl: '1: Een man maakt een boodschappenlijstje. 2: Hij staat in de supermarkt met een volle kar. 3: Hij kookt en er zitten vier gasten aan tafel.',
+    beeld_cn: '1:男人在写购物清单。2:他推着满满一车在超市。3:他在做饭,四位客人坐在桌边。',
+    vraag_nl: 'Vertel wat er gebeurt op de drie foto\'s. Gebruik de verleden tijd.',
+    vraag_cn: '讲述三张图里发生的事,用过去时。',
+    prepSec: 15, answerSec: 60,
+    must: ['三张图都要讲到', '全程用过去时', '说明为什么他要做这些', '给一个结尾评价'],
+    model_nl: 'Eerst maakte de man thuis een boodschappenlijstje, want hij ging die avond koken voor zijn vrienden. Hij zocht eerst een recept op internet. Daarna deed hij boodschappen in de supermarkt. Hij kocht groente, vlees, brood en een fles wijn, en zijn kar was helemaal vol. Ten slotte kookte hij thuis in de keuken en om zeven uur kwamen zijn gasten. Ze aten samen en praatten lang na. Het was een heel gezellige avond en het eten was gelukkig ook lekker.',
+    model_cn: '首先,男人在家写购物清单,因为他那天晚上要给朋友做饭。他先在网上找了个菜谱。然后他去超市采购,买了蔬菜、肉、面包和一瓶葡萄酒,推车装得满满的。最后他在家做饭,七点客人来了。他们一起吃饭,饭后聊了很久。那晚很愉快,菜也做得不错。',
+    keywords: [{ nl: 'het boodschappenlijstje', cn: '购物清单' }, { nl: 'het recept', cn: '菜谱' }, { nl: 'de gasten', cn: '客人' }, { nl: 'napraten', cn: '饭后聊天' }]
+  }
+];
+</script>
+<script>
+/* ===========================================================
    STATE & STORAGE
 =========================================================== */
 const state = {
@@ -23423,6 +23602,13 @@ const state = {
   listeningShowTranscript: false,
   listeningShowCN: false,
   listeningAnswered: {},        // {`${dId}-${qIdx}`: idx}
+  // speaking
+  speakingTab: 'tips',          // 'tips' | 'practice'
+  speakingType: 'all',          // 'all' | 'video' | 'foto1' | 'foto2' | 'foto3'
+  speakingIdx: 0,
+  speakingHideText: false,      // 模拟考场:隐藏题目文字,只听
+  speakingChecked: {},          // {taskId: [bool,...]} 信息点自查
+  speakingDone: {},             // {taskId: true} 练过一次
   // mock exam
   mockTab: 'list',              // 'list' | 'running' | 'result'
   mockCurrent: null,             // {mockId, startedAt, deadline, answers:{qKey: idx}, qIdx, submitted}
@@ -23633,6 +23819,7 @@ function renderTabs() {
   }
 }
 function switchTab(id) {
+  if (typeof spkStopAll === 'function') spkStopAll();
   state.tab = id;
   state.knmCurrent = null;
   saveState();
@@ -24588,7 +24775,25 @@ function renderListeningPractice(main) {
 =========================================================== */
 function renderSpeaking(main) {
   main.innerHTML = "";
+  spkStopAll();
   const C = window.CONTENT;
+
+  // sub-tab switcher
+  const tabRow = el('div', { class: 'pattern-tabs' });
+  ['tips', 'practice'].forEach(t => {
+    const labels = { tips: '技巧总览', practice: `练习 (${(C.SPEAKING_TASKS || []).length})` };
+    tabRow.appendChild(el('button', {
+      class: 'pattern-tab' + (state.speakingTab === t ? ' active' : ''),
+      onclick: () => { state.speakingTab = t; saveState(); renderSpeaking(main); }
+    }, labels[t]));
+  });
+  main.appendChild(tabRow);
+
+  if (state.speakingTab === 'practice') {
+    renderSpeakingPractice(main);
+    return;
+  }
+
   const intro = el('div', { class: 'card' });
   intro.appendChild(el('div', { class: 'card-sub' }, 'Spreken · 口语考试'));
   intro.appendChild(el('h2', { class: 'card-head' }, '口语技巧总览'));
@@ -24636,6 +24841,332 @@ function renderSpeaking(main) {
     }
     main.appendChild(sc);
   }
+}
+
+/* -----------------------------------------------------------
+   SPEAKING PRACTICE ENGINE  ·  朗读 + 计时 + 录音回放
+----------------------------------------------------------- */
+const SPK = {
+  phase: 'idle',     // 'idle' | 'prep' | 'rec' | 'done'
+  taskId: null,
+  timer: null,
+  stream: null,
+  recorder: null,
+  chunks: [],
+  urls: {},          // {taskId: objectURL}  仅本次会话有效,不写进 state
+  ui: {},
+};
+const SPK_TYPES = { all: '全部', video: '视频情境', foto1: '单图描述', foto2: '双图选择', foto3: '三图叙述' };
+
+function spkVoice() {
+  if (!window.speechSynthesis) return null;
+  const vs = speechSynthesis.getVoices() || [];
+  // 优先荷兰荷语 (Xander),其次比利时荷语 (Ellen)
+  return vs.find(v => /^nl[-_]nl/i.test(v.lang)) || vs.find(v => /^nl/i.test(v.lang)) || null;
+}
+function spkSpeak(text, rate) {
+  if (!window.speechSynthesis || !text) return false;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  const v = spkVoice();
+  if (v) u.voice = v;
+  u.lang = 'nl-NL';
+  u.rate = rate || 0.9;
+  speechSynthesis.speak(u);
+  return true;
+}
+function spkMicOK() {
+  return !!(window.isSecureContext && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+function spkStopAll() {
+  if (SPK.timer) { clearInterval(SPK.timer); SPK.timer = null; }
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  try { if (SPK.recorder && SPK.recorder.state !== 'inactive') SPK.recorder.stop(); } catch (e) {}
+  if (SPK.stream) { SPK.stream.getTracks().forEach(t => t.stop()); SPK.stream = null; }
+  SPK.recorder = null;
+  SPK.phase = 'idle';
+}
+
+function spkPromptText(task) {
+  return [task.situatie_nl, task.vraag_nl].filter(Boolean).join(' ... ');
+}
+function spkPlayPrompt(task) {
+  if (task.audio) {
+    const a = new Audio(task.audio);
+    a.play().catch(() => spkSpeak(spkPromptText(task)));
+    return;
+  }
+  spkSpeak(spkPromptText(task));
+}
+
+function spkBegin(task) {
+  spkStopAll();
+  SPK.taskId = task.id;
+  SPK.phase = 'prep';
+  let left = task.prepSec || 10;
+  SPK.ui.setPhase('prep', left);
+  spkPlayPrompt(task);
+  SPK.timer = setInterval(() => {
+    left--;
+    if (left > 0) { SPK.ui.setPhase('prep', left); return; }
+    clearInterval(SPK.timer); SPK.timer = null;
+    spkRecord(task);
+  }, 1000);
+}
+
+async function spkRecord(task) {
+  const total = task.answerSec || 60;
+  SPK.phase = 'rec';
+  if (window.speechSynthesis) speechSynthesis.cancel();
+
+  if (spkMicOK()) {
+    try {
+      SPK.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      SPK.chunks = [];
+      const mime = (window.MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported('audio/webm')) ? 'audio/webm' : '';
+      SPK.recorder = mime ? new MediaRecorder(SPK.stream, { mimeType: mime }) : new MediaRecorder(SPK.stream);
+      SPK.recorder.ondataavailable = e => { if (e.data && e.data.size) SPK.chunks.push(e.data); };
+      SPK.recorder.onstop = () => {
+        if (SPK.stream) { SPK.stream.getTracks().forEach(t => t.stop()); SPK.stream = null; }
+        if (SPK.chunks.length) {
+          const blob = new Blob(SPK.chunks, { type: SPK.chunks[0].type || 'audio/webm' });
+          if (SPK.urls[task.id]) URL.revokeObjectURL(SPK.urls[task.id]);
+          SPK.urls[task.id] = URL.createObjectURL(blob);
+        }
+        SPK.phase = 'done';
+        state.speakingDone[task.id] = true;
+        saveState();
+        SPK.ui.finish();
+      };
+      SPK.recorder.start();
+    } catch (e) {
+      SPK.ui.warn('麦克风打不开(' + (e && e.name ? e.name : 'error') + ')。这一轮只计时,不录音。');
+    }
+  } else {
+    SPK.ui.warn('当前环境不能录音(本地 file:// 打开时浏览器会禁用麦克风)。这一轮只计时。用线上版本或 localhost 打开即可录音。');
+  }
+
+  let left = total;
+  SPK.ui.setPhase('rec', left);
+  SPK.timer = setInterval(() => {
+    left--;
+    if (left > 0) { SPK.ui.setPhase('rec', left); return; }
+    clearInterval(SPK.timer); SPK.timer = null;
+    spkFinish(task);
+  }, 1000);
+}
+
+function spkFinish(task) {
+  if (SPK.timer) { clearInterval(SPK.timer); SPK.timer = null; }
+  if (SPK.recorder && SPK.recorder.state !== 'inactive') {
+    SPK.recorder.stop();   // onstop 里收尾
+    return;
+  }
+  SPK.phase = 'done';
+  state.speakingDone[task.id] = true;
+  saveState();
+  SPK.ui.finish();
+}
+
+function renderSpeakingPractice(main) {
+  const C = window.CONTENT;
+  const all = C.SPEAKING_TASKS || [];
+  if (!all.length) {
+    main.appendChild(el('div', { class: 'card empty-state' }, '还没有口语题目数据'));
+    return;
+  }
+  if (window.speechSynthesis) {   // 预热语音列表(首次 getVoices 常常返回空)
+    speechSynthesis.getVoices();
+    speechSynthesis.onvoiceschanged = () => {};
+  }
+
+  // --- 题型筛选 ---
+  const typeRow = el('div', { class: 'pattern-tabs' });
+  Object.keys(SPK_TYPES).forEach(t => {
+    const n = t === 'all' ? all.length : all.filter(x => x.type === t).length;
+    if (t !== 'all' && !n) return;
+    typeRow.appendChild(el('button', {
+      class: 'pattern-tab' + (state.speakingType === t ? ' active' : ''),
+      onclick: () => { state.speakingType = t; state.speakingIdx = 0; saveState(); renderSpeaking(main); }
+    }, `${SPK_TYPES[t]} ${n}`));
+  });
+  main.appendChild(typeRow);
+
+  const pool = state.speakingType === 'all' ? all : all.filter(x => x.type === state.speakingType);
+  if (state.speakingIdx >= pool.length) state.speakingIdx = 0;
+  const task = pool[state.speakingIdx];
+
+  const card = el('div', { class: 'card' });
+  card.appendChild(el('div', { class: 'card-sub' }, `${task.set || 'Spreken'} · ${SPK_TYPES[task.type] || task.type}`));
+  card.appendChild(el('h2', { class: 'card-head' },
+    `第 ${state.speakingIdx + 1} / ${pool.length} 题${state.speakingDone[task.id] ? '  ✓ 已练过' : ''}`));
+
+  // --- 上下题 + 模拟考场开关 ---
+  const nav = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '14px' } });
+  nav.appendChild(el('button', {
+    class: 'btn btn-ghost',
+    onclick: () => { state.speakingIdx = (state.speakingIdx - 1 + pool.length) % pool.length; saveState(); renderSpeaking(main); }
+  }, '← 上一题'));
+  nav.appendChild(el('button', {
+    class: 'btn btn-ghost',
+    onclick: () => { state.speakingIdx = (state.speakingIdx + 1) % pool.length; saveState(); renderSpeaking(main); }
+  }, '下一题 →'));
+  nav.appendChild(el('button', {
+    class: 'btn btn-ghost',
+    onclick: () => { state.speakingHideText = !state.speakingHideText; saveState(); renderSpeaking(main); }
+  }, state.speakingHideText ? '👁 显示题目文字' : '🙈 模拟考场(只听不看)'));
+  card.appendChild(nav);
+
+  // --- 计时器 ---
+  const timerBox = el('div', {
+    style: {
+      textAlign: 'center', padding: '18px 12px', borderRadius: '14px',
+      background: 'var(--bg-2)', marginBottom: '12px', transition: 'background .3s'
+    }
+  });
+  const timerNum = el('div', { class: 'mono', style: { fontSize: '40px', fontWeight: '700', lineHeight: '1.1' } }, '—');
+  const timerLbl = el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', marginTop: '4px' } }, '点「开始答题」进入 60 秒实战');
+  timerBox.appendChild(timerNum);
+  timerBox.appendChild(timerLbl);
+  card.appendChild(timerBox);
+
+  const warnBox = el('div', {
+    style: {
+      display: 'none', background: 'var(--yellow-soft)', color: '#7a5d10',
+      borderRadius: '10px', padding: '10px 12px', fontSize: '13px', marginBottom: '12px'
+    }
+  });
+  card.appendChild(warnBox);
+
+  // --- 控制按钮 ---
+  const ctrl = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '14px' } });
+  const btnListen = el('button', { class: 'btn btn-ghost', onclick: () => spkPlayPrompt(task) }, '🔊 听题目');
+  const btnStart = el('button', { class: 'btn', onclick: () => spkBegin(task) }, '● 开始答题');
+  const btnStop = el('button', { class: 'btn btn-ghost', style: { display: 'none' }, onclick: () => spkFinish(task) }, '■ 提前结束');
+  ctrl.appendChild(btnListen); ctrl.appendChild(btnStart); ctrl.appendChild(btnStop);
+  card.appendChild(ctrl);
+
+  // --- 题面 ---
+  const bodyBox = el('div', {});
+  if (!state.speakingHideText) {
+    if (task.images && task.images.length) {
+      const row = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '10px' } });
+      task.images.forEach(src => row.appendChild(el('img', {
+        src, style: { maxWidth: '100%', width: task.images.length > 1 ? '48%' : '100%', borderRadius: '10px' }
+      })));
+      bodyBox.appendChild(row);
+    }
+    const beeld = task.situatie_nl || task.beeld_nl;
+    const beeldCn = task.situatie_cn || task.beeld_cn;
+    if (beeld) {
+      bodyBox.appendChild(el('div', { class: 'reading-text', style: { fontStyle: 'italic', marginBottom: '6px' } }, beeld));
+      if (beeldCn) bodyBox.appendChild(el('div', { style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '13px', color: 'var(--ink-soft)', marginBottom: '10px' } }, beeldCn));
+    }
+    bodyBox.appendChild(el('div', { class: 'q-text' }, task.vraag_nl));
+    if (task.vraag_cn) bodyBox.appendChild(el('div', { style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '13px', color: 'var(--ink-soft)', marginBottom: '10px' } }, task.vraag_cn));
+  } else {
+    bodyBox.appendChild(el('div', { class: 'plan-extra', style: { background: 'var(--bg-2)', borderRadius: '10px', padding: '12px', fontSize: '13px', color: 'var(--ink-soft)' } },
+      '题目文字已隐藏。点「🔊 听题目」听,像真实考试一样只靠耳朵理解。'));
+  }
+  card.appendChild(bodyBox);
+
+  // --- 录完之后才出现的区域 ---
+  const after = el('div', { style: { display: 'none', marginTop: '16px' } });
+
+  const playHead = el('div', { class: 'mono muted', style: { fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '6px 0' } }, '你的录音');
+  const player = el('audio', { controls: 'controls', style: { width: '100%', marginBottom: '14px' } });
+  after.appendChild(playHead);
+  after.appendChild(player);
+
+  // 信息点自查
+  after.appendChild(el('div', { class: 'mono muted', style: { fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '6px 0' } }, '信息点自查 · 听回放,说到了就打勾'));
+  const checks = state.speakingChecked[task.id] || [];
+  (task.must || []).forEach((m, i) => {
+    const row = el('button', {
+      class: 'opt' + (checks[i] ? ' correct' : ''),
+      style: { textAlign: 'left', width: '100%', marginBottom: '6px' },
+      onclick: (ev) => {
+        const arr = state.speakingChecked[task.id] || [];
+        arr[i] = !arr[i];
+        state.speakingChecked[task.id] = arr;
+        saveState();
+        ev.currentTarget.className = 'opt' + (arr[i] ? ' correct' : '');
+      }
+    });
+    row.appendChild(el('span', { class: 'letter' }, String(i + 1)));
+    row.appendChild(el('span', {}, m));
+    after.appendChild(row);
+  });
+
+  // 参考答案
+  const modelToggle = el('button', { class: 'reading-cn-toggle', style: { marginTop: '10px' } }, '📄 看参考答案');
+  const modelBox = el('div', { style: { display: 'none' } });
+  modelToggle.addEventListener('click', () => {
+    const open = modelBox.style.display !== 'none';
+    modelBox.style.display = open ? 'none' : 'block';
+    modelToggle.textContent = open ? '📄 看参考答案' : '收起参考答案';
+  });
+  modelBox.appendChild(el('div', { class: 'writing-model', style: { fontSize: '14px' } }, task.model_nl));
+  modelBox.appendChild(el('button', {
+    class: 'btn btn-ghost', style: { marginBottom: '10px' },
+    onclick: () => spkSpeak(task.model_nl, 0.85)
+  }, '🔊 跟读范例'));
+  if (task.model_cn) modelBox.appendChild(el('div', { style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '13px', color: 'var(--ink-soft)', background: 'var(--bg-2)', padding: '10px 12px', borderRadius: '10px', lineHeight: '1.6' } }, task.model_cn));
+  if (task.keywords && task.keywords.length) {
+    modelBox.appendChild(el('div', { class: 'mono muted', style: { fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '12px 0 4px' } }, '关键词'));
+    task.keywords.forEach(k => {
+      const r = el('div', { class: 'phrase-row' });
+      r.appendChild(el('div', { class: 'phrase-nl' }, k.nl));
+      r.appendChild(el('div', { class: 'phrase-cn' }, k.cn));
+      modelBox.appendChild(r);
+    });
+  }
+  after.appendChild(modelToggle);
+  after.appendChild(modelBox);
+
+  after.appendChild(el('button', {
+    class: 'btn', style: { marginTop: '12px' },
+    onclick: () => spkBegin(task)
+  }, '↺ 再录一次'));
+
+  card.appendChild(after);
+  main.appendChild(card);
+
+  // --- UI 钩子:计时期间只改这几个节点,不整页重绘 ---
+  SPK.ui = {
+    setPhase(phase, left) {
+      if (phase === 'prep') {
+        timerNum.textContent = String(left);
+        timerLbl.textContent = '准备中 · 想清楚要说的信息点,先别开口';
+        timerBox.style.background = 'var(--yellow-soft)';
+      } else {
+        timerNum.textContent = String(left);
+        timerLbl.textContent = '● 录音中 · 一直说,不要停';
+        timerBox.style.background = left <= 10 ? '#f0d4cc' : '#d6e3c8';
+      }
+      btnStart.style.display = 'none';
+      btnStop.style.display = phase === 'rec' ? '' : 'none';
+      btnListen.style.display = 'none';
+      after.style.display = 'none';
+    },
+    warn(msg) {
+      warnBox.textContent = '⚠️ ' + msg;
+      warnBox.style.display = 'block';
+    },
+    finish() {
+      timerNum.textContent = '✓';
+      timerLbl.textContent = '这一题录完了。听回放,对着下面的信息点自查。';
+      timerBox.style.background = 'var(--bg-2)';
+      btnStart.style.display = '';
+      btnStart.textContent = '● 重新开始';
+      btnStop.style.display = 'none';
+      btnListen.style.display = '';
+      const url = SPK.urls[task.id];
+      if (url) { player.src = url; playHead.textContent = '你的录音'; }
+      else { player.removeAttribute('src'); playHead.textContent = '这一轮没有录音(只计时)'; }
+      after.style.display = 'block';
+    }
+  };
 }
 
 /* ===========================================================

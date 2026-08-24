@@ -23829,6 +23829,190 @@ window.CONTENT.SPEAKING_TASKS.push(
 </script>
 <script>
 /* ===========================================================
+   SPEAKING BASICS  ·  零基础入门梯子
+   发音 → 万能句 → 造句 → 有提示的 30 秒答题 → 真题 60 秒
+=========================================================== */
+window.CONTENT.SPEAKING_BASICS = {
+  klanken: [
+    { k: 'ui',  tip: '荷兰语最难的音。嘴唇撮圆说「哦」,舌头同时往前滑到「衣」,一个音里完成。不是「乌衣」。', words: [{nl:'huis',cn:'房子'},{nl:'buiten',cn:'外面'},{nl:'uit',cn:'出、从…出来'}] },
+    { k: 'eu',  tip: '嘴唇撮圆像说「哦」,但舌头位置在「诶」。接近法语的 eu。', words: [{nl:'neus',cn:'鼻子'},{nl:'deur',cn:'门'},{nl:'leuk',cn:'有意思、好玩'}] },
+    { k: 'oe',  tip: '就是中文的「乌」,最简单的一个。', words: [{nl:'boek',cn:'书'},{nl:'moeder',cn:'妈妈'},{nl:'goed',cn:'好'}] },
+    { k: 'uu',  tip: '中文的「迂」(ü)。嘴唇撮圆,舌头在「衣」的位置。', words: [{nl:'uur',cn:'小时'},{nl:'duur',cn:'贵'},{nl:'minuut',cn:'分钟'}] },
+    { k: 'ij / ei', tip: '两种写法,发音完全一样。像「爱」但更短更收,嘴不要张太大。', words: [{nl:'mijn',cn:'我的'},{nl:'tijd',cn:'时间'},{nl:'klein',cn:'小'},{nl:'trein',cn:'火车'}] },
+    { k: 'au / ou', tip: '两种写法,发音也一样。像中文的「傲」。', words: [{nl:'koud',cn:'冷'},{nl:'vrouw',cn:'女人'},{nl:'auto',cn:'汽车'}] },
+    { k: 'g / ch', tip: '喉咙里的摩擦音,像清嗓子前那个「呵」。中文没有这个音,但说不标准不影响及格,别因为它卡住。', words: [{nl:'goed',cn:'好'},{nl:'dag',cn:'天;你好'},{nl:'acht',cn:'八'},{nl:'lachen',cn:'笑'}] },
+    { k: 'sch', tip: 's + 上面那个喉音 ch,不是英语的 sh。分成两步:先「斯」,再「呵」。', words: [{nl:'school',cn:'学校'},{nl:'schrijven',cn:'写'},{nl:'misschien',cn:'也许'}] },
+    { k: 'v / w', tip: 'v 像英语 v 但更轻,接近 f。w 是上齿碰下唇的轻 v,不是英语的 w。', words: [{nl:'vier',cn:'四'},{nl:'water',cn:'水'},{nl:'wonen',cn:'居住'}] },
+    { k: 'r', tip: '小舌颤音和卷舌音荷兰人都用,两种都对,挑你顺口的那个,不要在这上面浪费时间。', words: [{nl:'rood',cn:'红'},{nl:'drie',cn:'三'},{nl:'werk',cn:'工作'}] },
+    { k: '-en 结尾', tip: '动词和复数结尾的 -en,那个 n 平时几乎不发音,读成轻轻的「呃」。lopen 听起来像 lope。', words: [{nl:'lopen',cn:'走'},{nl:'praten',cn:'说话'},{nl:'mensen',cn:'人们'}] },
+    { k: '重音', tip: '荷兰语单词重音基本都在第一个音节。复合词重音在前半部分。', words: [{nl:'boodschappen',cn:'采购、买菜'},{nl:'werken',cn:'工作'},{nl:'tandenborstel',cn:'牙刷'}] }
+  ],
+
+  bouwstenen: [
+    { groep: '① 开头 · 一看到图就能说的第一句', zinnen: [
+      { nl: 'Op de foto zie ik ...', cn: '图上我看到…' },
+      { nl: 'Op de plaatjes zie ik ...', cn: '这几张图上我看到…' },
+      { nl: 'Dit is een ... / Dit zijn ...', cn: '这是一个… / 这些是…' },
+      { nl: 'Ik zie een man / een vrouw / een kind.', cn: '我看到一个男人 / 女人 / 孩子。' },
+      { nl: 'Het is in een winkel / op straat / thuis.', cn: '地点是在商店 / 街上 / 家里。' }
+    ]},
+    { groep: '② 说动作 · 「他在做什么」', zinnen: [
+      { nl: 'Hij is aan het werken.', cn: '他在工作。(aan het + 动词 = 正在做)' },
+      { nl: 'Zij is haar tanden aan het poetsen.', cn: '她在刷牙。' },
+      { nl: 'Ze staan / zitten / lopen ...', cn: '他们站着 / 坐着 / 走着…' },
+      { nl: 'Er staat een tafel. / Er hangt een klok.', cn: '有一张桌子。/ 挂着一个钟。(er + 动词 = 有…)' },
+      { nl: 'Hij helpt haar.', cn: '他在帮她。' }
+    ]},
+    { groep: '③ 说看法 · 评分要的「你怎么想」', zinnen: [
+      { nl: 'Ik vind het lekker / gezond / mooi / saai.', cn: '我觉得好吃 / 健康 / 好看 / 无聊。' },
+      { nl: 'Ik denk dat het ochtend is.', cn: '我觉得是早上。(dat 后面动词到句末)' },
+      { nl: 'Het lijkt me leuk.', cn: '在我看来挺有意思。' },
+      { nl: 'Dat vind ik prettig.', cn: '我觉得这样舒服。' }
+    ]},
+    { groep: '④ 给理由 · 最容易被扣分的地方', zinnen: [
+      { nl: '..., want het is goedkoop.', cn: '…,因为便宜。(want 后面语序不变,最好用)' },
+      { nl: '..., omdat het goedkoop is.', cn: '…,因为便宜。(omdat 后面动词到句末)' },
+      { nl: 'Daarom kies ik A.', cn: '所以我选 A。(daarom 后面主谓倒装)' },
+      { nl: 'Bijvoorbeeld op zaterdag.', cn: '比如周六。' }
+    ]},
+    { groep: '⑤ 做选择 · 双图题专用', zinnen: [
+      { nl: 'Ik kies plaatje A.', cn: '我选图 A。' },
+      { nl: 'Ik heb liever ... / Ik drink liever ...', cn: '我更想要… / 我更喜欢喝…' },
+      { nl: 'A vind ik leuker dan B.', cn: 'A 我觉得比 B 好。' },
+      { nl: 'Maar als het regent, kies ik toch B.', cn: '不过要是下雨,我还是会选 B。' }
+    ]},
+    { groep: '⑥ 讲顺序 · 三图题专用', zinnen: [
+      { nl: 'Eerst ...', cn: '首先…(后面主谓倒装:Eerst wast hij…)' },
+      { nl: 'Daarna ...', cn: '然后…' },
+      { nl: 'Ten slotte ...', cn: '最后…' },
+      { nl: 'Uiteindelijk was hij blij.', cn: '最终他很高兴。' }
+    ]},
+    { groep: '⑦ 说频率和时间 · 「多久一次」', zinnen: [
+      { nl: 'elke dag / twee keer per week / soms / nooit', cn: '每天 / 每周两次 / 有时 / 从不' },
+      { nl: "'s ochtends / 's middags / 's avonds", cn: '早上 / 下午 / 晚上' },
+      { nl: 'in het weekend / op maandag', cn: '周末 / 周一' },
+      { nl: 'meestal / altijd / bijna nooit', cn: '通常 / 总是 / 几乎不' }
+    ]},
+    { groep: '⑧ 救急 · 卡住的时候说这些,别沉默', zinnen: [
+      { nl: 'Even denken...', cn: '让我想想…' },
+      { nl: 'Hoe zeg je dat...', cn: '那个怎么说来着…' },
+      { nl: 'Ik weet het woord niet, maar het is groen.', cn: '我不知道那个词,但它是绿色的。(不会的词就描述它)' },
+      { nl: 'Sorry, ik begin opnieuw.', cn: '抱歉,我重新说。' }
+    ]}
+  ],
+
+  bouwen: [
+    { id:'b1', cn:'图上我看到一个超市。', words:['Op','de','foto','zie','ik','een','supermarkt'], tip:'荷兰语「动词第二位」:句子以 Op de foto 开头时,动词 zie 必须紧跟其后,ik 排到动词后面。' },
+    { id:'b2', cn:'这个女人在刷牙。', words:['De','vrouw','poetst','haar','tanden'], tip:'最简单的语序:主语 + 动词 + 其他。poetst 是 poetsen 的第三人称形式(词干 + t)。' },
+    { id:'b3', cn:'我觉得这很健康。', words:['Ik','vind','dit','heel','gezond'], tip:'Ik vind + 东西 + 形容词。这是表达看法最省事的句型。' },
+    { id:'b4', cn:'我选 A,因为它更便宜。', words:['Ik','kies','A','want','het','is','goedkoper'], tip:'want 后面语序不变(het is),这就是 want 比 omdat 好用的原因。' },
+    { id:'b5', cn:'他迟到是因为他堵在路上。', words:['Hij','komt','te','laat','omdat','hij','in','de','file','staat'], tip:'omdat 后面动词要甩到最后:...hij in de file STAAT。这是荷兰语最典型的规则。' },
+    { id:'b6', cn:'首先他洗头发。', words:['Eerst','wast','hij','het','haar'], tip:'Eerst 开头 → 动词 wast 必须排第二位 → 主语 hij 退到第三位。三图题全靠这个句型。' },
+    { id:'b7', cn:'然后他用剪刀剪。', words:['Daarna','knipt','hij','met','een','schaar'], tip:'和上一句同一个规则:Daarna 开头,动词第二。met = 用(某工具)。' },
+    { id:'b8', cn:'最后他扫地。', words:['Ten','slotte','veegt','hij','de','vloer'], tip:'Ten slotte 算一个整体,占第一位,动词 veegt 紧跟其后。' },
+    { id:'b9', cn:'我每天和邻居说话。', words:['Ik','praat','elke','dag','met','mijn','buren'], tip:'时间(elke dag)放在动词后面。语序口诀:时间 → 方式 → 地点。' },
+    { id:'b10', cn:'我更喜欢喝橙汁。', words:['Ik','drink','liever','jus','d\'orange'], tip:'liever = 更喜欢,放在动词后面。双图选择题的核心词。' },
+    { id:'b11', cn:'这间教室里挂着一个钟。', words:['In','dit','lokaal','hangt','een','klok'], tip:'地点开头 → 动词 hangt 第二位。hangen 表示「挂着」,荷兰语很爱用这类具体动词代替「有」。' },
+    { id:'b12', cn:'我想换一双新的。', words:['Ik','wil','graag','een','nieuw','paar','ruilen'], tip:'情态动词 wil 在第二位,真正的动词 ruilen 跑到句子最后。这是荷兰语的「动词框架」。' }
+  ]
+};
+
+/* --- 入门套:30 秒 + 屏幕上给骨架 --- */
+window.CONTENT.SPEAKING_TASKS.push(
+  {
+    id:'bas-01', set:'入门套', type:'video',
+    situatie_nl:'Iemand zegt: "Ik drink elke ochtend koffie."',
+    situatie_cn:'有人说:"我每天早上喝咖啡。"',
+    vraag_nl:"Wat drinkt u 's ochtends?", vraag_cn:'你早上喝什么?',
+    prepSec:15, answerSec:30,
+    scaffold:["Ik drink 's ochtends ______.","Dat doe ik omdat ______.","Soms drink ik ook ______."],
+    must:['说出你喝什么','给一个理由','再说一样别的'],
+    model_nl:"Ik drink 's ochtends thee. Dat doe ik omdat ik geen koffie lekker vind. Soms drink ik ook een glas water.",
+    model_cn:'我早上喝茶。因为我不喜欢咖啡。有时候也喝一杯水。',
+    keywords:[{nl:'de thee',cn:'茶'},{nl:'lekker vinden',cn:'觉得好喝'}]
+  },
+  {
+    id:'bas-02', set:'入门套', type:'video',
+    situatie_nl:'Iemand zegt: "Ik woon in een appartement in Amsterdam."',
+    situatie_cn:'有人说:"我住在阿姆斯特丹的一套公寓里。"',
+    vraag_nl:'Waar woont u?', vraag_cn:'你住在哪里?',
+    prepSec:15, answerSec:30,
+    scaffold:['Ik woon in ______.','Mijn huis is ______.','Ik woon daar ______ jaar.'],
+    must:['说出城市或住的类型','形容一下(大/小/新)','说住了多久'],
+    model_nl:'Ik woon in Eindhoven, in een klein appartement. Mijn huis is niet groot, maar het is licht en rustig. Ik woon daar nu twee jaar.',
+    model_cn:'我住在埃因霍温,一套小公寓。房子不大,但采光好、安静。我在那儿住了两年了。',
+    keywords:[{nl:'het appartement',cn:'公寓'},{nl:'licht',cn:'明亮'},{nl:'rustig',cn:'安静'}]
+  },
+  {
+    id:'bas-03', set:'入门套', type:'foto1', art:['saladebar'],
+    beeld_nl:'Een saladebar met groente.', beeld_cn:'一个放着蔬菜的沙拉吧。',
+    vraag_nl:'Wat ziet u op de foto?', vraag_cn:'图上你看到什么?',
+    prepSec:15, answerSec:30,
+    scaffold:['Op de foto zie ik ______.','Ik zie ook ______ en ______.','Ik vind het ______.'],
+    must:['说出地点或主体','再说两样看得见的东西','说一句你的看法'],
+    model_nl:'Op de foto zie ik een saladebar. Ik zie tomaatjes en komkommer, en ook sla. Ik vind het gezond.',
+    model_cn:'图上我看到一个沙拉吧。我看到小番茄和黄瓜,还有生菜。我觉得挺健康。',
+    keywords:[{nl:'de groente',cn:'蔬菜'},{nl:'gezond',cn:'健康'}]
+  },
+  {
+    id:'bas-04', set:'入门套', type:'foto1', art:['tandenpoetsen'],
+    beeld_nl:'Een vrouw poetst haar tanden.', beeld_cn:'一个女人在刷牙。',
+    vraag_nl:'Wat doet de vrouw?', vraag_cn:'这个女人在做什么?',
+    prepSec:15, answerSec:30,
+    scaffold:['Op de foto zie ik een vrouw.','Zij ______.','Zij doet dat ______ per dag.','Ik doe dat ook ______.'],
+    must:['说出她在做什么','说频率','说说你自己'],
+    model_nl:"Op de foto zie ik een vrouw. Zij poetst haar tanden. Zij doet dat twee keer per dag. Ik doe dat ook, 's ochtends en 's avonds.",
+    model_cn:'图上我看到一个女人。她在刷牙。她一天刷两次。我也是,早上和晚上各一次。',
+    keywords:[{nl:'tanden poetsen',cn:'刷牙'},{nl:'twee keer per dag',cn:'一天两次'}]
+  },
+  {
+    id:'bas-05', set:'入门套', type:'foto2', art:['jusdorange','melk'],
+    beeld_nl:"A: jus d'orange. B: melk.", beeld_cn:'A:橙汁。B:牛奶。',
+    vraag_nl:'Wat drinkt u liever, A of B?', vraag_cn:'A 和 B 你更喜欢喝哪个?',
+    prepSec:15, answerSec:30,
+    scaffold:['Ik kies plaatje ______.','Ik drink dat het liefst ______.','______ drink ik minder vaak, want ______.'],
+    must:['明确说出 A 还是 B','说什么时候喝','说另一个为什么少喝'],
+    model_nl:"Ik kies plaatje A. Ik drink jus d'orange het liefst bij het ontbijt. Melk drink ik minder vaak, want ik gebruik het alleen in mijn koffie.",
+    model_cn:'我选 A。我最喜欢早饭时喝橙汁。牛奶我喝得少,因为我只用它兑咖啡。',
+    keywords:[{nl:'het liefst',cn:'最喜欢'},{nl:'minder vaak',cn:'比较少'}]
+  },
+  {
+    id:'bas-06', set:'入门套', type:'foto2', art:['oudgebouw','moderngebouw'],
+    beeld_nl:'A: een oud gebouw. B: een modern gebouw.', beeld_cn:'A:老楼。B:现代楼。',
+    vraag_nl:'In welk gebouw wilt u liever zijn? Vertel waarom.', vraag_cn:'你更想待在哪栋楼里?说明理由。',
+    prepSec:15, answerSec:30,
+    scaffold:['Ik kies plaatje ______.','Dat gebouw is ______.','Het andere gebouw vind ik ______.'],
+    must:['明确说出 A 还是 B','形容你选的那栋','说另一栋怎么样'],
+    model_nl:'Ik kies plaatje B. Dat gebouw is modern en er is veel licht. Het andere gebouw vind ik mooi, maar ook een beetje donker.',
+    model_cn:'我选 B。那栋楼很现代,光线充足。另一栋我觉得好看,但有点暗。',
+    keywords:[{nl:'het licht',cn:'光线'},{nl:'donker',cn:'暗'}]
+  },
+  {
+    id:'bas-07', set:'入门套', type:'foto3', art:['zeep','handenwassen','handdoek'],
+    beeld_nl:'1: zeep. 2: handen wassen. 3: handen afdrogen.', beeld_cn:'1:洗手液。2:洗手。3:擦干手。',
+    vraag_nl:'Vertel wat er gebeurt op de drie plaatjes.', vraag_cn:'说说这三张图里发生了什么。',
+    prepSec:20, answerSec:30,
+    scaffold:['Eerst ______.','Daarna ______.','Ten slotte ______.'],
+    must:['三张图都说到','用 Eerst / Daarna / Ten slotte','每张说出一个动作'],
+    model_nl:'Eerst pakt zij zeep. Daarna wast zij haar handen onder de kraan. Ten slotte droogt zij haar handen af met een handdoek.',
+    model_cn:'她先取洗手液。然后在水龙头下洗手。最后用毛巾把手擦干。',
+    keywords:[{nl:'de zeep',cn:'洗手液、肥皂'},{nl:'de kraan',cn:'水龙头'},{nl:'afdrogen',cn:'擦干'}]
+  },
+  {
+    id:'bas-08', set:'入门套', type:'foto3', art:['schoolbord','landkaart','klok'],
+    beeld_nl:'1: schoolbord. 2: wereldkaart. 3: klok.', beeld_cn:'1:白板。2:世界地图。3:挂钟。',
+    vraag_nl:'Wat ziet u op de plaatjes? Wat kun je ermee doen?', vraag_cn:'图上是什么?能用它们做什么?',
+    prepSec:20, answerSec:30,
+    scaffold:['Op plaatje 1 zie ik ______. Daarmee kun je ______.','Op plaatje 2 zie ik ______.','Op plaatje 3 zie ik ______.'],
+    must:['三样都说出名字','至少说一个用途','三张图都提到'],
+    model_nl:'Op plaatje 1 zie ik een schoolbord. Daarmee kun je woorden schrijven. Op plaatje 2 zie ik een wereldkaart. Op plaatje 3 zie ik een klok. Daarop zie je hoe laat het is.',
+    model_cn:'图 1 是白板,可以在上面写单词。图 2 是世界地图。图 3 是挂钟,能看时间。',
+    keywords:[{nl:'het schoolbord',cn:'白板、黑板'},{nl:'de wereldkaart',cn:'世界地图'},{nl:'Daarmee kun je...',cn:'用它可以…'}]
+  }
+);
+</script>
+<script>
+/* ===========================================================
    STATE & STORAGE
 =========================================================== */
 const state = {
@@ -23865,8 +24049,13 @@ const state = {
   listeningShowCN: false,
   listeningAnswered: {},        // {`${dId}-${qIdx}`: idx}
   // speaking
-  speakingTab: 'tips',          // 'tips' | 'practice'
+  speakingTab: 'basics',        // 'basics' | 'tips' | 'practice'
+  speakingBasicsTab: 'klanken', // 'klanken' | 'bouwstenen' | 'bouwen'
+  speakingBuildIdx: 0,
+  speakingBuildPick: {},        // {itemId: [wordIdx,...]}
+  speakingBuildChecked: {},     // {itemId: true}
   speakingType: 'all',          // 'all' | 'video' | 'foto1' | 'foto2' | 'foto3'
+  speakingSet: 'all',           // 'all' | 套卷名
   speakingIdx: 0,
   speakingHideText: false,      // 模拟考场:隐藏题目文字,只听
   speakingChecked: {},          // {taskId: [bool,...]} 信息点自查
@@ -25042,8 +25231,8 @@ function renderSpeaking(main) {
 
   // sub-tab switcher
   const tabRow = el('div', { class: 'pattern-tabs' });
-  ['tips', 'practice'].forEach(t => {
-    const labels = { tips: '技巧总览', practice: `练习 (${(C.SPEAKING_TASKS || []).length})` };
+  ['basics', 'tips', 'practice'].forEach(t => {
+    const labels = { basics: '入门 ★', tips: '技巧总览', practice: `练习 (${(C.SPEAKING_TASKS || []).length})` };
     tabRow.appendChild(el('button', {
       class: 'pattern-tab' + (state.speakingTab === t ? ' active' : ''),
       onclick: () => { state.speakingTab = t; saveState(); renderSpeaking(main); }
@@ -25051,6 +25240,10 @@ function renderSpeaking(main) {
   });
   main.appendChild(tabRow);
 
+  if (state.speakingTab === 'basics') {
+    renderSpeakingBasics(main);
+    return;
+  }
   if (state.speakingTab === 'practice') {
     renderSpeakingPractice(main);
     return;
@@ -25103,6 +25296,221 @@ function renderSpeaking(main) {
     }
     main.appendChild(sc);
   }
+}
+
+/* -----------------------------------------------------------
+   SPEAKING BASICS  ·  零基础入门
+----------------------------------------------------------- */
+const SPK_BASICS_TABS = { klanken: '① 发音', bouwstenen: '② 万能句', bouwen: '③ 造句' };
+
+function renderSpeakingBasics(main) {
+  const C = window.CONTENT;
+  const B = C.SPEAKING_BASICS || {};
+  if (window.speechSynthesis) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => {}; }
+
+  // === 路线图 ===
+  const road = el('div', { class: 'card' });
+  road.appendChild(el('div', { class: 'card-sub' }, 'Spreken · 从零开始' ));
+  road.appendChild(el('h2', { class: 'card-head' }, '五级台阶'));
+  road.appendChild(el('div', { style: { fontSize: '14px', lineHeight: '1.7', color: 'var(--ink-soft)', marginBottom: '10px' } },
+    '你现在只有零星单词,直接去做 60 秒真题只会卡住。按下面的顺序走,每一级都比上一级多说一点。'));
+  const steps = [
+    ['①', '发音', '先把 12 个中文里没有的音过一遍。听 + 跟读,不用背。', 'klanken'],
+    ['②', '万能句', '32 个骨架句。这些句子填上不同的词,就能应付所有题型。', 'bouwstenen'],
+    ['③', '造句', '把打乱的词拼成句子,练荷兰语最要命的语序规则。', 'bouwen'],
+    ['④', '有提示答题', '屏幕上给你句子骨架,30 秒录音。照着填就能说满。', 'guided'],
+    ['⑤', '真题', '60 秒,无提示,官方 16 道真题。', 'real']
+  ];
+  steps.forEach(([n, t, d, go]) => {
+    const r = el('div', {
+      style: { display: 'flex', gap: '12px', alignItems: 'flex-start', padding: '10px 12px', background: 'var(--bg)', borderRadius: '10px', marginBottom: '7px', cursor: 'pointer' },
+      onclick: () => {
+        if (go === 'guided') { state.speakingTab = 'practice'; state.speakingSet = '入门套'; state.speakingType = 'all'; state.speakingIdx = 0; }
+        else if (go === 'real') { state.speakingTab = 'practice'; state.speakingSet = '真题套 1'; state.speakingType = 'all'; state.speakingIdx = 0; }
+        else { state.speakingBasicsTab = go; }
+        saveState(); renderSpeaking(main);
+      }
+    });
+    r.appendChild(el('div', { class: 'mono', style: { fontSize: '18px', color: 'var(--accent, #b0463a)', lineHeight: '1.3' } }, n));
+    const c = el('div', {});
+    c.appendChild(el('div', { style: { fontWeight: '600', fontSize: '14px' } }, t + ' →'));
+    c.appendChild(el('div', { style: { fontSize: '12.5px', color: 'var(--ink-soft)', lineHeight: '1.55' } }, d));
+    r.appendChild(c);
+    road.appendChild(r);
+  });
+  main.appendChild(road);
+
+  // === 内层切换 ===
+  const row = el('div', { class: 'pattern-tabs' });
+  Object.keys(SPK_BASICS_TABS).forEach(k => {
+    row.appendChild(el('button', {
+      class: 'pattern-tab' + (state.speakingBasicsTab === k ? ' active' : ''),
+      onclick: () => { state.speakingBasicsTab = k; saveState(); renderSpeaking(main); }
+    }, SPK_BASICS_TABS[k]));
+  });
+  main.appendChild(row);
+
+  if (state.speakingBasicsTab === 'bouwstenen') return renderBasicsBouwstenen(main, B);
+  if (state.speakingBasicsTab === 'bouwen') return renderBasicsBouwen(main, B);
+  return renderBasicsKlanken(main, B);
+}
+
+function spkWordBtn(nl, cn, rate) {
+  const b = el('button', {
+    class: 'opt',
+    style: { display: 'inline-flex', alignItems: 'center', gap: '8px', width: 'auto', marginRight: '6px', marginBottom: '6px', padding: '7px 12px' },
+    onclick: () => spkSpeak(nl, rate || 0.75)
+  });
+  b.appendChild(el('span', { style: { fontSize: '13px' } }, '🔊'));
+  b.appendChild(el('span', { style: { fontWeight: '600' } }, nl));
+  if (cn) b.appendChild(el('span', { style: { fontSize: '12px', color: 'var(--ink-soft)', fontFamily: 'Noto Sans SC, sans-serif' } }, cn));
+  return b;
+}
+
+function renderBasicsKlanken(main, B) {
+  const head = el('div', { class: 'card' });
+  head.appendChild(el('div', { class: 'card-sub' }, 'Klanken' ));
+  head.appendChild(el('h2', { class: 'card-head' }, '12 个音 · 点词就能听'));
+  head.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', lineHeight: '1.6' } },
+    '点任何一个词都会用荷兰语读出来(语速已放慢)。听一遍,跟读一遍,就够了。发音不完美不影响及格 —— 评分只要求「听得懂」。'));
+  main.appendChild(head);
+
+  (B.klanken || []).forEach(k => {
+    const sc = el('div', { class: 'scenario' });
+    sc.appendChild(el('h3', {}, k.k));
+    sc.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', lineHeight: '1.6', marginBottom: '10px', fontFamily: 'Noto Sans SC, sans-serif' } }, k.tip));
+    const wrap = el('div', {});
+    k.words.forEach(w => wrap.appendChild(spkWordBtn(w.nl, w.cn, 0.7)));
+    sc.appendChild(wrap);
+    main.appendChild(sc);
+  });
+}
+
+function renderBasicsBouwstenen(main, B) {
+  const head = el('div', { class: 'card' });
+  head.appendChild(el('div', { class: 'card-sub' }, 'Bouwstenen' ));
+  head.appendChild(el('h2', { class: 'card-head' }, '32 个万能句'));
+  head.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', lineHeight: '1.6' } },
+    '这些句子里的空,换成任何词都成立。背下 ①②④⑥ 四组,就已经能把大部分题说满 60 秒了。点句子听发音。'));
+  main.appendChild(head);
+
+  (B.bouwstenen || []).forEach(g => {
+    const sc = el('div', { class: 'scenario' });
+    sc.appendChild(el('h3', {}, g.groep));
+    g.zinnen.forEach(z => {
+      const r = el('div', {
+        class: 'phrase-row',
+        style: { cursor: 'pointer' },
+        onclick: () => spkSpeak(z.nl.replace(/\.\.\./g, ''), 0.8)
+      });
+      r.appendChild(el('div', { class: 'phrase-nl' }, '🔊 ' + z.nl));
+      r.appendChild(el('div', { class: 'phrase-cn' }, z.cn));
+      sc.appendChild(r);
+    });
+    main.appendChild(sc);
+  });
+}
+
+function renderBasicsBouwen(main, B) {
+  const items = B.bouwen || [];
+  if (!items.length) { main.appendChild(el('div', { class: 'card empty-state' }, '没有造句题')); return; }
+  if (state.speakingBuildIdx >= items.length) state.speakingBuildIdx = 0;
+  const it = items[state.speakingBuildIdx];
+  const picked = state.speakingBuildPick[it.id] || [];
+  const checked = !!state.speakingBuildChecked[it.id];
+
+  const card = el('div', { class: 'card' });
+  card.appendChild(el('div', { class: 'card-sub' }, 'Zinnen bouwen' ));
+  card.appendChild(el('h2', { class: 'card-head' }, `第 ${state.speakingBuildIdx + 1} / ${items.length} 句`));
+  card.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', marginBottom: '14px', lineHeight: '1.6' } },
+    '把下面的词按正确顺序点出来,拼成这句荷兰语。点上面已选的词可以取消。'));
+
+  card.appendChild(el('div', {
+    style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '16px', fontWeight: '600', padding: '12px 14px', background: 'var(--bg-2)', borderRadius: '10px', marginBottom: '14px' }
+  }, it.cn));
+
+  // 已选区
+  const ansBox = el('div', {
+    style: { minHeight: '52px', padding: '10px', borderRadius: '10px', background: 'var(--bg)', border: '2px dashed var(--line, #ddd6c6)', marginBottom: '12px' }
+  });
+  if (!picked.length) ansBox.appendChild(el('span', { style: { fontSize: '13px', color: '#aaa' } }, '(从下面点词)'));
+  picked.forEach((wi, pos) => {
+    ansBox.appendChild(el('button', {
+      class: 'opt',
+      style: { display: 'inline-block', width: 'auto', marginRight: '6px', marginBottom: '6px', padding: '6px 12px', fontWeight: '600' },
+      disabled: checked ? 'disabled' : null,
+      onclick: () => {
+        const arr = (state.speakingBuildPick[it.id] || []).slice();
+        arr.splice(pos, 1);
+        state.speakingBuildPick[it.id] = arr;
+        saveState(); renderSpeaking(main);
+      }
+    }, it.words[wi]));
+  });
+  card.appendChild(ansBox);
+
+  // 词块区(按字母排序 = 打乱原顺序,且每次一样)
+  if (!checked) {
+    const order = it.words.map((w, i) => i).sort((a, b) => it.words[a].toLowerCase().localeCompare(it.words[b].toLowerCase()));
+    const pool = el('div', { style: { marginBottom: '14px' } });
+    order.forEach(wi => {
+      if (picked.indexOf(wi) !== -1) return;
+      pool.appendChild(el('button', {
+        class: 'opt',
+        style: { display: 'inline-block', width: 'auto', marginRight: '6px', marginBottom: '6px', padding: '8px 14px' },
+        onclick: () => {
+          const arr = (state.speakingBuildPick[it.id] || []).slice();
+          arr.push(wi);
+          state.speakingBuildPick[it.id] = arr;
+          saveState(); renderSpeaking(main);
+        }
+      }, it.words[wi]));
+    });
+    card.appendChild(pool);
+  }
+
+  // 按钮
+  const btns = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '10px' } });
+  if (!checked) {
+    btns.appendChild(el('button', {
+      class: 'btn',
+      disabled: picked.length !== it.words.length ? 'disabled' : null,
+      style: picked.length !== it.words.length ? { opacity: '.45' } : {},
+      onclick: () => {
+        if (picked.length !== it.words.length) return;
+        state.speakingBuildChecked[it.id] = true; saveState(); renderSpeaking(main);
+      }
+    }, '检查'));
+  } else {
+    btns.appendChild(el('button', {
+      class: 'btn btn-ghost',
+      onclick: () => { state.speakingBuildPick[it.id] = []; delete state.speakingBuildChecked[it.id]; saveState(); renderSpeaking(main); }
+    }, '↺ 再做一次'));
+  }
+  btns.appendChild(el('button', {
+    class: 'btn btn-ghost',
+    onclick: () => { state.speakingBuildIdx = (state.speakingBuildIdx - 1 + items.length) % items.length; saveState(); renderSpeaking(main); }
+  }, '← 上一句'));
+  btns.appendChild(el('button', {
+    class: 'btn btn-ghost',
+    onclick: () => { state.speakingBuildIdx = (state.speakingBuildIdx + 1) % items.length; saveState(); renderSpeaking(main); }
+  }, '下一句 →'));
+  card.appendChild(btns);
+
+  if (checked) {
+    const mine = picked.map(i => it.words[i]).join(' ');
+    const right = it.words.join(' ');
+    const ok = mine === right;
+    const fb = el('div', { class: 'feedback ' + (ok ? 'correct' : 'wrong') });
+    fb.appendChild(el('div', { class: 'fhead' }, ok ? '✓ 完全正确' : '✗ 语序不对'));
+    if (!ok) fb.appendChild(el('div', { style: { fontSize: '13px', marginBottom: '6px' } }, '你拼的:' + mine));
+    fb.appendChild(el('div', { style: { fontSize: '15px', fontWeight: '600', marginBottom: '8px' } }, right));
+    fb.appendChild(el('div', { class: 'fexplain', style: { fontFamily: 'Noto Sans SC, sans-serif' } }, it.tip));
+    card.appendChild(fb);
+    card.appendChild(el('button', { class: 'btn btn-ghost', style: { marginTop: '10px' }, onclick: () => spkSpeak(right, 0.8) }, '🔊 听正确句子'));
+  }
+
+  main.appendChild(card);
 }
 
 /* -----------------------------------------------------------
@@ -25244,17 +25652,34 @@ function renderSpeakingPractice(main) {
 
   // --- 题型筛选 ---
   const typeRow = el('div', { class: 'pattern-tabs' });
+  const inSet = all.filter(x => state.speakingSet === 'all' || (x.set || '其他') === state.speakingSet);
   Object.keys(SPK_TYPES).forEach(t => {
-    const n = t === 'all' ? all.length : all.filter(x => x.type === t).length;
+    const n = t === 'all' ? inSet.length : inSet.filter(x => x.type === t).length;
     if (t !== 'all' && !n) return;
     typeRow.appendChild(el('button', {
       class: 'pattern-tab' + (state.speakingType === t ? ' active' : ''),
       onclick: () => { state.speakingType = t; state.speakingIdx = 0; saveState(); renderSpeaking(main); }
     }, `${SPK_TYPES[t]} ${n}`));
   });
+  // --- 套卷筛选 ---
+  const sets = [...new Set(all.map(x => x.set || '其他'))];
+  const setRow = el('div', { class: 'pattern-tabs' });
+  ['all'].concat(sets).forEach(sv => {
+    setRow.appendChild(el('button', {
+      class: 'pattern-tab' + (state.speakingSet === sv ? ' active' : ''),
+      onclick: () => { state.speakingSet = sv; state.speakingIdx = 0; saveState(); renderSpeaking(main); }
+    }, sv === 'all' ? '全部套卷' : sv));
+  });
+  main.appendChild(setRow);
   main.appendChild(typeRow);
 
-  const pool = state.speakingType === 'all' ? all : all.filter(x => x.type === state.speakingType);
+  const pool = all
+    .filter(x => state.speakingSet === 'all' || (x.set || '其他') === state.speakingSet)
+    .filter(x => state.speakingType === 'all' || x.type === state.speakingType);
+  if (!pool.length) {
+    main.appendChild(el('div', { class: 'card empty-state' }, '这个组合下没有题,换一个筛选试试'));
+    return;
+  }
   if (state.speakingIdx >= pool.length) state.speakingIdx = 0;
   const task = pool[state.speakingIdx];
 
@@ -25343,6 +25768,14 @@ function renderSpeakingPractice(main) {
     }
     bodyBox.appendChild(el('div', { class: 'q-text' }, task.vraag_nl));
     if (task.vraag_cn) bodyBox.appendChild(el('div', { style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '13px', color: 'var(--ink-soft)', marginBottom: '10px' } }, task.vraag_cn));
+    if (task.scaffold && task.scaffold.length) {
+      const sk = el('div', { style: { background: 'var(--yellow-soft)', borderRadius: '10px', padding: '12px 14px', marginTop: '4px' } });
+      sk.appendChild(el('div', { class: 'mono', style: { fontSize: '10px', textTransform: 'uppercase', letterSpacing: '.08em', color: '#7a5d10', marginBottom: '6px' } }, '照着这个骨架说 · 录音时这里不会消失'));
+      task.scaffold.forEach(line => sk.appendChild(el('div', {
+        style: { fontSize: '15px', lineHeight: '1.9', color: '#5c4608' }
+      }, line)));
+      bodyBox.appendChild(sk);
+    }
   } else {
     bodyBox.appendChild(el('div', { class: 'plan-extra', style: { background: 'var(--bg-2)', borderRadius: '10px', padding: '12px', fontSize: '13px', color: 'var(--ink-soft)' } },
       '题目文字已隐藏。点「🔊 听题目」听,像真实考试一样只靠耳朵理解。'));

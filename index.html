@@ -24666,56 +24666,975 @@ window.CONTENT.WRITING_TASKS = [
    PLAN30  ·  30 天冲刺(口语 + 写作为主)
 =========================================================== */
 window.CONTENT.PLAN30 = {
-  intro: '目标:一个月内把 <b>Spreken(口语)</b> 和 <b>Schrijven(写作)</b> 练到能过。这两门最靠模板,是零基础一个月里投入产出比最高的。每天按下面做,大约 <b>2–3 小时</b>。',
-  waarschuwing: '<b>先说实话:</b>零基础到 A2 通常要 150–200 小时,压进一个月意味着每天至少 2 小时、一天都不能断。而且 A2 考试是<b>五门</b>:Lezen(阅读)、Luisteren(听力)、Schrijven、Spreken、KNM(社会常识)。这份计划保证口语和写作,阅读听力靠每天的词汇积累托底,KNM 放在第 27 天集中突击(它是纯背诵,突击有效)。如果你时间只能给到每天 1 小时,那就把考试推迟到两个月后,别硬考。',
-  weken: [
-    { naam: '第 1 周 · 能开口说一句、写一句', doel: '把发音、万能句、邮件骨架装进脑子。这周不追求写得好,只追求"能写出来"。', dagen: [
-      { d: 1, taken: ['口语 → 入门 ① 发音:12 个音全过一遍,每个例词跟读 3 次', '写作 → 入门 ② 表格词汇:20 个词读一遍,抄一遍', '词汇 tab:20 个新词'] },
-      { d: 2, taken: ['口语 → 入门 ② 万能句:第 ① ② 组(开头 + 说动作)', '写作 → 入门 ① 邮件骨架:第 ①②步(称呼 + 来意)', '写作 → 入门 ③ 造句:w1–w3', '词汇 20 个'] },
-      { d: 3, taken: ['口语 → 万能句 第 ④ ⑥ 组(给理由 + 讲顺序)← 最重要的两组', '写作 → 邮件骨架 第 ③④⑤步(原因 + 请求 + 结尾)', '写作 → 造句 w4–w6', '词汇 20 个'] },
-      { d: 4, taken: ['口语 → 入门 ③ 造句:b1–b6', '写作 → 真题 → 入门套 第 1 题(取消约会邮件),照骨架写', '把写的这封邮件发给 Claude 批改'] },
-      { d: 5, taken: ['口语 → 入门套 bas-01、bas-02(30 秒录音,照骨架说)', '写作 → 入门套 第 2 题(社区报:介绍自己)', '词汇 20 个'] },
-      { d: 6, taken: ['口语 → 入门套 bas-03、bas-04', '写作 → 入门套 第 3 题(图书馆填表)', '词汇 20 个'] },
-      { d: 7, taken: ['复习:万能句 ①②④⑥ 组 + 邮件骨架五步,全部不看提示复述一遍', '把本周写的三篇一起发给 Claude,问"哪里会扣分"', '休息半天'] }
-    ]},
-    { naam: '第 2 周 · 套模板成篇', doel: '每天一篇完整作文 + 一组口语题。开始计时。', dagen: [
-      { d: 8, taken: ['口语 → 入门套 bas-05、bas-06', '写作 → 入门套 第 4 题(请邻居收包裹)', '词汇 25 个'] },
-      { d: 9, taken: ['口语 → 入门套 bas-07、bas-08(三图题,练 Eerst/Daarna/Ten slotte)', '写作 → 入门套 第 5 题(我的一天)', '词汇 25 个'] },
-      { d: 10, taken: ['口语 → 造句 b7–b12', '写作 → 造句 w7–w10', '写作 → 入门套 第 6 题(留言条)', '本周作文发给 Claude'] },
-      { d: 11, taken: ['写作 → 真题套 1 第 1 题(Afspraak verzetten 改约邮件)', '口语 → 真题套 1 · 视频情境 2 题', '⚠️ 从今天起写作用纸笔手写,考试是手写的'] },
-      { d: 12, taken: ['写作 → 真题套 1 第 2 题(Feest)', '口语 → 真题套 1 · 单图描述 2 题', '词汇 25 个'] },
-      { d: 13, taken: ['写作 → 真题套 1 第 3 题(健身房填表)', '口语 → 真题套 1 · 双图选择 2 题', '词汇 25 个'] },
-      { d: 14, taken: ['写作 → 真题套 1 第 4 题(Dienst ruilen 换班)', '口语 → 真题套 1 · 三图叙述 2 题', '把套 1 的四篇作文一起发给 Claude'] }
-    ]},
-    { naam: '第 3 周 · 撤掉提示,做真题', doel: '不看骨架、不看范文,先写/先说,再对照。', dagen: [
-      { d: 15, taken: ['写作 → 真题套 2 第 1 题(Mooiste kleren)', '口语 → 真题套 2 · 视频题 4 题(开"模拟考场"隐藏文字)', 'KNM 20 题'] },
-      { d: 16, taken: ['写作 → 真题套 2 第 2 题(Boek lenen)', '口语 → 真题套 2 · 单图题 4 题', 'KNM 20 题'] },
-      { d: 17, taken: ['写作 → 真题套 2 第 3 题(Ingebroken 理赔表)', '口语 → 真题套 2 · 双图题 4 题', 'KNM 20 题'] },
-      { d: 18, taken: ['写作 → 真题套 2 第 4 题(Vrije dag 请假,注意用 u)', '口语 → 真题套 2 · 三图题 4 题', '套 2 作文发给 Claude'] },
-      { d: 19, taken: ['写作 → 真题套 3 第 1 题(E-mail aan docent)', '口语 → 真题套 3 · 视频题 4 题', 'KNM 20 题'] },
-      { d: 20, taken: ['写作 → 真题套 3 第 2 题(向市政反映问题)', '口语 → 真题套 3 · 单图题 4 题', 'KNM 20 题'] },
-      { d: 21, taken: ['写作 → 真题套 3 第 3 题(Weekend)', '口语 → 真题套 3 · 双图题 4 题', '复盘:把这周所有被改红的句子抄一遍'] }
-    ]},
-    { naam: '第 4 周 · 全套模考 + 补漏', doel: '按真实考试条件跑完整套,只补错的地方,不做新东西。', dagen: [
-      { d: 22, taken: ['写作 → 真题套 3 第 4 题(给同事的字条)', '口语 → 真题套 3 · 三图题 4 题', '套 3 作文发给 Claude'] },
-      { d: 23, taken: ['📝 模考:写作套 1 完整 4 题,<b>35 分钟计时、纸笔手写、不看任何提示</b>', '对照范文自查,记下漏掉的信息点'] },
-      { d: 24, taken: ['🎤 模考:口语套 1 完整 16 题,连着做完不暂停,全程录音', '回听,用自查表逐题打分'] },
-      { d: 25, taken: ['只练昨天两场模考里错的题型', '把反复出错的句子做成 5 句"必背句",贴在显眼处'] },
-      { d: 26, taken: ['📝 模考:写作套 2(计时手写)', '🎤 模考:口语套 2'] },
-      { d: 27, taken: ['KNM 集中突击:KNM tab 全部过一遍 + 做 knm-exam 真题页', '这门是纯背诵,今天一天能顶很多'] },
-      { d: 28, taken: ['📝 模考:写作套 3', '🎤 模考:口语套 3', '统计三次模考的稳定失分点'] },
-      { d: 29, taken: ['不做新题。只看:万能句 ①②④⑥ 组、邮件骨架五步、自己的 5 句必背句、被 Claude 改过的作文'] },
-      { d: 30, taken: ['轻量:早上把邮件骨架和口语骨架各默写一遍', '检查考试地点和证件', '早睡 —— 考前一天猛练只会让你考场语速失控'] }
-    ]}
-  ],
-  vuistregels: [
-    '<b>写作从第 11 天起用纸笔手写。</b>DUO 写作是纸质考试,用蓝笔手写。在屏幕上打字练不出手写速度。',
-    '<b>每篇作文都发给 Claude 改。</b>这是整份计划里最关键的一环 —— 自己写完看范文,你只会觉得"差不多";让人指出扣分点,才知道差在哪。',
-    '<b>口语宁可慢,不要停。</b>录音里的沉默是纯扣分,说错了继续说下去就行。',
-    '<b>词汇每天不断。</b>阅读和听力这一个月不专门练,全靠词汇托底。每天 20–25 个,一个月约 600 个。',
-    '<b>断一天就补回来。</b>这个强度没有缓冲,漏两三天整个计划就废了。'
-  ]
+ "intro": "五门一起排:<b>Lezen 阅读 25 题/65 分钟</b>、<b>Luisteren 听力 25 题/45 分钟</b>、<b>Schrijven 写作 4 题(纸笔手写)</b>、<b>Spreken 口语 16 题/35 分钟</b>、<b>KNM 社会常识 40 题</b>。每天大约 <b>3 小时</b>,分成几个 30–45 分钟的小块做,不要连着干。",
+ "waarschuwing": "<b>先说实话:</b>零基础到 A2 通常需要 150–200 小时。这份计划把它压到一个月,意味着每天 3 小时、一天都不能断,而且强度是真的大。<b>最有把握的是 Schrijven 和 Spreken</b>(套模板就能过);<b>Lezen 靠技巧 + 词汇</b>,一个月能练到边缘;<b>Luisteren 最难速成</b>,因为它只能靠听力时长堆;<b>KNM 是纯背诵</b>,反而最好办。如果一个月后只能过三到四门,先考过的那几门<b>成绩会保留</b>,剩下的补考就行 —— 不必五门死磕在同一天。",
+ "weken": [
+  {
+   "naam": "第 1 周 · 打地基(发音 + 骨架 + 每天听读)",
+   "doel": "口语能开口、写作能写出一句;听力和阅读每天各碰一次,先建立习惯。",
+   "dagen": [
+    {
+     "d": 1,
+     "taken": [
+      "口语 → 入门 ① 发音:12 个音全过,每个例词跟读 3 次",
+      "写作 → 入门 ② 表格词汇:20 个词读一遍、抄一遍",
+      "词汇 tab:20 个新词",
+      "阅读 → 技巧 tab:把阅读技巧读一遍(先不做题)"
+     ]
+    },
+    {
+     "d": 2,
+     "taken": [
+      "口语 → 万能句 ①② 组",
+      "写作 → 邮件骨架 ①②步",
+      "写作 → 造句 w1–w3",
+      "听力 → 练习第 1 篇:先只听(点▶︎播放对话),再看原文",
+      "词汇 20 个"
+     ]
+    },
+    {
+     "d": 3,
+     "taken": [
+      "口语 → 万能句 ④⑥ 组(给理由 + 讲顺序,最重要)",
+      "写作 → 邮件骨架 ③④⑤步",
+      "阅读 → 真题套 1 第 1 篇(学习小贴士),做完看解析",
+      "听力 → 第 2 篇",
+      "词汇 20 个"
+     ]
+    },
+    {
+     "d": 4,
+     "taken": [
+      "口语 → 造句 b1–b6",
+      "写作 → 入门套第 1 题(取消约会邮件),照骨架写",
+      "阅读 → 真题套 1 第 2 篇(长跑比赛)",
+      "听力 → 第 3 篇",
+      "把写的邮件发给 Claude 批改"
+     ]
+    },
+    {
+     "d": 5,
+     "taken": [
+      "口语 → 入门套 bas-01、bas-02(30 秒录音)",
+      "写作 → 入门套第 2 题(社区报:介绍自己)",
+      "阅读 → 真题套 1 第 3 篇(配送服务,查表题)",
+      "听力 → 第 4 篇",
+      "词汇 20 个"
+     ]
+    },
+    {
+     "d": 6,
+     "taken": [
+      "口语 → 入门套 bas-03、bas-04",
+      "写作 → 入门套第 3 题(图书馆填表)",
+      "阅读 → 真题套 1 第 4 篇(员工活动)",
+      "听力 → 第 5 篇",
+      "词汇 20 个"
+     ]
+    },
+    {
+     "d": 7,
+     "taken": [
+      "复习:万能句 ①②④⑥ + 邮件骨架五步,不看提示复述",
+      "阅读 → 真题套 1 第 5 篇(忘了包)",
+      "把本周三篇作文一起发给 Claude,问哪里会扣分",
+      "休息半天"
+     ]
+    }
+   ]
+  },
+  {
+   "naam": "第 2 周 · 成篇 + 阅读提速",
+   "doel": "写作每天一篇完整作文;阅读开始计时;听力从听懂大意到听懂细节。",
+   "dagen": [
+    {
+     "d": 8,
+     "taken": [
+      "口语 → 入门套 bas-05、bas-06",
+      "写作 → 入门套第 4 题(请邻居收包裹)",
+      "阅读 → 真题套 1 第 6 篇(社区运动日,3 题)",
+      "听力 → 第 6、7 篇",
+      "词汇 25 个"
+     ]
+    },
+    {
+     "d": 9,
+     "taken": [
+      "口语 → 入门套 bas-07、bas-08(三图题)",
+      "写作 → 入门套第 5 题(我的一天)",
+      "阅读 → 真题套 1 第 7 篇(婚礼邮件)",
+      "听力 → 第 8、9 篇",
+      "词汇 25 个"
+     ]
+    },
+    {
+     "d": 10,
+     "taken": [
+      "口语 → 造句 b7–b12",
+      "写作 → 造句 w4–w10",
+      "阅读 → 真题套 1 第 8 篇(急救课程)",
+      "听力 → 第 10、11 篇",
+      "写作作业发给 Claude"
+     ]
+    },
+    {
+     "d": 11,
+     "taken": [
+      "写作 → 真题套 1 第 1 题(改约邮件)",
+      "⚠️ 从今天起写作改用<b>纸笔手写</b>,考试是手写的",
+      "口语 → 真题套 1 · 视频题 2 题",
+      "阅读 → 真题套 1 第 9 篇(旧货中心)",
+      "听力 → 第 12、13 篇"
+     ]
+    },
+    {
+     "d": 12,
+     "taken": [
+      "写作 → 真题套 1 第 2 题(Feest)",
+      "口语 → 真题套 1 · 单图题 2 题",
+      "阅读 → 真题套 1 第 10 篇(病假规定)",
+      "听力 → 第 14、15 篇",
+      "词汇 25 个"
+     ]
+    },
+    {
+     "d": 13,
+     "taken": [
+      "写作 → 真题套 1 第 3 题(健身房填表)",
+      "口语 → 真题套 1 · 双图题 2 题",
+      "阅读 → 练习题库 1–3 篇,每篇限时 4 分钟",
+      "听力 → 第 16、17 篇",
+      "词汇 25 个"
+     ]
+    },
+    {
+     "d": 14,
+     "taken": [
+      "写作 → 真题套 1 第 4 题(换班邮件)",
+      "口语 → 真题套 1 · 三图题 2 题",
+      "阅读 → 练习题库 4–6 篇(限时)",
+      "套 1 的四篇作文一起发给 Claude"
+     ]
+    }
+   ]
+  },
+  {
+   "naam": "第 3 周 · 真题轮转 + KNM 启动",
+   "doel": "口语写作撤掉提示;阅读每天 4–5 篇保持手感;KNM 每天 20 题滚起来。",
+   "dagen": [
+    {
+     "d": 15,
+     "taken": [
+      "写作 → 真题套 2 第 1 题(最爱穿的衣服)",
+      "口语 → 真题套 2 · 视频题 4 题(开模拟考场,隐藏文字)",
+      "阅读 → 练习题库 7–10 篇",
+      "听力 → 第 18、19 篇",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 16,
+     "taken": [
+      "写作 → 真题套 2 第 2 题(借书)",
+      "口语 → 真题套 2 · 单图题 4 题",
+      "阅读 → 练习题库 11–14 篇",
+      "听力 → 第 20、21 篇",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 17,
+     "taken": [
+      "写作 → 真题套 2 第 3 题(入室盗窃理赔表)",
+      "口语 → 真题套 2 · 双图题 4 题",
+      "阅读 → 练习题库 15–18 篇",
+      "听力 → 第 22、23 篇",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 18,
+     "taken": [
+      "写作 → 真题套 2 第 4 题(请假,注意用 u)",
+      "口语 → 真题套 2 · 三图题 4 题",
+      "阅读 → 练习题库 19–22 篇",
+      "听力 → 第 24、25 篇",
+      "套 2 作文发给 Claude"
+     ]
+    },
+    {
+     "d": 19,
+     "taken": [
+      "写作 → 真题套 3 第 1 题(给老师的邮件)",
+      "口语 → 真题套 3 · 视频题 4 题",
+      "阅读 → 练习题库 23–26 篇",
+      "听力 → 第 26、27 篇",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 20,
+     "taken": [
+      "写作 → 真题套 3 第 2 题(向市政反映问题)",
+      "口语 → 真题套 3 · 单图题 4 题",
+      "阅读 → 练习题库 27–30 篇",
+      "听力 → 第 28、29 篇",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 21,
+     "taken": [
+      "写作 → 真题套 3 第 3 题(我的周末)",
+      "口语 → 真题套 3 · 双图题 4 题",
+      "阅读 → 练习题库 31–34 篇",
+      "听力 → 第 30 篇 + 回头重听第 1–5 篇(这次应该轻松多了)",
+      "复盘:把这周被改红的句子抄一遍"
+     ]
+    }
+   ]
+  },
+  {
+   "naam": "第 4 周 · 模考 + 补漏 + KNM 突击",
+   "doel": "按真实条件跑完整套,只补错的地方,不学新东西。",
+   "dagen": [
+    {
+     "d": 22,
+     "taken": [
+      "写作 → 真题套 3 第 4 题(给同事的字条)",
+      "口语 → 真题套 3 · 三图题 4 题",
+      "阅读 → 练习题库 35–40 篇(全部做完)",
+      "套 3 作文发给 Claude"
+     ]
+    },
+    {
+     "d": 23,
+     "taken": [
+      "📝 模考:写作套 1 完整 4 题,<b>35 分钟计时、纸笔手写、不看提示</b>",
+      "📖 模考:阅读真题套 1 全 25 题,<b>65 分钟计时</b>",
+      "对答案,把错题的原文依据找出来"
+     ]
+    },
+    {
+     "d": 24,
+     "taken": [
+      "🎤 模考:口语套 1 全 16 题,连着做完不暂停,全程录音",
+      "回听并用自查表逐题打分",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 25,
+     "taken": [
+      "只练前两天模考里错的题型",
+      "把反复出错的句子做成 5 句必背句,贴在显眼处",
+      "听力 → 重听最难的 5 篇"
+     ]
+    },
+    {
+     "d": 26,
+     "taken": [
+      "📝 模考:写作套 2(计时手写)",
+      "🎤 模考:口语套 2",
+      "KNM 20 题"
+     ]
+    },
+    {
+     "d": 27,
+     "taken": [
+      "🏛 KNM 集中突击日:KNM tab 全部过一遍",
+      "做 knm-exam 真题页两套(每套 40 题),订正错题",
+      "这门是纯背诵,今天一天顶得上一周"
+     ]
+    },
+    {
+     "d": 28,
+     "taken": [
+      "📝 模考:写作套 3",
+      "🎤 模考:口语套 3",
+      "📖 阅读:随机抽 25 题限时练",
+      "统计三次模考的稳定失分点"
+     ]
+    },
+    {
+     "d": 29,
+     "taken": [
+      "不做新题。只看:万能句 ①②④⑥ 组、邮件骨架五步、自己的 5 句必背句、被 Claude 改过的作文、KNM 错题"
+     ]
+    },
+    {
+     "d": 30,
+     "taken": [
+      "轻量:早上把邮件骨架和口语骨架各默写一遍",
+      "检查考试地点、时间和证件",
+      "早睡 —— 考前一天猛练只会让你考场语速失控"
+     ]
+    }
+   ]
+  }
+ ],
+ "vuistregels": [
+  "<b>写作从第 11 天起用纸笔手写。</b>DUO 写作是纸质考试,用蓝笔手写。在屏幕上打字练不出手写速度。",
+  "<b>每篇作文都发给 Claude 改。</b>这是整份计划最关键的一环 —— 自己对着范文看,你只会觉得差不多;让人指出扣分点,才知道差在哪。",
+  "<b>听力先听后看,永远别倒过来。</b>看过原文再听,等于没练。第一遍听不懂很正常,用慢速再听一遍,还是不懂再看原文。",
+  "<b>阅读先看题再读文。</b>官方每篇的开头都写着 <b>Lees eerst de vraag. Lees daarna de tekst.</b> —— 这是考试自己给的策略,照做。",
+  "<b>词汇每天不断。</b>阅读和听力最终都卡在词汇量上。每天 20–25 个,一个月约 600 个。",
+  "<b>五门不必同一天考。</b>先考有把握的,考过的成绩保留,剩下的再补考。这比五门一起挂划算得多。"
+ ]
 };
+</script>
+<script>
+/* ===========================================================
+   LEZEN 真题套 1  ·  DUO Oefenexamen Lezen A2 nr.1 (RV5Y)
+   10 篇官方阅读文章 + 25 题。官方数据里不含答案 key
+   (所有选项 score 都是 0),答案由 Claude 逐篇对照原文推定。
+=========================================================== */
+window.CONTENT.READING.push(...[
+ {
+  "id": "lz1-1",
+  "set": "真题套 1",
+  "type": "notice",
+  "title": "Tips om goed te leren",
+  "text_nl": "In een opleidingsgids staan tips om te leren.\n\nTips om goed te leren\n\nIedereen leert op zijn eigen manier. Toch geven we u een paar tips om beter te kunnen leren.\n\n• Begin met het maken van een planning: wat gaat u wanneer doen? Elke dag een beetje leren is beter dan alles op één dag leren. Lees op verschillende dagen dezelfde bladzijdes een paar keer opnieuw. U onthoudt de informatie dan beter.\n• Zoek uit wanneer u het beste kan leren: 's morgens, 's middags of 's avonds.\n• Leer niet langer dan een half uur. Neem daarna een pauze of ga even iets heel anders doen.\n• Leer in een rustige omgeving. Denk niet teveel aan andere dingen.\n• Lees eerst een stuk tekst. Denk daarna even na over de inhoud. Lees dan een nieuw stuk tekst en denk weer na over die inhoud. Ga zo verder tot het einde van de tekst.\n• Leg aan iemand anders uit wat u hebt gelezen. Als u dat kunt, weet u zeker dat u het hebt begrepen. U onthoudt informatie beter als u het aan iemand hebt verteld.",
+  "text_cn": "课程手册里的学习建议。\n\n学习小贴士\n\n每个人的学习方式都不一样。不过我们还是给你几条能学得更好的建议。\n\n• 先做计划:什么时候做什么?每天学一点比一天学完更好。同样的页面隔几天再读几遍,信息记得更牢。\n• 找出你什么时候学效率最高:早上、下午还是晚上。\n• 一次学习不要超过半小时。之后休息一下,或者去做点完全不同的事。\n• 在安静的环境里学。别想太多别的事。\n• 先读一段,然后想一想内容。再读新的一段,再想一想。就这样一直读到结尾。\n• 把读到的东西讲给别人听。讲得出来,就说明你真的懂了。讲过一遍,记得也更牢。",
+  "questions": [
+   {
+    "q": "Jamie heeft volgende week een belangrijk examen. Wat moet hij volgens de tekst het eerste doen?",
+    "cnQ": "Jamie 下周有个重要考试。按文章说,他首先该做什么?",
+    "opts": [
+     {
+      "nl": "een planning maken",
+      "cn": "做一个计划"
+     },
+     {
+      "nl": "een rustige plek zoeken",
+      "cn": "找个安静的地方"
+     },
+     {
+      "nl": "nadenken over de inhoud",
+      "cn": "思考内容"
+     }
+    ],
+    "answer": 0,
+    "explain": "原文第一条就是 <b>Begin met het maken van een planning</b>(先做计划)。题目问的是 <b>het eerste</b>(最先),对应列表第一条。"
+   },
+   {
+    "q": "Wanneer kan je volgens de tekst het beste leren?",
+    "cnQ": "按文章说,什么时候学习最好?",
+    "opts": [
+     {
+      "nl": "'s ochtends",
+      "cn": "早上"
+     },
+     {
+      "nl": "'s middags",
+      "cn": "下午"
+     },
+     {
+      "nl": "'s avonds",
+      "cn": "晚上"
+     },
+     {
+      "nl": "Dat moet je zelf bepalen.",
+      "cn": "这得你自己决定"
+     }
+    ],
+    "answer": 3,
+    "explain": "原文说 <b>Zoek uit wanneer u het beste kan leren</b>(自己去找出什么时候最适合),并没有指定时段。A/B/C 只是原文并列列出的三个可能,不是答案。"
+   },
+   {
+    "q": "Noa weet niet hoe hij het beste kan leren. Welk advies kan je hem geven?",
+    "cnQ": "Noa 不知道怎么学最好。你能给他什么建议?",
+    "opts": [
+     {
+      "nl": "Leer eerst de hele tekst en lees daarna elk stukje opnieuw.",
+      "cn": "先学完整篇,再把每小段重读一遍"
+     },
+     {
+      "nl": "Leer elke dag een beetje en vertel aan iemand wat je hebt gelezen.",
+      "cn": "每天学一点,并把读到的讲给别人听"
+     },
+     {
+      "nl": "Leer lang achter elkaar door en lees elk stuk tekst twee keer.",
+      "cn": "连续长时间学,每段读两遍"
+     },
+     {
+      "nl": "Leer met andere mensen en lees elke dag samen hetzelfde stuk tekst.",
+      "cn": "和别人一起学,每天一起读同一段"
+     }
+    ],
+    "answer": 1,
+    "explain": "两个信息点都在原文:<b>Elke dag een beetje leren is beter</b> + <b>Leg aan iemand anders uit wat u hebt gelezen</b>。C 错在原文说 <b>Leer niet langer dan een half uur</b>(不要连续学太久)。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-2",
+  "set": "真题套 1",
+  "type": "notice",
+  "title": "Brief: jaarlijkse hardloopwedstrijd",
+  "text_nl": "Alle bewoners van een dorp krijgen een brief.\n\nAan de bewoners van het dorp\nOnderwerp: Jaarlijkse hardloopwedstrijd\n\nWij willen u met deze brief informatie geven over de jaarlijkse hardloopwedstrijd in ons dorp. Ook willen wij u vertellen wat er die dag anders is voor het verkeer. We willen dat alles zo goed mogelijk gaat en we hopen dat u weinig last hebt van de wedstrijd.\n\nOngeveer 500 hardlopers doen mee aan de hardloopwedstrijd. De start en de finish zijn op het Dorpsplein. U kunt naar de hardlopers komen kijken, als u daar zin in heeft.\n\nDatum: zaterdag 13 juni\nTijd: van 11.00 uur tot 16.00 uur\nRoute: Dorpsplein – Dorpsstraat – Bergsebaan – Flamingostraat – Dorpsplein\n\nWe willen dat alles veilig is voor de hardlopers, het verkeer en het publiek. Daarom sluiten wij een aantal straten en wegen af. Op de route mogen tot 17.00 uur geen auto's staan. Wij vragen u daarom uw auto vóór zaterdagmorgen 13 juni 10.00 uur weg te halen. Auto's die er daarna nog staan zal de politie wegslepen.\n\nWij bieden u onze excuses aan voor de overlast en wij danken u voor uw medewerking.\n\nMet vriendelijke groet,\nPiet Jansen\nOrganisator hardloopwedstrijd",
+  "text_cn": "村里所有居民收到的一封信。\n\n致村民\n主题:年度长跑比赛\n\n我们写这封信是想告诉您本村年度长跑比赛的信息,也想说明那天交通会有什么变化。我们希望一切顺利,也希望比赛尽量不给您添麻烦。\n\n大约有 500 名跑者参加。起点和终点都在村广场。如果您有兴趣,可以来看比赛。\n\n日期:6 月 13 日星期六\n时间:11:00 至 16:00\n路线:村广场 – 村街 – Bergsebaan – Flamingostraat – 村广场\n\n为了跑者、交通和观众的安全,我们会封闭一些街道。路线上直到 17:00 都不能停车。因此请您在 6 月 13 日星期六上午 10:00 之前把车挪走。之后仍停在那里的车,警察会拖走。\n\n给您带来不便,我们深表歉意,并感谢您的配合。\n\n此致敬礼,\nPiet Jansen\n长跑比赛组织者",
+  "questions": [
+   {
+    "q": "Waarom krijgen de dorpsbewoners deze brief van Piet Jansen?",
+    "cnQ": "村民为什么收到这封信?",
+    "opts": [
+     {
+      "nl": "Hij wil ze informatie geven over alles rondom de hardloopwedstrijd.",
+      "cn": "告知与长跑比赛有关的各项信息"
+     },
+     {
+      "nl": "Hij wil ze oproepen met z'n allen naar de hardlopers te komen kijken.",
+      "cn": "号召大家都来看比赛"
+     },
+     {
+      "nl": "Hij wil ze uitnodigen om mee te doen aan de hardloopwedstrijd.",
+      "cn": "邀请他们参加比赛"
+     }
+    ],
+    "answer": 0,
+    "explain": "第一段就写明目的:<b>informatie geven over de jaarlijkse hardloopwedstrijd</b> + <b>vertellen wat er die dag anders is voor het verkeer</b>。看比赛只是 <b>als u daar zin in heeft</b>(有兴趣的话),不是号召。"
+   },
+   {
+    "q": "Gaston woont in de Flamingostraat. Wanneer moet hij zijn auto weghalen op zaterdag 13 juni?",
+    "cnQ": "Gaston 住在 Flamingostraat。他必须几点前把车挪走?",
+    "opts": [
+     {
+      "nl": "voor 10.00 uur",
+      "cn": "10 点前"
+     },
+     {
+      "nl": "voor 11.00 uur",
+      "cn": "11 点前"
+     },
+     {
+      "nl": "voor 16.00 uur",
+      "cn": "16 点前"
+     },
+     {
+      "nl": "voor 17.00 uur",
+      "cn": "17 点前"
+     }
+    ],
+    "answer": 0,
+    "explain": "原文:<b>uw auto vóór zaterdagmorgen 13 juni 10.00 uur weg te halen</b>。11:00 是比赛开始,16:00 是结束,17:00 是恢复停车 —— 三个都是干扰项。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-3",
+  "set": "真题套 1",
+  "type": "advertisement",
+  "title": "Verzamel- en transportservice",
+  "text_nl": "In een meubelwinkel ligt een folder met informatie over de transportservice.\n\nVerzamel- en transportservice\n\nHebt u meubels gezien die u wilt kopen? En wilt u dat wij deze meubels bij u thuisbezorgen? Dan kunt u gebruikmaken van onze transportservice.\n\nHoe werkt het? U maakt een lijstje met de meubels, op internet of in onze winkel. Wij verzamelen deze meubels en bezorgen alles bij u thuis. Dit alles voor een klein bedrag.\n\nTarieven:\n0–199 kg: begane grond € 54,- / 1e, 2e, 3e etc. verdieping € 64,-\n200 kg of meer: begane grond € 104,- / 1e, 2e, 3e etc. verdieping € 144,-\n\nDeze prijzen zijn geldig voor één adres. Wilt u de meubels op meer adressen laten bezorgen? Ga dan voor meer informatie naar de informatiebalie in onze winkel.\n\nBezorging\n• De levertijd van de meubels is ten minste twee weken.\n• U kunt op onze website zien op welke dagen wij meubels thuisbezorgen.\n• Wilt u weten hoe laat wij de meubels bezorgen? Bel dan naar onze klantenservice. Dit kan alleen op de dag van de bezorging, vanaf 8 uur 's ochtends.\n• Woont u op de vijfde verdieping of hoger? Wij bezorgen alleen als er een lift is.",
+  "text_cn": "家具店里的一份配送服务宣传单。\n\n代取与配送服务\n\n看中了想买的家具?想让我们送到家?那就可以用我们的配送服务。\n\n怎么操作?您在网上或店里列一个家具清单,我们把这些家具收齐并全部送到您家,只收很少的费用。\n\n价目表:\n0–199 公斤:一楼(地面层)€54 / 二楼及以上 €64\n200 公斤及以上:一楼 €104 / 二楼及以上 €144\n\n这些价格适用于一个地址。想送到多个地址?请到店内咨询台了解详情。\n\n配送\n• 交货时间至少两周。\n• 哪些天送货,可以在网站上查。\n• 想知道具体几点送到?请打客服电话。只能在送货当天、早上 8 点以后打。\n• 住在五楼或更高?只有有电梯我们才送。",
+  "questions": [
+   {
+    "q": "Modibo woont in een flat, op de tweede verdieping. Hij heeft een tafel van 20 kilo gekocht. Hij wil deze tafel thuis laten bezorgen. Wat moet hij hiervoor betalen?",
+    "cnQ": "Modibo 住二楼,买了一张 20 公斤的桌子要送到家。他付多少钱?",
+    "opts": [
+     {
+      "nl": "€ 54,-",
+      "cn": "54 欧"
+     },
+     {
+      "nl": "€ 64,-",
+      "cn": "64 欧"
+     },
+     {
+      "nl": "€ 104,-",
+      "cn": "104 欧"
+     },
+     {
+      "nl": "€ 144,-",
+      "cn": "144 欧"
+     }
+    ],
+    "answer": 1,
+    "explain": "两个条件要同时看:20 公斤 → <b>0–199 kg</b> 那一行;二楼 → <b>verdieping</b> 那一列。交叉点是 <b>€ 64</b>。这种查表题每套必考,先定行再定列。"
+   },
+   {
+    "q": "Thérèse wil meubels thuis laten bezorgen. Ze wil weten hoe laat de meubels bezorgd worden. Wanneer kan zij dat vragen?",
+    "cnQ": "Thérèse 想知道家具几点送到。她什么时候可以问?",
+    "opts": [
+     {
+      "nl": "op de dag van de bezorging",
+      "cn": "送货当天"
+     },
+     {
+      "nl": "op het moment dat zij de meubels koopt",
+      "cn": "买家具的时候"
+     },
+     {
+      "nl": "twee weken voor de bezorging",
+      "cn": "送货前两周"
+     }
+    ],
+    "answer": 0,
+    "explain": "原文:<b>Dit kan alleen op de dag van de bezorging, vanaf 8 uur 's ochtends</b>。<b>alleen</b>(只能)是关键词。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-4",
+  "set": "真题套 1",
+  "type": "email",
+  "title": "Personeelsuitje: kanovaren",
+  "text_nl": "Sabrina krijgt een brief van haar werk.\n\nBeste collega,\n\nOp vrijdag 9 mei gaan we met het bedrijf kanovaren!\n\nJan van 'Botenverhuur de Rijnstroom' wacht op ons om half 11 in Utrecht. Adres: Rhijnauwen 2. Om half 12 is er lunch met een kop koffie of thee. Om half 8 eten we een pannenkoek bij het pannenkoekenhuis. Je hoeft zelf dus geen eten mee te nemen. Het programma eindigt om half 9.\n\nWat moet je meenemen? We raden aan om extra kleding mee te nemen, voor als je kleding nat wordt op de boot. Wij zullen handdoeken meenemen. Je hoeft geen zwemkleding mee te nemen, het water is nog te koud om in te zwemmen.\n\nLaat je weten of je erbij kunt zijn? Je kunt je tot 2 mei bij Ingmar aanmelden. Als je nog vragen hebt, kun je bellen met Charlotte, tel. 030 - 2521312.\n\nWij hopen op een gezellige dag!\n\nNamens de feestcommissie,\nHenk de Groot",
+  "text_cn": "Sabrina 收到单位的一封信。\n\n亲爱的同事:\n\n5 月 9 日星期五,公司组织划独木舟!\n\nBotenverhuur de Rijnstroom 的 Jan 十点半在乌得勒支等我们。地址:Rhijnauwen 2。十一点半有午餐,配咖啡或茶。晚上七点半我们在薄饼店吃薄饼,所以你不用自己带吃的。活动八点半结束。\n\n要带什么?建议多带一套衣服,以防在船上弄湿。毛巾我们会准备。不用带泳衣,水还太凉,不能游泳。\n\n能不能来,请回复一下。5 月 2 日前找 Ingmar 报名。还有问题的话,可以打电话给 Charlotte,电话 030-2521312。\n\n希望大家玩得开心!\n\n代表活动委员会,\nHenk de Groot",
+  "questions": [
+   {
+    "q": "Wat moet Sabrina meenemen naar het personeelsuitje?",
+    "cnQ": "Sabrina 要带什么去这次员工活动?",
+    "opts": [
+     {
+      "nl": "een handdoek",
+      "cn": "毛巾"
+     },
+     {
+      "nl": "eten en drinken",
+      "cn": "吃的和喝的"
+     },
+     {
+      "nl": "extra kleding",
+      "cn": "多带一套衣服"
+     },
+     {
+      "nl": "zwemkleding",
+      "cn": "泳衣"
+     }
+    ],
+    "answer": 2,
+    "explain": "原文:<b>We raden aan om extra kleding mee te nemen</b>。另外三个都被原文否掉了:毛巾 <b>wij zullen handdoeken meenemen</b>(公司带)、吃的 <b>je hoeft geen eten mee te nemen</b>、泳衣 <b>je hoeft geen zwemkleding mee te nemen</b>。"
+   },
+   {
+    "q": "Sabrina wil weten of haar man ook mee mag. Aan wie moet ze dat vragen?",
+    "cnQ": "Sabrina 想知道她先生能不能一起来。她该问谁?",
+    "opts": [
+     {
+      "nl": "aan Charlotte",
+      "cn": "问 Charlotte"
+     },
+     {
+      "nl": "aan Henk",
+      "cn": "问 Henk"
+     },
+     {
+      "nl": "aan Ingmar",
+      "cn": "问 Ingmar"
+     },
+     {
+      "nl": "aan Jan",
+      "cn": "问 Jan"
+     }
+    ],
+    "answer": 0,
+    "explain": "这是<b>提问</b>,不是报名。原文:<b>Als je nog vragen hebt, kun je bellen met Charlotte</b>。Ingmar 负责的是 <b>aanmelden</b>(报名),是最容易选错的干扰项。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-5",
+  "set": "真题套 1",
+  "type": "email",
+  "title": "E-mail: Tas vergeten",
+  "text_nl": "Jasper ontvangt een e-mail van zijn collega.\n\nAan: j.degraaf@werk.nl\nOnderwerp: Tas vergeten\n\nHoi Jasper,\n\nIk zit nu in de trein van mijn werk naar huis en merk dat ik mijn tas ben vergeten! Hij staat nog op mijn bureau. Wil jij hem misschien ophalen en naar de portier brengen? Dan haal ik mijn tas daar morgen op.\n\nHet is een gele rugtas met een rits. In de tas zit mijn laptop. Er zitten ook een boek en een bril in de tas. Gelukkig heb ik mijn telefoon en portemonnee wel bij me!\n\nWil je me een bericht sturen als je de tas gevonden hebt?\n\nAlvast bedankt!\n\nGroetjes,\nSuzanne",
+  "text_cn": "Jasper 收到同事的一封邮件。\n\n收件人:j.degraaf@werk.nl\n主题:忘了包\n\n嗨 Jasper:\n\n我现在在下班回家的火车上,发现我把包忘了!它还在我桌上。你能帮我取一下、送到门卫那儿吗?我明天去那儿拿。\n\n是一个带拉链的黄色双肩包。包里有我的笔记本电脑,还有一本书和一副眼镜。还好手机和钱包在我身上!\n\n找到包了给我发条消息好吗?\n\n先谢谢你!\n\nSuzanne",
+  "questions": [
+   {
+    "q": "Waar is de tas van Suzanne?",
+    "cnQ": "Suzanne 的包在哪儿?",
+    "opts": [
+     {
+      "nl": "bij de portier",
+      "cn": "在门卫那儿"
+     },
+     {
+      "nl": "in de trein",
+      "cn": "在火车上"
+     },
+     {
+      "nl": "op haar bureau",
+      "cn": "在她桌上"
+     }
+    ],
+    "answer": 2,
+    "explain": "原文:<b>Hij staat nog op mijn bureau</b>。门卫那儿是她<b>希望</b>包被送到的地方(还没送到),火车上的是她本人 —— 两个都是时间顺序陷阱。"
+   },
+   {
+    "q": "Wat zit er in de tas van Suzanne?",
+    "cnQ": "Suzanne 的包里有什么?(原题是四张图片,这里改成文字选项)",
+    "opts": [
+     {
+      "nl": "een laptop, een boek en een bril",
+      "cn": "笔记本电脑、一本书和一副眼镜"
+     },
+     {
+      "nl": "een laptop, een telefoon en een portemonnee",
+      "cn": "笔记本电脑、手机和钱包"
+     },
+     {
+      "nl": "een boek, een bril en een portemonnee",
+      "cn": "书、眼镜和钱包"
+     },
+     {
+      "nl": "een telefoon, een boek en een laptop",
+      "cn": "手机、书和笔记本电脑"
+     }
+    ],
+    "answer": 0,
+    "explain": "原文:<b>In de tas zit mijn laptop. Er zitten ook een boek en een bril in de tas.</b> 手机和钱包<b>在她身上</b>(<b>heb ik wel bij me</b>),不在包里。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-6",
+  "set": "真题套 1",
+  "type": "notice",
+  "title": "Brief buurtvereniging: sportdag",
+  "text_nl": "Halima krijgt een brief van de buurtvereniging.\n\nBeste buurtbewoners,\n\nOp 9 juli is onze sportdag in het Sportpark in Amsterdam. Wilt u om 9 uur op het veld zijn? Dan kunnen we op tijd beginnen.\n\nWe beginnen om half 10 met een tennistoernooi. U kunt 's ochtends ook kiezen voor basketbal. Daarna hebben we lunchpauze. U moet zelf uw brood meenemen, wij zorgen voor koffie en thee. Na de pauze is er een voetbaltoernooi. Voor de kinderen is er dan een volleybalwedstrijd. Om half 7 is de sportdag afgelopen. We gaan dan barbecueën. Als u geen vlees eet, wilt u dit dan doorgeven aan Marie? Zij doet samen met Mo de boodschappen.\n\nLet op! Wij kunnen de kleedkamers van het Sportpark niet gebruiken. De kleedkamers worden verbouwd. U moet dus thuis uw sportkleren aantrekken.\n\nDe sportdag (met barbecue en drankjes) kost € 15,- per persoon. Kinderen betalen € 8,50. U moet betalen als u zich aanmeldt. U kunt zich aanmelden tot 25 juni bij Jan (Vissersplein 45A).\n\nVorig jaar was de barbecue alleen voor de deelnemers van de sportdag. Dit jaar is dat anders: ook mensen die niet meedoen mogen mee barbecueën. Zij betalen dan € 10,-. Als u niet meedoet aan de sportdag, kunt u zich tot 1 juli voor de barbecue aanmelden bij Mo (Abrahamslaan 2).\n\nWij hopen op een zonnige sportdag!\n\nMet vriendelijke groeten,\nJan, Marie, Bas en Mo",
+  "text_cn": "Halima 收到社区协会的一封信。\n\n各位街坊:\n\n7 月 9 日是我们在阿姆斯特丹体育公园的运动日。请九点到场好吗?这样我们能准时开始。\n\n九点半从网球赛开始。上午也可以选篮球。之后是午餐休息。面包请自带,咖啡和茶我们提供。休息后有足球赛,同时给孩子们安排排球比赛。六点半运动日结束,然后我们烧烤。如果您不吃肉,能不能告诉 Marie?她和 Mo 一起负责采购。\n\n注意!体育公园的更衣室不能用,正在翻修。所以请在家就穿好运动服。\n\n运动日(含烧烤和饮料)每人 15 欧,儿童 8.50 欧。报名时就要付款。6 月 25 日前找 Jan 报名。\n\n去年烧烤只对参加运动日的人开放。今年不一样:不参加的人也可以来烧烤,费用 10 欧。如果您不参加运动日,可以在 7 月 1 日前找 Mo 报名烧烤。\n\n希望是个大晴天!\n\n此致,\nJan、Marie、Bas 和 Mo",
+  "questions": [
+   {
+    "q": "Halima wil meedoen met de sportdag. Wat moet ze meenemen?",
+    "cnQ": "Halima 想参加运动日。她要带什么?",
+    "opts": [
+     {
+      "nl": "geld voor de barbecue",
+      "cn": "烧烤的钱"
+     },
+     {
+      "nl": "haar lunch voor de pauze",
+      "cn": "午休吃的面包"
+     },
+     {
+      "nl": "haar sportkleding",
+      "cn": "她的运动服"
+     },
+     {
+      "nl": "iets te drinken voor de pauze",
+      "cn": "午休喝的东西"
+     }
+    ],
+    "answer": 1,
+    "explain": "原文:<b>U moet zelf uw brood meenemen</b>。运动服不是带去,而是 <b>thuis aantrekken</b>(在家穿好);钱在<b>报名时</b>就付了;喝的 <b>wij zorgen voor koffie en thee</b>。"
+   },
+   {
+    "q": "De kinderen van Halima doen 's middags mee met de sportdag. Welke sport gaan ze doen?",
+    "cnQ": "Halima 的孩子下午参加。他们做什么运动?",
+    "opts": [
+     {
+      "nl": "basketbal",
+      "cn": "篮球"
+     },
+     {
+      "nl": "tennis",
+      "cn": "网球"
+     },
+     {
+      "nl": "voetbal",
+      "cn": "足球"
+     },
+     {
+      "nl": "volleybal",
+      "cn": "排球"
+     }
+    ],
+    "answer": 3,
+    "explain": "原文:<b>Na de pauze is er een voetbaltoernooi. Voor de kinderen is er dan een volleybalwedstrijd.</b> 足球是大人的,排球才是孩子的。网球和篮球都在<b>上午</b>。"
+   },
+   {
+    "q": "De man van Halima kan niet meedoen met de sportdag. Hij wil wel meedoen aan de barbecue. Wat moet hij doen?",
+    "cnQ": "Halima 的先生不参加运动日,但想参加烧烤。他该怎么做?",
+    "opts": [
+     {
+      "nl": "zich aanmelden bij Jan",
+      "cn": "找 Jan 报名"
+     },
+     {
+      "nl": "zich aanmelden bij Marie",
+      "cn": "找 Marie 报名"
+     },
+     {
+      "nl": "zich aanmelden bij Mo",
+      "cn": "找 Mo 报名"
+     },
+     {
+      "nl": "Niets, hij mag niet mee barbecueën.",
+      "cn": "没法参加烧烤"
+     }
+    ],
+    "answer": 2,
+    "explain": "最后一段:<b>Als u niet meedoet aan de sportdag, kunt u zich tot 1 juli voor de barbecue aanmelden bij Mo</b>。Jan 管运动日报名,Marie 管不吃肉的登记 —— 三个人分工不同,是典型的人名陷阱。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-7",
+  "set": "真题套 1",
+  "type": "email",
+  "title": "E-mail: Bruiloft Nadia en Richard",
+  "text_nl": "Michael werkt op een kantoor. Zijn collega Nadia gaat trouwen met Richard.\n\nBruiloft Nadia en Richard\n\nBeste collega's,\n\nVolgende week vrijdag is de bruiloft van Nadia en Richard! Daarom hebben we een feestcommissie opgericht. De feestcommissie bestaat uit William, David en Elise. We hebben alle drie een taak, zodat we er een leuke dag van kunnen maken!\n\nWij willen een bus huren om samen met collega's naar de bruiloft te gaan. Wil je mee met de bus? Geef je dan op bij David.\n\nWe willen met de collega's een cadeau geven aan het bruidspaar. Als je wilt, kun je ook meedoen. Je kunt geld aan William geven. We weten nog niet precies wat we gaan geven. Op het bureau van Elise ligt een lijstje met cadeaus. Kruis op het lijstje aan wat je het leukste cadeau vindt: een cadeaubon of een weekendje weg. We gaan het cadeau geven dat het meest gekozen is door jullie.\n\nNadia is deze week nog gewoon aan het werk. Ons cadeau moet natuurlijk wel een verrassing blijven. Let er dus op dat je niets zegt tegen Nadia!\n\nGroeten, de feestcommissie\nDavid, William en Elise",
+  "text_cn": "Michael 在办公室工作,同事 Nadia 要和 Richard 结婚。\n\nNadia 和 Richard 的婚礼\n\n各位同事:\n\n下周五是 Nadia 和 Richard 的婚礼!为此我们成立了筹备小组,成员是 William、David 和 Elise。我们三个各有分工,好让这天过得开心!\n\n我们想租一辆大巴,和同事们一起去婚礼。想坐大巴吗?找 David 报名。\n\n我们想以同事们的名义送新人一份礼物。愿意参加的话,可以把钱交给 William。具体送什么还没定。Elise 桌上有一张礼物清单,请在上面勾选你觉得最好的:礼品券,还是一个周末短途游。我们会送得票最多的那个。\n\nNadia 这周还照常上班。礼物当然得保密,所以千万别跟她提!\n\n筹备小组敬上\nDavid、William 和 Elise",
+  "questions": [
+   {
+    "q": "Michael wil met de bus mee naar de bruiloft. Bij wie moet hij zich opgeven?",
+    "cnQ": "Michael 想坐大巴去婚礼。该找谁报名?",
+    "opts": [
+     {
+      "nl": "bij David",
+      "cn": "找 David"
+     },
+     {
+      "nl": "bij Elise",
+      "cn": "找 Elise"
+     },
+     {
+      "nl": "bij William",
+      "cn": "找 William"
+     }
+    ],
+    "answer": 0,
+    "explain": "原文:<b>Wil je mee met de bus? Geef je dan op bij David.</b> William 收钱,Elise 桌上放清单 —— 三人各管一件事,读题先锁定<b>大巴</b>这个关键词。"
+   },
+   {
+    "q": "Welk cadeau gaan de collega's samen geven aan Nadia en Richard?",
+    "cnQ": "同事们打算合送什么礼物?",
+    "opts": [
+     {
+      "nl": "een cadeaubon voor een weekendje weg",
+      "cn": "一张周末游的礼品券"
+     },
+     {
+      "nl": "geld",
+      "cn": "现金"
+     },
+     {
+      "nl": "Dat moeten ze nog kiezen.",
+      "cn": "还没定,要投票选"
+     }
+    ],
+    "answer": 2,
+    "explain": "原文:<b>We weten nog niet precies wat we gaan geven</b> + <b>We gaan het cadeau geven dat het meest gekozen is</b>。A 是把两个<b>并列的</b>选项(cadeaubon <b>of</b> weekendje weg)错误地拼成了一个。"
+   },
+   {
+    "q": "Waarom stuurt de feestcommissie deze e-mail vooral?",
+    "cnQ": "筹备小组发这封邮件主要是为了什么?",
+    "opts": [
+     {
+      "nl": "om nog wat taken te verdelen",
+      "cn": "再分配一些任务"
+     },
+     {
+      "nl": "om te vertellen wat zij geregeld hebben",
+      "cn": "告知他们安排了什么"
+     },
+     {
+      "nl": "om te vragen wie er nog meer bij de feestcommissie wil",
+      "cn": "问还有谁想加入"
+     }
+    ],
+    "answer": 1,
+    "explain": "整封邮件在讲已经安排好的三件事:大巴、礼物、清单。分工已定(<b>We hebben alle drie een taak</b>),也没招新成员。主旨题要看整体,不要抠某一句。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-8",
+  "set": "真题套 1",
+  "type": "advertisement",
+  "title": "EHBO De Groene Cirkel",
+  "text_nl": "Op internet staat een folder met informatie over EHBO-cursussen.\n\nEHBO De Groene Cirkel\n\nEHBO betekent: Eerste Hulp Bij Ongelukken. Als EHBO'er kunt u helpen als er een ongeluk gebeurt. Bijvoorbeeld als uw buurjongen valt en zijn arm breekt. Of als iemand zich snijdt bij het eten maken. U kunt bij ons verschillende EHBO-cursussen volgen. U haalt uw diploma bij ons altijd in korte tijd.\n\nCursus EHBO I\nDit is de algemene cursus. U leert om te helpen bij allerlei ongelukken. Bijvoorbeeld als iemand z'n been breekt. Maar u leert ook wat u moet doen bij andere problemen, zoals een bloedneus of brandwond. De cursus bestaat uit zes bijeenkomsten. U krijgt er een online cursusboek bij. Aan het einde van de cursus doet u examen in de praktijk.\nKosten: € 124,50\n\nCursus EHBO II\nDit is de cursus Reanimeren. Deze cursus kan u helpen om levens te redden! U leert mensen met een hartstilstand of ademstilstand te helpen. De cursus bestaat uit één bijeenkomst van drie uur. U krijgt de gids Reanimatie mee naar huis.\nKosten: € 72,50\n\nCursus EHBO III\nDit is de cursus EHBO voor ouders. Deze cursus is zeer geschikt voor ouders en verzorgers. Is een kind bijvoorbeeld gewond of ziek? Of moet een kind ineens erg hoesten? Deze cursus leert u hoe u dan kunt helpen. De cursus is ook erg handig als u in het onderwijs werkt. De cursus bestaat uit vier bijeenkomsten.\nKosten: € 105,-",
+  "text_cn": "网上一份急救课程的宣传页。\n\nEHBO De Groene Cirkel(急救培训)\n\nEHBO 的意思是事故急救。作为急救员,发生意外时你能帮上忙,比如邻居家孩子摔断胳膊,或者有人做饭时切到手。我们这里有几种急救课程,拿证时间都很短。\n\n课程 EHBO I\n通用课。学习在各种事故中施救,比如有人摔断腿,也包括流鼻血、烫伤等情况。课程共六次,附赠在线教材,结课有实操考试。\n费用:124.50 欧\n\n课程 EHBO II\n心肺复苏课。这门课能帮你救命!学习如何救助心跳骤停或呼吸骤停的人。课程只有一次,时长三小时,可带走一本复苏指南。\n费用:72.50 欧\n\n课程 EHBO III\n家长急救课。非常适合家长和看护者。孩子受伤或生病了?突然咳得厉害?这门课教你怎么处理。如果你在教育行业工作,这门课也很实用。课程共四次。\n费用:105 欧",
+  "questions": [
+   {
+    "q": "Myra geeft les op een basisschool. Ze wil een EHBO-cursus volgen die past bij haar werk. Welke cursus is het meest geschikt voor Myra?",
+    "cnQ": "Myra 在小学教书,想选一门和工作相关的急救课。哪门最合适?",
+    "opts": [
+     {
+      "nl": "cursus EHBO I",
+      "cn": "课程 EHBO I"
+     },
+     {
+      "nl": "cursus EHBO II",
+      "cn": "课程 EHBO II"
+     },
+     {
+      "nl": "cursus EHBO III",
+      "cn": "课程 EHBO III"
+     }
+    ],
+    "answer": 2,
+    "explain": "EHBO III 里写着 <b>De cursus is ook erg handig als u in het onderwijs werkt</b>。<b>het onderwijs</b> = 教育行业,对应在小学教书。"
+   },
+   {
+    "q": "Aylin wil leren reanimeren. In hoeveel bijeenkomsten leert zij dat?",
+    "cnQ": "Aylin 想学心肺复苏。要上几次课?",
+    "opts": [
+     {
+      "nl": "één",
+      "cn": "一次"
+     },
+     {
+      "nl": "drie",
+      "cn": "三次"
+     },
+     {
+      "nl": "vier",
+      "cn": "四次"
+     },
+     {
+      "nl": "zes",
+      "cn": "六次"
+     }
+    ],
+    "answer": 0,
+    "explain": "<b>Reanimeren</b> 是 EHBO II:<b>één bijeenkomst van drie uur</b>。三是<b>小时</b>数,不是次数 —— 故意设的数字陷阱。"
+   },
+   {
+    "q": "Ronald wil zoveel mogelijk verschillende dingen leren over EHBO. Welke cursus kan hij het beste kiezen?",
+    "cnQ": "Ronald 想尽可能学到多种急救知识。选哪门?",
+    "opts": [
+     {
+      "nl": "cursus EHBO I",
+      "cn": "课程 EHBO I"
+     },
+     {
+      "nl": "cursus EHBO II",
+      "cn": "课程 EHBO II"
+     },
+     {
+      "nl": "cursus EHBO III",
+      "cn": "课程 EHBO III"
+     }
+    ],
+    "answer": 0,
+    "explain": "EHBO I 是 <b>de algemene cursus</b>(通用课):<b>helpen bij allerlei ongelukken</b>,还包括流鼻血、烫伤。<b>allerlei</b>(各种各样)对应题干的<b>尽可能多种</b>。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-9",
+  "set": "真题套 1",
+  "type": "advertisement",
+  "title": "Bartjes Kringloopcentrum",
+  "text_nl": "In de krant staat een tekst over Bartjes Kringloopcentrum.\n\nBartjes Kringloopcentrum\n\nIn Bartjes Kringloopcentrum is veel te koop. Gebruikte spullen of nieuwe spullen, altijd goed en goedkoop. Kom regelmatig kijken. Er is altijd weer iets anders te koop.\n\nWat hebben we te koop?\n• Kleding en schoenen voor dames, heren en kinderen\n• Boeken en tijdschriften voor volwassenen en jeugd\n• Elektrische apparaten, meubels, speelgoed, enzovoorts\n\nHoe werken we?\nU brengt uw spullen naar ons. Wij kunnen ze ook gratis bij u thuis ophalen. We nemen niet alles mee, alleen wat we kunnen verkopen in onze winkel. Wij controleren en testen alle spullen. Wat kapot is, proberen we te maken. Ook maken we alles schoon. Daarna zetten we de spullen te koop in onze winkel. Als u spullen bij ons koopt, kunnen we ze bij u thuis afleveren. Daarvoor betaalt u 5 euro.\n\nWat doen we met onze winst?\nU krijgt geen geld voor uw spullen. De medewerkers van Bartjes zijn allemaal vrijwilligers. Het geld dat we verdienen met de verkoop gaat naar een goed doel. Elk jaar kiezen we een ander goed doel. Het goede doel is dit jaar kinderboerderij Het bokje.",
+  "text_cn": "报纸上一篇关于旧货中心的文章。\n\nBartjes 旧货中心\n\n我们这里有很多东西卖。二手的、全新的都有,质量好又便宜。常来看看,每次都有新货。\n\n我们卖什么?\n• 男女和儿童的服装鞋子\n• 成人和青少年的书籍杂志\n• 电器、家具、玩具等等\n\n我们怎么运作?\n您把东西送来,我们也可以免费上门取。我们不是什么都收,只收店里卖得掉的。所有东西都会检查和测试。坏的我们尽量修好,也都会清洁干净,然后摆到店里出售。您在我们这儿买了东西,我们可以送到家,费用 5 欧。\n\n利润怎么用?\n您的东西我们不付钱。Bartjes 的员工全是志愿者。销售赚的钱捐给一个公益项目,每年选一个不同的。今年是儿童农场 Het bokje。",
+  "questions": [
+   {
+    "q": "Bartjes krijgt vaak kapotte spullen. Wat doet Bartjes met de kapotte spullen?",
+    "cnQ": "Bartjes 常收到坏的东西。他们怎么处理?",
+    "opts": [
+     {
+      "nl": "Die brengen ze terug naar de eigenaar.",
+      "cn": "退回给原主人"
+     },
+     {
+      "nl": "Die gooien ze weg.",
+      "cn": "扔掉"
+     },
+     {
+      "nl": "Die proberen ze te repareren.",
+      "cn": "尽量修好"
+     }
+    ],
+    "answer": 2,
+    "explain": "原文:<b>Wat kapot is, proberen we te maken</b>。<b>maken</b> 在这里是修理的意思(= repareren),不是制作。"
+   },
+   {
+    "q": "John heeft spullen voor Bartjes. Bartjes moet de spullen bij hem op komen halen. Hoeveel moet hij dan betalen aan Bartjes?",
+    "cnQ": "John 有东西要给 Bartjes,需要上门来取。他付多少钱?",
+    "opts": [
+     {
+      "nl": "5 euro",
+      "cn": "5 欧"
+     },
+     {
+      "nl": "niets",
+      "cn": "不用付"
+     },
+     {
+      "nl": "Dat ligt aan het soort spullen.",
+      "cn": "看是什么东西"
+     }
+    ],
+    "answer": 1,
+    "explain": "原文:<b>Wij kunnen ze ook gratis bij u thuis ophalen</b>(免费上门取)。那 5 欧是<b>买东西之后送货</b>的费用 —— 方向正好相反,最经典的陷阱。"
+   },
+   {
+    "q": "Waar gaat de winst van Bartjes dit jaar naartoe?",
+    "cnQ": "今年的利润捐给谁?",
+    "opts": [
+     {
+      "nl": "naar de medewerkers van Bartjes",
+      "cn": "给员工"
+     },
+     {
+      "nl": "naar kinderboerderij Het bokje",
+      "cn": "给儿童农场 Het bokje"
+     },
+     {
+      "nl": "naar verschillende goede doelen",
+      "cn": "给多个公益项目"
+     }
+    ],
+    "answer": 1,
+    "explain": "原文:<b>Het goede doel is dit jaar kinderboerderij Het bokje</b>。员工是<b>志愿者</b>(不拿钱);<b>Elk jaar kiezen we een ander goed doel</b> 是每年<b>一个</b>,不是同时多个。"
+   }
+  ]
+ },
+ {
+  "id": "lz1-10",
+  "set": "真题套 1",
+  "type": "notice",
+  "title": "Ziekmelding op het werk",
+  "text_nl": "Felicity, Emilio en Jaime werken bij supermarkt BJ. Dit zijn de regels voor als je je ziek meldt.\n\nZiekmelding\n\nHoe meld ik mij ziek?\nU meldt u telefonisch ziek bij uw werkgever. Dit doet u zo snel mogelijk, maar uiterlijk op het tijdstip dat uw werkdag begint. Als uw werkdag normaal bijvoorbeeld om 9 uur begint, meldt u zich uiterlijk om 9 uur ziek. Wordt u onder werktijd ziek, dan meldt u dit meteen. In ieder geval voordat u naar huis gaat.\n\nWat vertel ik tijdens een ziekmelding?\nWaar hebt u last van? Wat gaat u doen om zo snel mogelijk beter te worden? Wanneer kunt u weer werken, denkt u? Moeten uw collega's werk van u overnemen? Dit zijn allemaal dingen die uw werkgever moet weten. Ook is het belangrijk dat uw werkgever u kan bereiken. U spreekt tijdens het gesprek ook af wanneer u elkaar weer spreekt.\n\nMoet ik alle klachten aan mijn werkgever vertellen?\nU hebt recht op uw privacy. U hoeft geen medische gegevens te geven. Als u privéproblemen hebt, hoeft u daar niets over te vertellen. U moet wél vertellen waarom u niet kunt komen werken. U kunt zeggen dat u om medische redenen of privéredenen niet kunt komen werken. Meer hoeft u niet te zeggen.",
+  "text_cn": "三人在 BJ 超市工作。这是请病假的规定。\n\n病假报备\n\n怎么报病假?\n打电话向雇主报备。尽快,但最晚不能超过你当天上班开始的时间。比如你平时九点上班,那最晚九点就要报。如果是在上班期间病了,要立刻报备,无论如何要在回家之前报。\n\n报备时要说什么?\n哪里不舒服?你打算怎么尽快好起来?你觉得什么时候能回来上班?需要同事接手你的工作吗?这些都是雇主需要知道的。另外雇主要能联系上你,通话时也要约好下次什么时候再联系。\n\n所有症状都要告诉雇主吗?\n你有隐私权。不必提供医疗信息。如果是私人问题,也不用说。但你必须说明为什么不能来上班,可以说是医疗原因或私人原因,说到这儿就够了。",
+  "questions": [
+   {
+    "q": "Felicity is aan het werk en voelt zich ziek. Het is drie uur 's middags. Wat moet ze doen?",
+    "cnQ": "Felicity 正在上班,下午三点觉得不舒服。她该怎么做?",
+    "opts": [
+     {
+      "nl": "Ze moet naar huis gaan en zich dan meteen ziek melden.",
+      "cn": "先回家,然后马上报备"
+     },
+     {
+      "nl": "Ze moet naar huis gaan en zich de volgende werkdag ziek melden.",
+      "cn": "先回家,第二个工作日再报"
+     },
+     {
+      "nl": "Ze moet zich ziek melden en dan naar huis gaan.",
+      "cn": "先报备,然后再回家"
+     }
+    ],
+    "answer": 2,
+    "explain": "原文:<b>Wordt u onder werktijd ziek, dan meldt u dit meteen. In ieder geval voordat u naar huis gaat.</b> 关键是 <b>voordat</b>(在……之前)—— 先报备、后回家。"
+   },
+   {
+    "q": "Jaime meldt zich ziek. Wat moet hij vertellen tijdens zijn ziekmelding?",
+    "cnQ": "Jaime 报病假时必须说什么?",
+    "opts": [
+     {
+      "nl": "wanneer hij denkt dat hij weer kan werken",
+      "cn": "他觉得什么时候能回来上班"
+     },
+     {
+      "nl": "wanneer hij ziek geworden is",
+      "cn": "他什么时候生的病"
+     },
+     {
+      "nl": "wat voor werk hij misschien nog wel kan doen",
+      "cn": "他还能做什么工作"
+     }
+    ],
+    "answer": 0,
+    "explain": "原文列出的四个问题里有 <b>Wanneer kunt u weer werken, denkt u?</b>。B 和 C 原文根本没提 —— A2 阅读的正确答案几乎总能在原文里找到几乎一样的句子。"
+   }
+  ]
+ }
+]);
 </script>
 <script>
 /* ===========================================================
@@ -24732,6 +25651,7 @@ const state = {
   patternIdx: 0,
   // reading
   readingIdx: 0,
+  readingSet: '真题套 1',
   readingTab: 'questions',     // 'questions' | 'tips'
   readingQuestionIdx: 0,
   readingShowCN: false,
@@ -25295,9 +26215,26 @@ function renderReading(main) {
     return;
   }
 
+  // set filter
+  const setOf = x => x.set || '练习题库';
+  const sets = [...new Set(C.READING.map(setOf))];
+  const setRow = el('div', { class: 'pattern-tabs' });
+  sets.forEach(sv => {
+    const n = C.READING.filter(x => setOf(x) === sv).length;
+    setRow.appendChild(el('button', {
+      class: 'pattern-tab' + (state.readingSet === sv ? ' active' : ''),
+      onclick: () => { state.readingSet = sv; state.readingIdx = 0; state.readingShowCN = false; saveState(); renderReading(main); }
+    }, `${sv} ${n}`));
+  });
+  main.appendChild(setRow);
+  if (sets.indexOf(state.readingSet) === -1) state.readingSet = sets[0];
+
+  const pool = C.READING.filter(x => setOf(x) === state.readingSet);
+  if (state.readingIdx >= pool.length) state.readingIdx = 0;
+
   // passage selector
   const tabs = el('div', { class: 'pattern-tabs' });
-  C.READING.forEach((r, i) => {
+  pool.forEach((rr, i) => {
     tabs.appendChild(el('button', {
       class: 'pattern-tab' + (state.readingIdx === i ? ' active' : ''),
       onclick: () => { state.readingIdx = i; state.readingQuestionIdx = 0; state.readingShowCN = false; saveState(); renderReading(main); }
@@ -25305,7 +26242,7 @@ function renderReading(main) {
   });
   main.appendChild(tabs);
 
-  const r = C.READING[state.readingIdx];
+  const r = pool[state.readingIdx];
   const card = el('div', { class: 'card' });
   const typeLabel = { email: '📧 邮件', advertisement: '📰 广告', notice: '📌 通知', poster: '📋 海报', sign: '🪧 告示' }[r.type] || r.type;
   card.appendChild(el('div', { class: 'card-sub' }, typeLabel));
@@ -25792,6 +26729,7 @@ function renderReorderExercise(main, ex) {
 =========================================================== */
 function renderListening(main) {
   main.innerHTML = "";
+  if (window.speechSynthesis) { speechSynthesis.cancel(); speechSynthesis.getVoices(); }
   const C = window.CONTENT;
 
   // sub-tab switcher
@@ -25868,12 +26806,24 @@ function renderListeningPractice(main) {
 
   const d = dialogues[state.listeningIdx];
   const card = el('div', { class: 'card' });
-  card.appendChild(el('div', { class: 'card-sub' }, '听力对话练习 (无音频版)'));
+  card.appendChild(el('div', { class: 'card-sub' }, '听力对话练习 · 有语音'));
   card.appendChild(el('h2', { class: 'card-head' }, d.title));
   card.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', marginBottom: '12px', fontStyle: 'italic' } }, d.scenario));
 
   card.appendChild(el('div', { class: 'plan-extra', style: { background: 'var(--yellow-soft)', color: '#7a5d10', borderRadius: '10px', padding: '10px 12px', fontSize: '13px', marginBottom: '14px' } },
-    '💡 提示:这是文字版练习。真实考试会听音频。建议你先<b>不看 transcript</b>直接做题,模拟真实考试。'));
+    '💡 正确练法:<b>先别看原文</b>,点下面的播放键听一遍,直接做题。做完再看原文对照。第一遍听不懂是正常的,用慢速再听一遍。'));
+
+  // --- 语音播放 ---
+  const spreek = (txt, rate) => {
+    const schoon = String(txt || '')
+      .split('\n').map(l => l.replace(/^\s*[A-Za-z][A-Za-z ]{0,14}:\s*/, '')).join('. ');
+    spkSpeak(schoon, rate);
+  };
+  const audioRow = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '14px' } });
+  audioRow.appendChild(el('button', { class: 'btn', onclick: () => spreek(d.transcript_nl, 0.9) }, '▶︎ 播放对话'));
+  audioRow.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => spreek(d.transcript_nl, 0.65) }, '🐢 慢速'));
+  audioRow.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => { if (window.speechSynthesis) speechSynthesis.cancel(); } }, '■ 停止'));
+  card.appendChild(audioRow);
 
   // Transcript toggle
   card.appendChild(el('button', {
@@ -25882,7 +26832,16 @@ function renderListeningPractice(main) {
   }, state.listeningShowTranscript ? '隐藏对话' : '🇳🇱 查看对话原文 (Transcript)'));
 
   if (state.listeningShowTranscript) {
-    card.appendChild(el('div', { class: 'reading-text', style: { whiteSpace: 'pre-line' } }, d.transcript_nl));
+    const tbox = el('div', { class: 'reading-text', style: { whiteSpace: 'pre-line' } });
+    String(d.transcript_nl || '').split('\n').forEach(line => {
+      if (!line.trim()) return;
+      tbox.appendChild(el('div', {
+        style: { cursor: 'pointer', padding: '2px 0' },
+        title: '点句子听这一句',
+        onclick: () => spreek(line, 0.8)
+      }, '🔊 ' + line));
+    });
+    card.appendChild(tbox);
     card.appendChild(el('button', {
       class: 'reading-cn-toggle',
       style: { marginTop: '4px' },

@@ -24667,7 +24667,7 @@ window.CONTENT.WRITING_TASKS = [
 =========================================================== */
 window.CONTENT.PLAN30 = {
  "intro": "五门一起排:<b>Lezen 阅读 25 题/65 分钟</b>、<b>Luisteren 听力 25 题/45 分钟</b>、<b>Schrijven 写作 4 题(纸笔手写)</b>、<b>Spreken 口语 16 题/35 分钟</b>、<b>KNM 社会常识 40 题</b>。每天大约 <b>3 小时</b>,分成几个 30–45 分钟的小块做,不要连着干。",
- "waarschuwing": "<b>先说实话:</b>零基础到 A2 通常需要 150–200 小时。这份计划把它压到一个月,意味着每天 3 小时、一天都不能断,而且强度是真的大。<b>最有把握的是 Schrijven 和 Spreken</b>(套模板就能过);<b>Lezen 靠技巧 + 词汇</b>,一个月能练到边缘;<b>Luisteren 最难速成</b>,因为它只能靠听力时长堆;<b>KNM 是纯背诵</b>,反而最好办。如果一个月后只能过三到四门,先考过的那几门<b>成绩会保留</b>,剩下的补考就行 —— 不必五门死磕在同一天。",
+ "waarschuwing": "<b>先说实话:</b>零基础到 A2 通常需要 150–200 小时。这份计划把它压到一个月,意味着每天 3 小时、一天都不能断,而且强度是真的大。<b>最有把握的是 Schrijven 和 Spreken</b>(套模板就能过);<b>Lezen 靠技巧 + 词汇</b>,一个月能练到边缘;<b>Luisteren</b> 过去被认为最难速成,但官方练习卷的播放器带 10 秒回放键、也没有“只能听一次”的提示,所以它更像“带着问题定位信息”而不是“一遍听懂”——真正的限制是 45 分钟做 25 题的时间,不是听几遍;<b>KNM 是纯背诵</b>,反而最好办。如果一个月后只能过三到四门,先考过的那几门<b>成绩会保留</b>,剩下的补考就行 —— 不必五门死磕在同一天。",
  "weken": [
   {
    "naam": "第 1 周 · 打地基(发音 + 骨架 + 每天听读)",
@@ -25638,6 +25638,805 @@ window.CONTENT.READING.push(...[
 </script>
 <script>
 /* ===========================================================
+   补充包 2026-08-28
+   1) 70 个真题高频词(从官方 Lezen 四套的原文里统计出来、词库里没有的)
+   2) 2024-03 考场回忆的 4 道写作真题
+   3) 从共享文档整理的常用句
+=========================================================== */
+window.CONTENT.VOCAB.push(...[
+ {
+  "nl": "de tekst",
+  "cn": "文章、文本",
+  "type": "n",
+  "ex_nl": "Lees eerst de vraag en daarna de tekst.",
+  "ex_cn": "先看题目,再读文章。",
+  "theme": "examen"
+ },
+ {
+  "nl": "het woord",
+  "cn": "单词",
+  "type": "n",
+  "ex_nl": "Ik ken dit woord nog niet.",
+  "ex_cn": "这个词我还不认识。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de les",
+  "cn": "课",
+  "type": "n",
+  "ex_nl": "De lessen beginnen om negen uur.",
+  "ex_cn": "课九点开始。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de cursus",
+  "cn": "课程、培训班",
+  "type": "n",
+  "ex_nl": "Ik volg een cursus Nederlands.",
+  "ex_cn": "我在上荷兰语课。",
+  "theme": "examen"
+ },
+ {
+  "nl": "het cursusboek",
+  "cn": "教材",
+  "type": "n",
+  "ex_nl": "U krijgt het cursusboek bij de eerste les.",
+  "ex_cn": "第一次上课时发教材。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de bijeenkomst",
+  "cn": "课次、聚会",
+  "type": "n",
+  "ex_nl": "De cursus bestaat uit zes bijeenkomsten.",
+  "ex_cn": "这门课一共六次。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de cursist",
+  "cn": "学员",
+  "type": "n",
+  "ex_nl": "De cursisten schrijven op het bord.",
+  "ex_cn": "学员们在黑板上写字。",
+  "theme": "examen"
+ },
+ {
+  "nl": "volgen",
+  "cn": "上(课)、跟随",
+  "type": "v",
+  "ex_nl": "Zij volgt een opleiding in de techniek.",
+  "ex_cn": "她在读技术类专业。",
+  "theme": "examen"
+ },
+ {
+  "nl": "studeren",
+  "cn": "读书、学习",
+  "type": "v",
+  "ex_nl": "Mijn zoon studeert in Utrecht.",
+  "ex_cn": "我儿子在乌得勒支上学。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de planning",
+  "cn": "计划",
+  "type": "n",
+  "ex_nl": "Begin met het maken van een planning.",
+  "ex_cn": "先做一个计划。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de inhoud",
+  "cn": "内容",
+  "type": "n",
+  "ex_nl": "Denk daarna even na over de inhoud.",
+  "ex_cn": "之后想一想内容。",
+  "theme": "examen"
+ },
+ {
+  "nl": "onthouden",
+  "cn": "记住",
+  "type": "v",
+  "ex_nl": "Zo onthoudt u de informatie beter.",
+  "ex_cn": "这样你记得更牢。",
+  "theme": "examen"
+ },
+ {
+  "nl": "opnieuw",
+  "cn": "重新、再一次",
+  "type": "adv",
+  "ex_nl": "Lees die bladzijde opnieuw.",
+  "ex_cn": "把那一页重读一遍。",
+  "theme": "examen"
+ },
+ {
+  "nl": "dezelfde",
+  "cn": "同一个、同样的",
+  "type": "adj",
+  "ex_nl": "Lees op verschillende dagen dezelfde tekst.",
+  "ex_cn": "隔几天读同一篇文章。",
+  "theme": "examen"
+ },
+ {
+  "nl": "verschillende",
+  "cn": "各种各样的、若干",
+  "type": "adj",
+  "ex_nl": "Er zijn verschillende soorten groenten.",
+  "ex_cn": "有好几种蔬菜。",
+  "theme": "examen"
+ },
+ {
+  "nl": "het stuk",
+  "cn": "一段、一块",
+  "type": "n",
+  "ex_nl": "Lees eerst een stuk tekst.",
+  "ex_cn": "先读一段文字。",
+  "theme": "examen"
+ },
+ {
+  "nl": "langer",
+  "cn": "更久、更长",
+  "type": "adv",
+  "ex_nl": "Leer niet langer dan een half uur.",
+  "ex_cn": "一次别学超过半小时。",
+  "theme": "examen"
+ },
+ {
+  "nl": "allemaal",
+  "cn": "全都",
+  "type": "adv",
+  "ex_nl": "Dat moet uw werkgever allemaal weten.",
+  "ex_cn": "这些你雇主都得知道。",
+  "theme": "examen"
+ },
+ {
+  "nl": "hieronder",
+  "cn": "下面(见下)",
+  "type": "adv",
+  "ex_nl": "De prijzen ziet u hieronder.",
+  "ex_cn": "价格见下方。",
+  "theme": "examen"
+ },
+ {
+  "nl": "maximaal",
+  "cn": "最多",
+  "type": "adj",
+  "ex_nl": "Er mogen maximaal tien mensen mee.",
+  "ex_cn": "最多十个人可以去。",
+  "theme": "examen"
+ },
+ {
+  "nl": "de meubels",
+  "cn": "家具",
+  "type": "n",
+  "ex_nl": "Wij bezorgen de meubels bij u thuis.",
+  "ex_cn": "我们把家具送到您家。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de spullen",
+  "cn": "东西、物品",
+  "type": "n",
+  "ex_nl": "Hebt u spullen die u niet meer gebruikt?",
+  "ex_cn": "您有不用的东西吗?",
+  "theme": "winkel"
+ },
+ {
+  "nl": "bezorgen",
+  "cn": "送货、投递",
+  "type": "v",
+  "ex_nl": "Wij bezorgen alles bij u thuis.",
+  "ex_cn": "我们把一切送到您家。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de bezorging",
+  "cn": "配送",
+  "type": "n",
+  "ex_nl": "De bezorging kost vijf euro.",
+  "ex_cn": "配送费五欧。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de folder",
+  "cn": "宣传单",
+  "type": "n",
+  "ex_nl": "In de winkel ligt een folder.",
+  "ex_cn": "店里有一份宣传单。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de klant",
+  "cn": "顾客",
+  "type": "n",
+  "ex_nl": "De klanten wachten bij de kassa.",
+  "ex_cn": "顾客们在收银台等着。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de klantenkaart",
+  "cn": "会员卡",
+  "type": "n",
+  "ex_nl": "Hebt u een klantenkaart van deze winkel?",
+  "ex_cn": "您有这家店的会员卡吗?",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de prijs",
+  "cn": "价格",
+  "type": "n",
+  "ex_nl": "De prijzen staan op de website.",
+  "ex_cn": "价格在网站上。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "het lijstje",
+  "cn": "小清单",
+  "type": "n",
+  "ex_nl": "U maakt een lijstje met de meubels.",
+  "ex_cn": "您列一张家具清单。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "verzamelen",
+  "cn": "收集、集齐",
+  "type": "v",
+  "ex_nl": "Wij verzamelen deze spullen voor u.",
+  "ex_cn": "我们帮您把这些东西收齐。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "het speelgoed",
+  "cn": "玩具",
+  "type": "n",
+  "ex_nl": "Wij verkopen ook speelgoed.",
+  "ex_cn": "我们也卖玩具。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de openingstijden",
+  "cn": "营业时间",
+  "type": "n",
+  "ex_nl": "De openingstijden staan op de deur.",
+  "ex_cn": "营业时间贴在门上。",
+  "theme": "winkel"
+ },
+ {
+  "nl": "de verdieping",
+  "cn": "楼层",
+  "type": "n",
+  "ex_nl": "Ik woon op de tweede verdieping.",
+  "ex_cn": "我住三楼(荷兰的二层)。",
+  "theme": "wonen"
+ },
+ {
+  "nl": "het gebouw",
+  "cn": "楼、建筑",
+  "type": "n",
+  "ex_nl": "Dat is een oud gebouw.",
+  "ex_cn": "那是一栋老楼。",
+  "theme": "wonen"
+ },
+ {
+  "nl": "de bewoners",
+  "cn": "居民、住户",
+  "type": "n",
+  "ex_nl": "Alle bewoners krijgen een brief.",
+  "ex_cn": "所有住户都收到一封信。",
+  "theme": "wonen"
+ },
+ {
+  "nl": "de stapel",
+  "cn": "一摞、一堆",
+  "type": "n",
+  "ex_nl": "Er staat een stapel dozen in de kamer.",
+  "ex_cn": "房间里堆着一摞箱子。",
+  "theme": "wonen"
+ },
+ {
+  "nl": "de route",
+  "cn": "路线",
+  "type": "n",
+  "ex_nl": "De route staat in de brief.",
+  "ex_cn": "路线写在信里。",
+  "theme": "vervoer"
+ },
+ {
+  "nl": "de stadsbus",
+  "cn": "市内公交",
+  "type": "n",
+  "ex_nl": "De stadsbus rijdt elke tien minuten.",
+  "ex_cn": "市内公交每十分钟一班。",
+  "theme": "vervoer"
+ },
+ {
+  "nl": "de minuut",
+  "cn": "分钟",
+  "type": "n",
+  "ex_nl": "Het duurt ongeveer twintig minuten.",
+  "ex_cn": "大概要二十分钟。",
+  "theme": "tijd"
+ },
+ {
+  "nl": "het rooster",
+  "cn": "课表、排班表",
+  "type": "n",
+  "ex_nl": "Het nieuwe rooster hangt bij de receptie.",
+  "ex_cn": "新排班表贴在前台。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de bedrijfsarts",
+  "cn": "企业医生",
+  "type": "n",
+  "ex_nl": "U moet naar de bedrijfsarts.",
+  "ex_cn": "您得去看企业医生。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de ziekmelding",
+  "cn": "病假报备",
+  "type": "n",
+  "ex_nl": "Doe uw ziekmelding telefonisch.",
+  "ex_cn": "请打电话报病假。",
+  "theme": "werk"
+ },
+ {
+  "nl": "telefonisch",
+  "cn": "通过电话",
+  "type": "adv",
+  "ex_nl": "U meldt zich telefonisch ziek.",
+  "ex_cn": "你要打电话报病假。",
+  "theme": "werk"
+ },
+ {
+  "nl": "bereiken",
+  "cn": "联系到、够到",
+  "type": "v",
+  "ex_nl": "Uw werkgever moet u kunnen bereiken.",
+  "ex_cn": "你雇主要能联系上你。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de leidinggevende",
+  "cn": "主管、上司",
+  "type": "n",
+  "ex_nl": "Vraag het aan uw leidinggevende.",
+  "ex_cn": "这个去问你的主管。",
+  "theme": "werk"
+ },
+ {
+  "nl": "het secretariaat",
+  "cn": "办公室、秘书处",
+  "type": "n",
+  "ex_nl": "Bel het secretariaat voor een afspraak.",
+  "ex_cn": "预约请打给办公室。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de administratie",
+  "cn": "行政、账务",
+  "type": "n",
+  "ex_nl": "De administratie stuurt de rekening.",
+  "ex_cn": "账务部门寄账单。",
+  "theme": "werk"
+ },
+ {
+  "nl": "bespreken",
+  "cn": "商量、讨论",
+  "type": "v",
+  "ex_nl": "Ik wil dit graag met u bespreken.",
+  "ex_cn": "我想和您谈谈这件事。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de taak",
+  "cn": "任务",
+  "type": "n",
+  "ex_nl": "We hebben alle drie een taak.",
+  "ex_cn": "我们三个各有一项任务。",
+  "theme": "werk"
+ },
+ {
+  "nl": "het team",
+  "cn": "团队",
+  "type": "n",
+  "ex_nl": "Ons team bestaat uit vijf mensen.",
+  "ex_cn": "我们团队有五个人。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de presentatie",
+  "cn": "报告、演示",
+  "type": "n",
+  "ex_nl": "Morgen geef ik een presentatie.",
+  "ex_cn": "明天我做一个报告。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de receptie",
+  "cn": "前台",
+  "type": "n",
+  "ex_nl": "Meldt u zich bij de receptie.",
+  "ex_cn": "请到前台登记。",
+  "theme": "werk"
+ },
+ {
+  "nl": "de gegevens",
+  "cn": "信息、资料",
+  "type": "n",
+  "ex_nl": "Vul uw gegevens in op het formulier.",
+  "ex_cn": "在表格上填写您的信息。",
+  "theme": "gemeente"
+ },
+ {
+  "nl": "het telefoonnummer",
+  "cn": "电话号码",
+  "type": "n",
+  "ex_nl": "Wat is uw telefoonnummer?",
+  "ex_cn": "您的电话号码是多少?",
+  "theme": "gemeente"
+ },
+ {
+  "nl": "de uitnodiging",
+  "cn": "邀请、请柬",
+  "type": "n",
+  "ex_nl": "Ik heb een uitnodiging gekregen.",
+  "ex_cn": "我收到一份邀请。",
+  "theme": "omgang"
+ },
+ {
+  "nl": "meedoen",
+  "cn": "参加",
+  "type": "v",
+  "ex_nl": "Wilt u meedoen aan de sportdag?",
+  "ex_cn": "您想参加运动日吗?",
+  "theme": "omgang"
+ },
+ {
+  "nl": "meenemen",
+  "cn": "带上、带走",
+  "type": "v",
+  "ex_nl": "U moet zelf brood meenemen.",
+  "ex_cn": "面包请自己带。",
+  "theme": "omgang"
+ },
+ {
+  "nl": "het cadeau",
+  "cn": "礼物",
+  "type": "n",
+  "ex_nl": "Wij geven samen een cadeau.",
+  "ex_cn": "我们一起送一份礼物。",
+  "theme": "omgang"
+ },
+ {
+  "nl": "de bruiloft",
+  "cn": "婚礼",
+  "type": "n",
+  "ex_nl": "Volgende week is de bruiloft.",
+  "ex_cn": "下周是婚礼。",
+  "theme": "omgang"
+ },
+ {
+  "nl": "zich opgeven",
+  "cn": "报名",
+  "type": "v",
+  "ex_nl": "Geef je op bij David.",
+  "ex_cn": "去找 David 报名。",
+  "theme": "omgang"
+ },
+ {
+  "nl": "de barbecue",
+  "cn": "烧烤",
+  "type": "n",
+  "ex_nl": "Na de sportdag is er een barbecue.",
+  "ex_cn": "运动日之后有烧烤。",
+  "theme": "omgang"
+ },
+ {
+  "nl": "de buurtbijeenkomst",
+  "cn": "社区聚会",
+  "type": "n",
+  "ex_nl": "Komt u ook naar de buurtbijeenkomst?",
+  "ex_cn": "您也来社区聚会吗?",
+  "theme": "omgang"
+ },
+ {
+  "nl": "de sportdag",
+  "cn": "运动日",
+  "type": "n",
+  "ex_nl": "De sportdag is op negen juli.",
+  "ex_cn": "运动日在 7 月 9 日。",
+  "theme": "vrije tijd"
+ },
+ {
+  "nl": "de hardloopwedstrijd",
+  "cn": "长跑比赛",
+  "type": "n",
+  "ex_nl": "Er is een hardloopwedstrijd in het dorp.",
+  "ex_cn": "村里有一场长跑比赛。",
+  "theme": "vrije tijd"
+ },
+ {
+  "nl": "de activiteit",
+  "cn": "活动",
+  "type": "n",
+  "ex_nl": "Er is elke week een activiteit in de buurt.",
+  "ex_cn": "社区每周都有活动。",
+  "theme": "vrije tijd"
+ },
+ {
+  "nl": "de talenschool",
+  "cn": "语言学校",
+  "type": "n",
+  "ex_nl": "Ik leer Nederlands op een talenschool.",
+  "ex_cn": "我在一所语言学校学荷兰语。",
+  "theme": "onderwijs"
+ },
+ {
+  "nl": "de techniek",
+  "cn": "技术(专业)",
+  "type": "n",
+  "ex_nl": "Hij doet een opleiding in de techniek.",
+  "ex_cn": "他在读技术类专业。",
+  "theme": "onderwijs"
+ },
+ {
+  "nl": "de spoedbehandeling",
+  "cn": "急诊处理",
+  "type": "n",
+  "ex_nl": "Bel voor een spoedbehandeling.",
+  "ex_cn": "急诊请打电话。",
+  "theme": "gezondheid"
+ },
+ {
+  "nl": "last hebben van",
+  "cn": "(某处)不舒服",
+  "type": "v",
+  "ex_nl": "Ik heb last van mijn rug.",
+  "ex_cn": "我腰不舒服。",
+  "theme": "gezondheid"
+ },
+ {
+  "nl": "zich melden",
+  "cn": "报到、登记",
+  "type": "v",
+  "ex_nl": "U moet zich melden bij de balie.",
+  "ex_cn": "您要到柜台登记。",
+  "theme": "gemeente"
+ }
+]);
+window.CONTENT.WRITING_TASKS.push(...[
+ {
+  "id": "w2403-1",
+  "set": "考场回忆 2403",
+  "type": "email",
+  "titel": "拒绝演唱会邀请 + 另约",
+  "situatie_nl": "Een vriend heeft u uitgenodigd voor een concert. U kunt niet mee. U schrijft een e-mail terug.",
+  "situatie_cn": "朋友邀请你去看演唱会,你去不了。写封邮件回复他。(2024 年 3 月考场回忆题)",
+  "punten": [
+   "Schrijf dat u niet mee kunt naar het concert.",
+   "Schrijf waarom niet. Bedenk het zelf.",
+   "Stel voor om een andere keer samen iets te doen: wat en waar? Bedenk het zelf."
+  ],
+  "punten_cn": [
+   "写明你去不了演唱会",
+   "写明原因(自己编)",
+   "提议下次一起做点别的:做什么、去哪儿(自己编)"
+  ],
+  "must": [
+   "有称呼和落款",
+   "明确说了去不了",
+   "给了原因",
+   "提出了具体的替代活动(做什么 + 在哪儿)",
+   "对朋友用 je"
+  ],
+  "model_nl": "Hoi Daan,\n\nBedankt voor je uitnodiging voor het concert! Helaas kan ik niet mee.\nIk moet die zaterdag werken, want een collega is ziek en ik heb beloofd haar dienst over te nemen. Jammer, want ik hou echt van die band.\n\nZullen we een andere keer samen iets doen? Ik zou graag naar het Van Abbemuseum in Eindhoven gaan, en daarna kunnen we koffie drinken in het centrum. Zondag 15 maart zou goed uitkomen voor mij.\n\nLaat je weten of dat lukt?\n\nGroetjes,\nXinyu",
+  "model_cn": "嗨 Daan:\n\n谢谢你邀请我去演唱会!可惜我去不了。\n那个周六我得上班,因为有个同事病了,我答应替她的班。挺遗憾的,我很喜欢那个乐队。\n\n我们改天一起做点别的好吗?我挺想去埃因霍温的 Van Abbe 博物馆,之后可以在市中心喝杯咖啡。3 月 15 日周日对我合适。\n\n你看行不行?\n\nXinyu",
+  "phrases": [
+   {
+    "nl": "Bedankt voor je uitnodiging!",
+    "cn": "谢谢你的邀请!"
+   },
+   {
+    "nl": "Helaas kan ik niet mee.",
+    "cn": "可惜我去不了。"
+   },
+   {
+    "nl": "een dienst overnemen",
+    "cn": "替班"
+   },
+   {
+    "nl": "Zullen we een andere keer ...?",
+    "cn": "我们改天…好吗?"
+   }
+  ]
+ },
+ {
+  "id": "w2403-2",
+  "set": "考场回忆 2403",
+  "type": "formulier",
+  "titel": "语言课报名表",
+  "situatie_nl": "U wilt een taalcursus gaan volgen. U vult het inschrijfformulier van de talenschool in. Sommige gegevens moet u zelf bedenken.",
+  "situatie_cn": "你想报一个语言课程,填语言学校的报名表。有些信息自己编。(2024 年 3 月考场回忆题)",
+  "punten": [
+   "Vul uw persoonsgegevens in.",
+   "Kruis aan wat u na het examen gaat doen: studeren of werken.",
+   "Schrijf welke opleiding of wat voor werk dat is.",
+   "Schrijf wat u van die opleiding of dat werk vindt."
+  ],
+  "punten_cn": [
+   "填个人信息",
+   "勾选考完后是上学还是上班",
+   "写明学什么专业 / 做什么工作",
+   "写你对这个专业或工作的看法"
+  ],
+  "velden": [
+   {
+    "label": "Voor- en achternaam"
+   },
+   {
+    "label": "Adres"
+   },
+   {
+    "label": "Postcode"
+   },
+   {
+    "label": "Woonplaats"
+   },
+   {
+    "label": "Telefoonnummer"
+   },
+   {
+    "label": "E-mailadres"
+   },
+   {
+    "label": "Geboortedatum"
+   },
+   {
+    "label": "Nationaliteit"
+   },
+   {
+    "label": "Na het examen wil ik: studeren / werken (kies één)"
+   },
+   {
+    "label": "Welke opleiding of wat voor werk?",
+    "groot": true
+   },
+   {
+    "label": "Wat vindt u van die opleiding of dat werk?",
+    "groot": true
+   }
+  ],
+  "must": [
+   "个人信息每栏都填了",
+   "明确二选一(studeren 或 werken)",
+   "写清楚是什么专业/什么工作",
+   "最后一栏是完整句子,不是一个词",
+   "给了理由(用 want 或 omdat)"
+  ],
+  "model_nl": "Voor- en achternaam: Xinyu Chen\nAdres: Kerkstraat 12\nPostcode: 5611 AB\nWoonplaats: Eindhoven\nTelefoonnummer: 06 12345678\nE-mailadres: xinyu@voorbeeld.nl\nGeboortedatum: 04-06-1995\nNationaliteit: Chinese\n\nNa het examen wil ik: studeren\n\nWelke opleiding of wat voor werk?\nIk wil een opleiding Verzorgende volgen bij het ROC in Eindhoven. De opleiding duurt twee jaar en ik loop dan ook stage in een verzorgingshuis.\n\nWat vindt u van die opleiding of dat werk?\nIk vind deze opleiding heel interessant, want ik werk graag met mensen en ik wil later ouderen helpen. Het lijkt me soms wel zwaar werk, maar ik denk dat het ook dankbaar is.",
+  "model_cn": "最后两栏的中文:\n学什么——我想在埃因霍温的 ROC 读护理专业,两年制,期间还要在养老院实习。\n你怎么看——我觉得这个专业很有意思,因为我喜欢和人打交道,以后想照顾老人。工作可能挺辛苦,但我觉得也很有成就感。",
+  "phrases": [
+   {
+    "nl": "een opleiding volgen",
+    "cn": "读一个专业"
+   },
+   {
+    "nl": "stage lopen",
+    "cn": "实习"
+   },
+   {
+    "nl": "Het lijkt me zwaar werk.",
+    "cn": "我觉得这活儿挺累。"
+   },
+   {
+    "nl": "dankbaar werk",
+    "cn": "有成就感的工作"
+   }
+  ]
+ },
+ {
+  "id": "w2403-3",
+  "set": "考场回忆 2403",
+  "type": "email",
+  "titel": "告诉老板你搬家了",
+  "situatie_nl": "U bent verhuisd. U schrijft een e-mail aan uw chef om dit door te geven.",
+  "situatie_cn": "你搬家了。写邮件告诉老板。(2024 年 3 月考场回忆题)",
+  "punten": [
+   "Schrijf waarom u de e-mail stuurt.",
+   "Schrijf wat uw nieuwe adres is. Bedenk het zelf.",
+   "Schrijf wanneer u verhuisd bent."
+  ],
+  "punten_cn": [
+   "写明来意",
+   "写出新地址(自己编)",
+   "写明什么时候搬的"
+  ],
+  "must": [
+   "用正式称呼(Geachte heer/mevrouw)",
+   "全程用 u",
+   "新地址写全:街名+门牌号、邮编、城市",
+   "写了搬家日期",
+   "有正式落款"
+  ],
+  "model_nl": "Geachte heer Jansen,\n\nIk schrijf u om door te geven dat ik verhuisd ben. Mijn gegevens in de administratie kloppen daardoor niet meer.\n\nIk ben op zaterdag 2 maart verhuisd. Mijn nieuwe adres is:\nBerkenlaan 48\n5615 CD Eindhoven\n\nMijn telefoonnummer en e-mailadres blijven hetzelfde.\nWilt u dit doorgeven aan de administratie?\n\nAlvast bedankt.\n\nMet vriendelijke groet,\nXinyu Chen",
+  "model_cn": "尊敬的 Jansen 先生:\n\n我写信是想告知您我搬家了,所以公司档案里我的信息不再正确。\n\n我是 3 月 2 日周六搬的。新地址是:\nBerkenlaan 48\n5615 CD Eindhoven\n\n电话和邮箱不变。\n能麻烦您转告行政部门吗?\n\n先谢谢您。\n\n此致敬礼,\nXinyu Chen",
+  "phrases": [
+   {
+    "nl": "doorgeven",
+    "cn": "转达、告知"
+   },
+   {
+    "nl": "verhuisd zijn",
+    "cn": "已经搬家"
+   },
+   {
+    "nl": "Mijn gegevens kloppen niet meer.",
+    "cn": "我的信息不对了。"
+   },
+   {
+    "nl": "blijft hetzelfde",
+    "cn": "保持不变"
+   }
+  ]
+ },
+ {
+  "id": "w2403-4",
+  "set": "考场回忆 2403",
+  "type": "tekst",
+  "titel": "社区报:你怎么看市集",
+  "situatie_nl": "U krijgt elke week een wijkkrant. U schrijft een stukje over de markt in uw buurt. Schrijf minimaal drie zinnen op.",
+  "situatie_cn": "给社区报写一段你们街区的集市,至少三句。(2024 年 3 月考场回忆题)",
+  "punten": [
+   "Wat vindt u van de markt?",
+   "Wat koopt u op de markt?",
+   "Wat koopt u er niet? En waarom niet?"
+  ],
+  "punten_cn": [
+   "你觉得集市怎么样",
+   "你在集市上买什么",
+   "你不买什么、为什么不买"
+  ],
+  "must": [
+   "至少三句完整句",
+   "三个问题都回答了",
+   "给了理由(want / omdat)",
+   "用了 meestal / altijd / nooit 之类的频率词"
+  ],
+  "model_nl": "Ik vind de markt in onze buurt heel gezellig. Elke woensdag sta ik daar rond tien uur, want dan is het nog rustig en is de groente nog vers.\n\nIk koop er meestal groente, fruit en soms bloemen voor op tafel. De prijzen zijn er lager dan in de supermarkt en je kunt met de verkopers praten.\n\nVlees en vis koop ik er nooit, want ik weet niet hoe lang dat al buiten ligt. Die haal ik liever in de winkel, waar alles in de koeling staat.",
+  "model_cn": "我觉得我们街区的集市很热闹。每周三十点左右我都在那儿,那时候人还不多,菜也还新鲜。\n\n我一般买蔬菜、水果,有时买束花放桌上。价格比超市便宜,而且能和摊主聊两句。\n\n肉和鱼我从来不在那儿买,因为不知道在外面放了多久。这些我更愿意去店里买,那儿都放在冷柜里。",
+  "phrases": [
+   {
+    "nl": "de markt",
+    "cn": "集市"
+   },
+   {
+    "nl": "vers",
+    "cn": "新鲜"
+   },
+   {
+    "nl": "de verkoper",
+    "cn": "摊主、售货员"
+   },
+   {
+    "nl": "de koeling",
+    "cn": "冷柜、冷藏"
+   },
+   {
+    "nl": "lager dan",
+    "cn": "比…低"
+   }
+  ]
+ }
+]);
+window.CONTENT.SPEAKING.safe_sentences.push(...[{"nl": "Ik ga liever naar een concert dan naar de bioscoop.", "cn": "比起电影院,我更愿意去看演唱会。"}, {"nl": "Ik ga het liefst met de trein naar de stad.", "cn": "我最喜欢坐火车去城里。"}, {"nl": "Ik zou het liefst in Spanje willen wonen.", "cn": "我最想住在西班牙。"}, {"nl": "Ik doe veel aan sport.", "cn": "我经常运动。"}, {"nl": "Ik heb weinig contact met de buren.", "cn": "我和邻居来往不多。"}, {"nl": "Mijn moedertaal is Chinees.", "cn": "我的母语是中文。"}]);
+window.CONTENT.WRITING_BASICS.bouwplan[3].zinnen.push(...[{"nl": "Het spijt me dat ik onze afspraak moet verzetten.", "cn": "抱歉我得改一下我们的约。"}, {"nl": "Zullen we een andere datum afspreken?", "cn": "我们另约一天好吗?"}, {"nl": "Volgende week donderdagavond werkt beter voor mij.", "cn": "下周四晚上对我更合适。"}, {"nl": "Zo ja, wanneer is dit mogelijk?", "cn": "如果可以的话,什么时候方便?"}, {"nl": "Kun jij zondag voor mij werken?", "cn": "你能周日替我上班吗?"}, {"nl": "Wat is de oplossing voor dit probleem?", "cn": "这个问题该怎么解决?"}]);
+window.CONTENT.WRITING_BASICS.bouwplan.push({"stap": "⑥ 语序口诀 · 动词后面怎么排", "uitleg": "荷兰语动词后面的成分有固定顺序:<b>时间 → 方式 → 地点</b>(TMP)。<b>niet</b> 放在地点/补语前面。句子里第二个动词(原形或分词)永远甩到<b>句末</b>。写作扣分最多的就是这一条。", "zinnen": [{"nl": "Wij zullen vanavond niet naar de film gaan.", "cn": "我们今晚不去看电影。(zullen 第二位 → 时间 vanavond → niet → 地点 → gaan 到句末)"}, {"nl": "Ik kan volgende week niet aan het rijexamen deelnemen.", "cn": "我下周不能参加驾照考试。"}, {"nl": "Ik ga morgen met de fiets naar mijn werk.", "cn": "我明天骑车去上班。(时间 morgen → 方式 met de fiets → 地点 naar mijn werk)"}, {"nl": "Zij heeft gisteren een nieuwe jas gekocht.", "cn": "她昨天买了件新外套。(分词 gekocht 在句末)"}]});
+window.CONTENT.LISTENING.general_tips = ["<b>先看题,再听。</b>官方每题都写着 <b>Lees eerst de vraag. Kijk daarna naar de video.</b> 带着问题听,比听完再看题准得多。", "<b>播放器有回放键。</b>官方练习卷的播放器是 <b>⟲10 秒 / 播放暂停 / ⟳10 秒</b>,没有“只能听一次”的提示,所以听不清可以退回去重听。但 <b>45 分钟 25 题</b>,平均每题不到两分钟 —— 真正的限制是时间,不是次数。别在一题上反复纠缠。", "<b>先抓“谁、什么时候、多少钱、哪一天”。</b>A2 听力的答案基本都是这类具体信息,不是主旨。", "<b>选项先扫一眼。</b>三个选项往往只差一个词(twee/drie/vier maanden),听的时候就盯那一个位置。", "<b>听不懂就猜,马上进下一题。</b>没有倒扣分,空着和猜错一样,但纠缠会让你后面来不及。", "<b>练习方法:先只听、不看原文。</b>本 app 每篇对话都能播放(还有慢速),先听着做题,做完再看原文对照 —— 看过原文再听等于没练。"];
+window.CONTENT.LISTENING.intro = "Luisteren A2 是电脑考:<b>25 题 / 45 分钟</b>。你会看短视频、听对话和通知,然后回答选择题。每题的答案几乎都是一个具体信息(时间、价格、人名、哪一天),不是理解主旨。";
+</script>
+<script>
+/* ===========================================================
    STATE & STORAGE
 =========================================================== */
 const state = {
@@ -26037,7 +26836,7 @@ function renderVocab(main) {
   // theme pills
   const themes = [...new Set(C.VOCAB.map(v => v.theme))];
   const themeMap = {
-    vraag: '疑问词', voegwoord: '连接词', ontkenning: '否定',
+    vraag: '疑问词', voegwoord: '连接词', ontkenning: '否定', examen: '真题高频',
     werk: '工作', gezondheid: '健康', wonen: '住房', gemeente: '政府',
     onderwijs: '教育', tijd: '时间', werkwoord: '动词', omgang: '社交礼貌',
     lichaam: '身体', kleding: '衣物', eten: '食物', stad: '城市',

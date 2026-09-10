@@ -26437,6 +26437,262 @@ window.CONTENT.LISTENING.intro = "Luisteren A2 是电脑考:<b>25 题 / 45 分�
 </script>
 <script>
 /* ===========================================================
+   LISTEN_KLANK  ·  听力:连读、弱读、吞音 + 数字时间
+=========================================================== */
+window.CONTENT.LISTEN_KLANK = {
+ "intro": "听不清通常不是因为词没学过,而是真人说话时词和词粘在一起、小词读得很轻、词尾被吞掉。书上的 <b>Ik weet het niet</b>,真人嘴里常常是 <b>'k weet 't nie</b>。下面八条按对 A2 听力的影响从大到小排列,每条都有例句可以听。",
+ "tts_note": "⚠️ 关于发音按钮:<b>🔊 正常</b> 和 <b>🐢 慢速</b> 读的是标准书面句子。电脑语音比真人说得清楚,这些连读现象它只能部分体现。标着 <b>🔊 口语读法(模拟)</b> 的按钮,是把句子按口语发音改写后让电脑读,用来大致感受区别。真实的连读请以真人录音为准(页面最下面有链接)。",
+ "groepen": [
+  {
+   "titel": "① 词尾 -en 的 n 基本不发音",
+   "regel": "荷兰口语里(西部大城市尤其明显),动词原形、复数名词、形容词结尾的 <b>-en</b>,那个 n 几乎不读,听起来和 <b>-e</b> 一样。这是最常见、也最影响听懂的一条。",
+   "tip": "听到一个词以轻轻的「呃」结尾,脑子里自动补上 n。是复数还是动词原形,靠上下文判断。",
+   "voorbeelden": [
+    {
+     "nl": "We gaan morgen boodschappen doen.",
+     "klinkt": "we gaan morge boodschappe doen",
+     "spreektaal": "We gaan morge boodschappe doen.",
+     "cn": "我们明天去买东西。"
+    },
+    {
+     "nl": "De kinderen spelen buiten.",
+     "klinkt": "de kindere spele buite",
+     "spreektaal": "De kindere spele buite.",
+     "cn": "孩子们在外面玩。"
+    },
+    {
+     "nl": "Kunnen we om zeven uur beginnen?",
+     "klinkt": "kunne we om zeve uur beginne?",
+     "spreektaal": "Kunne we om zeve uur beginne?",
+     "cn": "我们七点开始可以吗?"
+    }
+   ]
+  },
+  {
+   "titel": "② 代词和冠词缩成一个轻音",
+   "regel": "<b>het、een、ik、zijn(他的)、mijn、haar、hem、eens</b> 这些小词在句子里几乎不重读,会缩成一个很轻的音。荷兰人发消息时也常这样写:<b>'t</b>(het)、<b>'n</b>(een)、<b>'k</b>(ik)、<b>z'n</b>(zijn)、<b>m'n</b>(mijn)、<b>d'r</b>(haar)、<b>'m</b>(hem)、<b>'s</b>(eens)。另外 <b>je、ze、we、me</b> 里的元音都读成轻轻的「呃」。",
+   "tip": "这些小词听漏了一般不影响答题,关键信息在名词、数字和动词上。别因为一个 't 没听清就慌。",
+   "voorbeelden": [
+    {
+     "nl": "Ik heb het niet gezien.",
+     "klinkt": "'k heb 't nie gezien",
+     "cn": "我没看见。"
+    },
+    {
+     "nl": "Hij is zijn sleutels kwijt.",
+     "klinkt": "hij is z'n sleutels kwijt",
+     "spreektaal": "Hij is z'n sleutels kwijt.",
+     "cn": "他钥匙丢了。"
+    },
+    {
+     "nl": "Ik zie mijn moeder morgen.",
+     "klinkt": "'k zie m'n moeder morge",
+     "spreektaal": "Ik zie m'n moeder morge.",
+     "cn": "我明天见我妈妈。"
+    },
+    {
+     "nl": "Ik bel haar straks.",
+     "klinkt": "'k bel d'r straks",
+     "cn": "我待会儿给她打电话。"
+    },
+    {
+     "nl": "Heb je een pen voor mij?",
+     "klinkt": "heb je 'n pen voor me?",
+     "cn": "你有支笔给我吗?"
+    },
+    {
+     "nl": "Kijk eens!",
+     "klinkt": "kijk 's!",
+     "cn": "你看!"
+    }
+   ]
+  },
+  {
+   "titel": "③ 词尾的 t 被吞掉,两个词缩成一个",
+   "regel": "<b>niet、wat、dat</b> 结尾的 t 在快速口语里常常不读。<b>dat is</b> 缩成 <b>da's</b>,<b>zo een</b> 缩成 <b>zo'n</b>。",
+   "tip": "<b>nie</b> 就是 niet。否定词吞了 t 最危险,整句意思会反过来。句尾听到一个短促的「ni」,就是否定。",
+   "voorbeelden": [
+    {
+     "nl": "Dat is niet goed.",
+     "klinkt": "da's nie goed",
+     "spreektaal": "Da's nie goed.",
+     "cn": "这不好。"
+    },
+    {
+     "nl": "Ik weet het niet.",
+     "klinkt": "'k weet 't nie",
+     "cn": "我不知道。"
+    },
+    {
+     "nl": "Wat zeg je?",
+     "klinkt": "wa zeg je?(wa 的 a 很短)",
+     "cn": "你说什么?"
+    },
+    {
+     "nl": "Dat weet ik niet.",
+     "klinkt": "da weet ik nie",
+     "cn": "这个我不知道。"
+    }
+   ]
+  },
+  {
+   "titel": "④ 问句里「动词 + je」连成一个词",
+   "regel": "荷兰语问句把动词放最前面,后面紧跟 <b>je</b>,两个词会粘成一个:<b>Heb je</b> 像「hebje」,<b>Ben je</b> 像「benje」。动词以 <b>t / d</b> 结尾时,<b>t + je</b> 听起来像「tje」,舌头往上顶一下;以 <b>s</b> 结尾时,<b>s + je</b> 听起来像「sje」,接近拼音 x 的音。小词尾 <b>-tje、-sje</b> 也是这个音:<b>meisje</b> 听起来像「meishe」。",
+   "tip": "听到一个陌生的「……tje / ……sje」,先想想是不是「动词 + je」,往往就是一个你认识的问句开头。",
+   "voorbeelden": [
+    {
+     "nl": "Heb je tijd?",
+     "klinkt": "hebje tijd?",
+     "cn": "你有时间吗?"
+    },
+    {
+     "nl": "Weet je waar de bushalte is?",
+     "klinkt": "weetje waar de bushalte is?(t 和 j 粘在一起)",
+     "cn": "你知道公交站在哪儿吗?"
+    },
+    {
+     "nl": "Wat doe je morgen?",
+     "klinkt": "wat doeje morge?",
+     "cn": "你明天干什么?"
+    },
+    {
+     "nl": "Is je zus ook thuis?",
+     "klinkt": "isje zus ook thuis?(s 和 j 粘成 sj)",
+     "cn": "你姐姐也在家吗?"
+    },
+    {
+     "nl": "Het meisje drinkt een kopje thee.",
+     "klinkt": "het meishe drinkt 'n kopje thee",
+     "cn": "那个女孩喝一小杯茶。"
+    }
+   ]
+  },
+  {
+   "titel": "⑤ 辅音互相影响:写 d 读 t,写 z 读 s",
+   "regel": "三条规律:<br>1. 词尾的 <b>d / b</b> 读成 <b>t / p</b>:<b>goed</b> 读「goet」,<b>hond</b> 读「hont」,<b>ik heb</b> 读「ik hep」。<br>2. 前一个词以 <b>t、k、p、s</b> 结尾时,后面的 <b>z / v</b> 变成 <b>s / f</b>:<b>ik zie</b> 读「ik sie」,<b>dat vind ik</b> 读「dat fint ik」。<br>3. 反过来,<b>k、t、p、s</b> 后面紧跟 <b>b / d</b> 时会变浊:<b>ik ben</b> 读「ig ben」,<b>op de</b> 读「ob de」。",
+   "tip": "这条主要影响你对照原文听的感觉:明明写的是 z,听到的是 s。知道规律以后,就不会以为自己听错了。",
+   "voorbeelden": [
+    {
+     "nl": "Het eten is heel goed.",
+     "klinkt": "het eten is heel goet",
+     "cn": "饭很好吃。"
+    },
+    {
+     "nl": "Ik zie je morgen.",
+     "klinkt": "ik sie je morge",
+     "cn": "明天见。"
+    },
+    {
+     "nl": "Dat vind ik leuk.",
+     "klinkt": "dat fint ik leuk",
+     "cn": "我觉得这挺好。"
+    },
+    {
+     "nl": "Ik ben op zondag thuis.",
+     "klinkt": "ig ben op sondach thuis",
+     "cn": "我周日在家。"
+    }
+   ]
+  },
+  {
+   "titel": "⑥ 常用词的口语缩短",
+   "regel": "一些高频词在口语里读得很短:<b>natuurlijk</b> → 「tuurlijk」,<b>even</b> → 「effe」,<b>eigenlijk</b> → 「eigelijk」,<b>misschien</b> → 「m'schien」,<b>alsjeblieft</b> → 「asjeblieft」。<b>'s ochtends / 's middags / 's avonds</b> 前面的 's 粘在后面的词上:「sochtens / smiddachs / savons」。另外相邻的相同辅音会合成一个:<b>ik kom</b> 读「ikom」。",
+   "tip": "这几个缩短形式数量不多,但出现频率很高,记住就够了。",
+   "voorbeelden": [
+    {
+     "nl": "Natuurlijk kan dat!",
+     "klinkt": "tuurlijk kan dat!",
+     "spreektaal": "Tuurlijk kan dat!",
+     "cn": "当然可以!"
+    },
+    {
+     "nl": "Wacht even, alsjeblieft.",
+     "klinkt": "wacht effe, asjeblieft",
+     "spreektaal": "Wacht effe, asjeblieft.",
+     "cn": "请稍等一下。"
+    },
+    {
+     "nl": "Ik kom eigenlijk morgen.",
+     "klinkt": "ikom eigelijk morge",
+     "cn": "我其实明天来。"
+    },
+    {
+     "nl": "Misschien kom ik 's avonds.",
+     "klinkt": "m'schien kom ik savons",
+     "cn": "也许我晚上来。"
+    }
+   ]
+  },
+  {
+   "titel": "⑦ 数字和时间:A2 听力里最容易错的地方",
+   "regel": "<b>1. 十几和几十</b>:<b>dertien</b>(13)和 <b>dertig</b>(30)的区别在尾巴。<b>-tien</b> 读得清楚饱满,有明显的 ie 音;<b>-tig</b> 读得很轻,像「tuch」。<br><b>2. 个位在前</b>:<b>vierentwintig</b> = vier en twintig = 4 和 20 = <b>24</b>,不是 42。<br><b>3. half 的意思是「差半小时到」</b>:<b>half drie</b> = <b>2:30</b>,不是 3:30。<b>tien voor half vier</b> = 3:20,<b>vijf over half vier</b> = 3:35。<br><b>4. 价格</b>:<b>twee euro vijftig</b> = € 2,50,口语里常省掉 euro,只说 <b>twee vijftig</b>。",
+   "tip": "下面有个小测验专门练这四种。时间、日期、价格是 A2 听力答案里出现最多的东西。",
+   "voorbeelden": [
+    {
+     "nl": "De bus komt om half drie.",
+     "klinkt": "half drie = 2:30",
+     "cn": "公交两点半来。"
+    },
+    {
+     "nl": "Ik woon op nummer vierentwintig.",
+     "klinkt": "vierentwintig = 24",
+     "cn": "我住 24 号。"
+    },
+    {
+     "nl": "Het kost dertien euro.",
+     "klinkt": "dertien = 13,不是 30",
+     "cn": "这个 13 欧。"
+    },
+    {
+     "nl": "De les begint om tien voor half negen.",
+     "klinkt": "tien voor half negen = 8:20",
+     "cn": "课八点二十开始。"
+    }
+   ]
+  },
+  {
+   "titel": "⑧ 关键信息藏在句尾",
+   "regel": "这条不算连读,但它是「每个词都听懂了还是答错」的主要原因。荷兰语会把三样关键东西放到句子最后:<br>1. 否定词 <b>niet</b>:<b>Ik kan morgen om tien uur niet komen.</b><br>2. 可分动词的尾巴:<b>Hij belt je morgen terug.</b> / <b>Doe het licht uit.</b><br>3. 完成时的过去分词:<b>Ik heb gisteren een nieuwe jas gekocht.</b>",
+   "tip": "句子没说完之前别急着选答案,一定听到最后一个词。",
+   "voorbeelden": [
+    {
+     "nl": "Ik kan morgen om tien uur niet komen.",
+     "klinkt": "最后的 niet 才告诉你是「来不了」",
+     "cn": "我明天十点来不了。"
+    },
+    {
+     "nl": "Doe het licht uit.",
+     "klinkt": "最后的 uit = 关(aan = 开)",
+     "cn": "把灯关了。"
+    },
+    {
+     "nl": "Ik haal je om vijf uur op.",
+     "klinkt": "最后的 op:ophalen = 去接",
+     "cn": "我五点来接你。"
+    }
+   ]
+  }
+ ],
+ "training": [
+  "<b>先慢后快。</b>在「练习」里先用 🐢 慢速把每个词听清楚,再用正常速度听,最后不看原文听。",
+  "<b>跟读。</b>放一句,暂停,模仿着说一遍,连吞音一起模仿。自己能说出来的连读,就一定听得出来。",
+  "<b>后期一定要听真人录音。</b>电脑语音比真人清楚。你那份备考文档里的 YouTube 播放列表有 A2 听力题和原文:听一遍,看原文,再听一遍,在原文上把吞音和连读的地方圈出来。",
+  "<b>数字每天练五分钟。</b>用上面的小测验。时间和价格是最稳的得分点。"
+ ],
+ "links": [
+  {
+   "label": "2024 luisteren Inburgering (A2) 听力题",
+   "url": "https://www.youtube.com/watch?v=k-2IpUBZ9rY&list=PLDZTmK0ceYCrLbHx8iXExmlmLjLXmDf1x&index=1"
+  },
+  {
+   "label": "同一套题的原文(script)",
+   "url": "https://www.youtube.com/watch?v=lsANZyUYzq8&list=PLDZTmK0ceYCrLbHx8iXExmlmLjLXmDf1x&index=2"
+  }
+ ]
+};
+</script>
+<script>
+/* ===========================================================
    STATE & STORAGE
 =========================================================== */
 const state = {
@@ -27533,8 +27789,8 @@ function renderListening(main) {
 
   // sub-tab switcher
   const tabRow = el('div', { class: 'pattern-tabs' });
-  ['tips', 'practice'].forEach(t => {
-    const labels = { tips: '技巧总览', practice: `练习 (${(C.LISTENING_DIALOGUES||[]).length})` };
+  ['tips', 'klank', 'practice'].forEach(t => {
+    const labels = { tips: '技巧总览', klank: '听不清? 连读弱读', practice: `练习 (${(C.LISTENING_DIALOGUES||[]).length})` };
     tabRow.appendChild(el('button', {
       class: 'pattern-tab' + (state.listeningTab === t ? ' active' : ''),
       onclick: () => { state.listeningTab = t; saveState(); renderListening(main); }
@@ -27542,6 +27798,10 @@ function renderListening(main) {
   });
   main.appendChild(tabRow);
 
+  if (state.listeningTab === 'klank') {
+    renderListeningKlank(main);
+    return;
+  }
   if (state.listeningTab === 'practice') {
     renderListeningPractice(main);
     return;
@@ -27841,7 +28101,7 @@ function spkSpeakQueue(list, rate) {
 // 一段连续的拉丁字母文字(荷兰语),允许中间有空格、标点、斜杠和方括号
 const SPK_LATIN_RUN = /[A-Za-zÀ-ÖØ-öø-ÿ'’][A-Za-zÀ-ÖØ-öø-ÿ'’0-9 ,.!?…\-\/\[\]()]*[A-Za-zÀ-ÖØ-öø-ÿ0-9.!?…\]]|[A-Za-zÀ-ÖØ-öø-ÿ]/g;
 
-function spkSpeakableHtml(html, tag, props) {
+function spkSpeakableHtml(html, tag, props, opts) {
   const box = el(tag || 'div', Object.assign({}, props || {}, { html: html }));
   const walker = document.createTreeWalker(box, NodeFilter.SHOW_TEXT);
   const nodes = [];
@@ -27849,6 +28109,7 @@ function spkSpeakableHtml(html, tag, props) {
   nodes.forEach(node => {
     const txt = node.nodeValue;
     if (!/[A-Za-zÀ-ÿ]/.test(txt)) return;
+    if (opts && opts.onlyBold && !(node.parentElement && node.parentElement.closest('b,strong'))) return;
     const frag = document.createDocumentFragment();
     let last = 0, m;
     SPK_LATIN_RUN.lastIndex = 0;
@@ -27856,6 +28117,7 @@ function spkSpeakableHtml(html, tag, props) {
       const run = m[0];
       const spoken = spkCleanNl(run);
       if (!/[A-Za-zÀ-ÿ]/.test(spoken)) continue;
+      if (opts && opts.allowRun && !opts.allowRun(run)) continue;
       if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
       frag.appendChild(el('span', {
         class: 'spk-say' + (run.length > 3 ? ' spk-icon' : ''),
@@ -28765,6 +29027,242 @@ function renderWritingPractice(main) {
   remind.appendChild(el('div', { style: { fontSize: '14px', lineHeight: '1.7' } },
     '先自己写完、对着上面的自查表打完勾,再看范文。然后把你写的那段复制给 Claude,我会逐句改并告诉你哪里会扣分 —— 这一步比多做十道题都管用。'));
   main.appendChild(remind);
+}
+
+/* -----------------------------------------------------------
+   LISTENING · 听不清?连读弱读 + 数字时间小测
+----------------------------------------------------------- */
+const NL_EENHEID = ['nul', 'een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen'];
+const NL_TIENERS = ['tien', 'elf', 'twaalf', 'dertien', 'veertien', 'vijftien', 'zestien', 'zeventien', 'achttien', 'negentien'];
+const NL_TIENTAL = ['', '', 'twintig', 'dertig', 'veertig', 'vijftig', 'zestig', 'zeventig', 'tachtig', 'negentig'];
+const NL_UUR = ['', 'één', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf', 'twaalf'];
+
+function nlGetal(n) {
+  if (n < 10) return NL_EENHEID[n];
+  if (n < 20) return NL_TIENERS[n - 10];
+  const t = Math.floor(n / 10), e = n % 10;
+  if (e === 0) return NL_TIENTAL[t];
+  const u = NL_EENHEID[e];
+  return u + (/e$/.test(u) ? 'ën' : 'en') + NL_TIENTAL[t];
+}
+
+function nlTijd(h, m) {
+  const nx = h === 12 ? 1 : h + 1;
+  switch (m) {
+    case 0:  return NL_UUR[h] + ' uur';
+    case 5:  return 'vijf over ' + NL_UUR[h];
+    case 10: return 'tien over ' + NL_UUR[h];
+    case 15: return 'kwart over ' + NL_UUR[h];
+    case 20: return 'tien voor half ' + NL_UUR[nx];
+    case 25: return 'vijf voor half ' + NL_UUR[nx];
+    case 30: return 'half ' + NL_UUR[nx];
+    case 35: return 'vijf over half ' + NL_UUR[nx];
+    case 40: return 'tien over half ' + NL_UUR[nx];
+    case 45: return 'kwart voor ' + NL_UUR[nx];
+    case 50: return 'tien voor ' + NL_UUR[nx];
+    case 55: return 'vijf voor ' + NL_UUR[nx];
+  }
+  return '';
+}
+
+const LK = { kind: 'mix', item: null, answered: null, goed: 0, totaal: 0 };
+function lkShuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function lkPick(a) { return a[Math.floor(Math.random() * a.length)]; }
+
+function lkMaakTijd() {
+  const h = 1 + Math.floor(Math.random() * 12);
+  const m = lkPick([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]);
+  const nx = h === 12 ? 1 : h + 1;
+  const fmt = (hh, mm) => `${hh}:${String(mm).padStart(2, '0')}`;
+  const goed = fmt(h, m);
+  const seen = new Set([goed]);
+  const opts = [goed];
+  [fmt(nx, m), fmt(h, (m + 30) % 60), fmt(h, (60 - m) % 60), fmt(nx, (60 - m) % 60), fmt(h, (m + 10) % 60)].forEach(t => {
+    if (!seen.has(t) && opts.length < 4) { seen.add(t); opts.push(t); }
+  });
+  while (opts.length < 4) {
+    const t = fmt(1 + Math.floor(Math.random() * 12), lkPick([0, 15, 30, 45]));
+    if (!seen.has(t)) { seen.add(t); opts.push(t); }
+  }
+  let uitleg;
+  if (m === 30) uitleg = `half ${NL_UUR[nx]} = 离 ${nx} 点还差半小时 = ${goed},不是 ${fmt(nx, 30)}。`;
+  else if ([20, 25, 35, 40].includes(m)) uitleg = `以 half ${NL_UUR[nx]}(${fmt(h, 30)})为中心:voor half 往前减,over half 往后加,所以是 ${goed}。`;
+  else if (m === 15 || m === 45) uitleg = `kwart = 一刻钟(15 分钟)。kwart over 是过一刻,kwart voor 是差一刻,所以是 ${goed}。`;
+  else if (m === 0) uitleg = `整点:${NL_UUR[h]} uur = ${goed}。`;
+  else uitleg = `over = 过了几分,voor = 差几分,所以是 ${goed}。`;
+  return { tekst: nlTijd(h, m), vraag: '听到的是几点?', opts: lkShuffle(opts), goed, uitleg };
+}
+
+const LK_PAREN = [[13, 30], [14, 40], [15, 50], [16, 60], [17, 70], [18, 80], [19, 90], [24, 42], [36, 63], [57, 75], [48, 84], [29, 92], [35, 53], [46, 64], [27, 72]];
+function lkMaakGetal() {
+  const p = lkPick(LK_PAREN);
+  const flip = Math.random() < 0.5;
+  const n = flip ? p[1] : p[0], ander = flip ? p[0] : p[1];
+  const seen = new Set([n, ander]);
+  const opts = [n, ander];
+  lkShuffle([n + 1, n - 1, ander + 1, n + 10, n - 10].filter(x => x > 10 && x < 100)).forEach(x => {
+    if (!seen.has(x) && opts.length < 4) { seen.add(x); opts.push(x); }
+  });
+  let uitleg;
+  if (n >= 13 && n <= 19) uitleg = `${nlGetal(n)} 以 -tien 结尾,尾巴清楚饱满,是十几(${n})。${nlGetal(ander)} 以 -tig 结尾,尾巴很轻,是几十(${ander})。`;
+  else if (n % 10 === 0) uitleg = `${nlGetal(n)} 以 -tig 结尾,尾巴读得很轻,是几十(${n})。${nlGetal(ander)} 以 -tien 结尾,是十几(${ander})。`;
+  else uitleg = `个位在前:${nlGetal(n)} = ${n % 10} en ${Math.floor(n / 10) * 10} = ${n},别听成 ${ander}。`;
+  return { tekst: nlGetal(n), vraag: '听到的是多少?', opts: lkShuffle(opts.map(String)), goed: String(n), uitleg };
+}
+
+function lkMaakPrijs() {
+  const e = 1 + Math.floor(Math.random() * 19);
+  const c = lkPick([0, 15, 25, 35, 45, 50, 75, 95]);
+  const fmt = (ee, cc) => `€ ${ee},${String(cc).padStart(2, '0')}`;
+  const goed = fmt(e, c);
+  const tekst = c === 0 ? `${nlGetal(e)} euro` : `${nlGetal(e)} euro ${nlGetal(c)}`;
+  const swap = (c > 20 && c % 10) ? (c % 10) * 10 + Math.floor(c / 10) : null;
+  const tienTig = (e >= 13 && e <= 19) ? (e - 10) * 10 : null;
+  const seen = new Set([goed]);
+  const opts = [goed];
+  [swap != null ? fmt(e, swap) : null, tienTig ? fmt(tienTig, c) : null, fmt(e + 1, c), fmt(e, (c + 50) % 100), fmt(Math.max(1, e - 1), c)]
+    .filter(Boolean).forEach(t => { if (!seen.has(t) && opts.length < 4) { seen.add(t); opts.push(t); } });
+  while (opts.length < 4) {
+    const t = fmt(Math.max(1, e + lkPick([-3, -2, 2, 3, 10])), lkPick([0, 25, 50, 75, 95]));
+    if (!seen.has(t)) { seen.add(t); opts.push(t); }
+  }
+  let uitleg = `${tekst} = ${goed}。`;
+  if (swap != null) uitleg += `注意 ${nlGetal(c)} 是个位在前,等于 ${c},不是 ${swap}。`;
+  if (tienTig) uitleg += `${nlGetal(e)} 是 ${e}(-tien),不是 ${tienTig}(-tig)。`;
+  return { tekst, vraag: '价格是多少?', opts: lkShuffle(opts), goed, uitleg };
+}
+
+function renderKlankDrill(main) {
+  const card = el('div', { class: 'card', id: 'lk-drill' });
+  card.appendChild(el('div', { class: 'card-sub' }, 'Getallen · tijd · prijzen'));
+  card.appendChild(el('h2', { class: 'card-head' }, '🔢 数字和时间听力小测'));
+  card.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--ink-soft)', lineHeight: '1.6', marginBottom: '8px' } },
+    '点 ▶︎ 播放 听一遍,选你听到的。听不清就点慢速。换下一题时会自动读一遍。题目是随机生成的,可以一直练。'));
+  const kinds = { mix: '混合', tijd: '时间', getal: '数字', prijs: '价格' };
+  const kr = el('div', { class: 'pattern-tabs' });
+  const score = el('div', { class: 'mono', style: { fontSize: '12px', color: 'var(--ink-soft)', margin: '6px 0 10px' } });
+  const body = el('div', {});
+
+  function nieuw(spreek) {
+    const k = LK.kind === 'mix' ? lkPick(['tijd', 'getal', 'prijs']) : LK.kind;
+    LK.item = k === 'tijd' ? lkMaakTijd() : (k === 'getal' ? lkMaakGetal() : lkMaakPrijs());
+    LK.answered = null;
+    teken();
+    if (spreek) spkSpeak(LK.item.tekst, 0.95);
+  }
+  function teken() {
+    const it = LK.item;
+    score.textContent = LK.totaal ? `本次练习:答对 ${LK.goed} / ${LK.totaal}` : '';
+    body.innerHTML = '';
+    body.appendChild(el('div', { class: 'q-text' }, it.vraag));
+    const ctrl = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', margin: '8px 0 12px' } });
+    ctrl.appendChild(el('button', { class: 'btn', onclick: () => spkSpeak(it.tekst, 0.95) }, '▶︎ 播放'));
+    ctrl.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => spkSpeak(it.tekst, 0.6) }, '🐢 慢速'));
+    body.appendChild(ctrl);
+    const opts = el('div', { class: 'opts' });
+    it.opts.forEach((o, i) => {
+      const cls = ['opt'];
+      if (LK.answered != null) {
+        if (o === it.goed) cls.push('correct');
+        else if (o === LK.answered) cls.push('wrong');
+        else cls.push('muted');
+      }
+      const b = el('button', {
+        class: cls.join(' '),
+        disabled: LK.answered != null ? 'disabled' : null,
+        onclick: () => {
+          if (LK.answered != null) return;
+          LK.answered = o; LK.totaal++;
+          if (o === it.goed) LK.goed++;
+          teken();
+        }
+      });
+      b.appendChild(el('span', { class: 'letter' }, 'ABCD'[i]));
+      b.appendChild(el('span', {}, o));
+      opts.appendChild(b);
+    });
+    body.appendChild(opts);
+    if (LK.answered != null) {
+      const ok = LK.answered === it.goed;
+      const fb = el('div', { class: 'feedback ' + (ok ? 'correct' : 'wrong') });
+      fb.appendChild(el('div', { class: 'fhead' }, ok ? '✓ 对了' : '✗ 听错了'));
+      fb.appendChild(el('div', { style: { fontSize: '15px', fontWeight: '600', margin: '4px 0' } }, it.tekst));
+      fb.appendChild(el('div', { class: 'fexplain', style: { fontFamily: 'Noto Sans SC, sans-serif' } }, it.uitleg));
+      body.appendChild(fb);
+      body.appendChild(el('button', { class: 'btn', style: { marginTop: '10px' }, onclick: () => nieuw(true) }, '下一题 →'));
+    }
+  }
+
+  Object.keys(kinds).forEach(k => kr.appendChild(el('button', {
+    class: 'pattern-tab' + (LK.kind === k ? ' active' : ''),
+    onclick: (ev) => {
+      LK.kind = k;
+      [...kr.children].forEach(b => b.classList.remove('active'));
+      ev.currentTarget.classList.add('active');
+      nieuw(true);
+    }
+  }, kinds[k])));
+
+  card.appendChild(kr);
+  card.appendChild(score);
+  card.appendChild(body);
+  main.appendChild(card);
+  if (!LK.item) nieuw(false); else teken();
+}
+
+// 听力连读页只朗读加粗的标准形式;'k 't 'n 'm d'r 这类缩写电脑读不准,不给发音
+const LK_SPEAK_OPTS = {
+  onlyBold: true,
+  allowRun: run => !/['’]/.test(run) || /\b(z'n|m'n|zo'n|da's)\b|'s (ochtends|middags|avonds|morgens|nachts)/i.test(run)
+};
+
+function renderListeningKlank(main) {
+  const K = window.CONTENT.LISTEN_KLANK;
+  if (!K) { main.appendChild(el('div', { class: 'card empty-state' }, '没有数据')); return; }
+  if (window.speechSynthesis) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => {}; }
+
+  const intro = el('div', { class: 'card' });
+  intro.appendChild(el('div', { class: 'card-sub' }, 'Luisteren · 为什么听不清'));
+  intro.appendChild(el('h2', { class: 'card-head' }, '连读、弱读和吞音'));
+  intro.appendChild(spkSpeakableHtml(K.intro, 'div', { style: { fontSize: '14px', lineHeight: '1.7', color: 'var(--ink-soft)', marginBottom: '10px' } }, LK_SPEAK_OPTS));
+  intro.appendChild(el('div', { html: K.tts_note, style: { fontSize: '13px', lineHeight: '1.7', background: 'var(--yellow-soft)', color: '#5c4608', padding: '10px 12px', borderRadius: '10px', marginBottom: '10px' } }));
+  intro.appendChild(el('button', {
+    class: 'btn btn-ghost',
+    onclick: () => { const d = document.getElementById('lk-drill'); if (d) d.scrollIntoView({ behavior: 'smooth' }); }
+  }, '🔢 直接去数字时间小测 ↓'));
+  main.appendChild(intro);
+
+  K.groepen.forEach(g => {
+    const sc = el('div', { class: 'scenario' });
+    sc.appendChild(el('h3', {}, g.titel));
+    sc.appendChild(spkSpeakableHtml(g.regel, 'div', { style: { fontSize: '13.5px', lineHeight: '1.8', color: 'var(--ink-soft)', marginBottom: '10px', fontFamily: 'Noto Sans SC, sans-serif' } }, LK_SPEAK_OPTS));
+    g.voorbeelden.forEach(v => {
+      const box = el('div', { style: { background: 'var(--bg)', borderRadius: '10px', padding: '10px 12px', marginBottom: '8px' } });
+      box.appendChild(el('div', { style: { fontSize: '15px', fontWeight: '600', marginBottom: '4px' } }, v.nl));
+      box.appendChild(el('div', { style: { fontSize: '13px', color: 'var(--accent, #b0463a)', marginBottom: '3px' } }, '听起来像:' + v.klinkt));
+      box.appendChild(el('div', { style: { fontSize: '12.5px', color: 'var(--ink-soft)', fontFamily: 'Noto Sans SC, sans-serif', marginBottom: '8px' } }, v.cn));
+      const row = el('div', { style: { display: 'flex', gap: '6px', flexWrap: 'wrap' } });
+      const sm = { padding: '6px 12px', fontSize: '13px' };
+      row.appendChild(el('button', { class: 'btn btn-ghost', style: sm, onclick: () => spkSpeak(v.nl, 0.95) }, '🔊 正常'));
+      row.appendChild(el('button', { class: 'btn btn-ghost', style: sm, onclick: () => spkSpeak(v.nl, 0.65) }, '🐢 慢速'));
+      if (v.spreektaal) row.appendChild(el('button', { class: 'btn btn-ghost', style: sm, onclick: () => spkSpeak(v.spreektaal, 1.0) }, '🔊 口语读法(模拟)'));
+      box.appendChild(row);
+      sc.appendChild(box);
+    });
+    if (g.tip) sc.appendChild(spkSpeakableHtml('💡 ' + g.tip, 'div', { class: 'trick' }, LK_SPEAK_OPTS));
+    main.appendChild(sc);
+  });
+
+  renderKlankDrill(main);
+
+  const tr = el('div', { class: 'card' });
+  tr.appendChild(el('div', { class: 'card-sub' }, 'Oren trainen'));
+  tr.appendChild(el('h2', { class: 'card-head' }, '怎么练耳朵'));
+  const ul = el('ul', { class: 'strategy-list' });
+  K.training.forEach(t => ul.appendChild(el('li', { html: t })));
+  tr.appendChild(ul);
+  (K.links || []).forEach(l => tr.appendChild(el('a', { href: l.url, target: '_blank', rel: 'noopener', style: { display: 'block', fontSize: '13.5px', marginTop: '8px' } }, '▶ ' + l.label)));
+  main.appendChild(tr);
 }
 
 /* ===========================================================

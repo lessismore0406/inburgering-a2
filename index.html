@@ -27729,12 +27729,19 @@ function renderSpeaking(main) {
     return;
   }
 
+  if (window.speechSynthesis) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => {}; }
+
+  const hint = el('div', { class: 'card', style: { background: 'var(--yellow-soft)' } });
+  hint.appendChild(el('div', { style: { fontSize: '13.5px', lineHeight: '1.7', color: '#5c4608' } },
+    '🔊 这一页所有荷兰语都能点着听:带虚线的词和句子点一下就读;万能句点整行,也可以全部连读;范例能整段播放、慢速播放,或者一句一句点。'));
+  main.appendChild(hint);
+
   const intro = el('div', { class: 'card' });
   intro.appendChild(el('div', { class: 'card-sub' }, 'Spreken · 口语考试'));
   intro.appendChild(el('h2', { class: 'card-head' }, '口语技巧总览'));
-  intro.appendChild(el('div', { html: C.SPEAKING.intro, style: { fontSize: '14px', lineHeight: '1.6', color: 'var(--ink-soft)', marginBottom: '12px' } }));
+  intro.appendChild(spkSpeakableHtml(C.SPEAKING.intro, 'div', { style: { fontSize: '14px', lineHeight: '1.6', color: 'var(--ink-soft)', marginBottom: '12px' } }));
   const ul = el('ul', { class: 'strategy-list' });
-  C.SPEAKING.general_tips.forEach(t => ul.appendChild(el('li', { html: t })));
+  C.SPEAKING.general_tips.forEach(t => ul.appendChild(spkSpeakableHtml(t, 'li')));
   intro.appendChild(ul);
   main.appendChild(intro);
 
@@ -27742,9 +27749,13 @@ function renderSpeaking(main) {
   const safe = el('div', { class: 'card' });
   safe.appendChild(el('div', { class: 'card-sub' }, '万能安全句'));
   safe.appendChild(el('h2', { class: 'card-head' }, '记住这些,任何题都能开口'));
+  const safeBtns = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '10px' } });
+  safeBtns.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => spkSpeakQueue(C.SPEAKING.safe_sentences.map(x => x.nl), 0.8) }, '▶︎ 全部连读'));
+  safeBtns.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => { if (window.speechSynthesis) speechSynthesis.cancel(); } }, '■ 停止'));
+  safe.appendChild(safeBtns);
   for (const s of C.SPEAKING.safe_sentences) {
-    const r = el('div', { class: 'phrase-row' });
-    r.appendChild(el('div', { class: 'phrase-nl' }, s.nl));
+    const r = el('div', { class: 'phrase-row', style: { cursor: 'pointer' }, title: '点击朗读', onclick: () => spkSpeak(spkCleanNl(s.nl), 0.8) });
+    r.appendChild(el('div', { class: 'phrase-nl' }, '🔊 ' + s.nl));
     r.appendChild(el('div', { class: 'phrase-cn' }, s.cn));
     safe.appendChild(r);
   }
@@ -27758,24 +27769,106 @@ function renderSpeaking(main) {
 
   for (const s of C.SPEAKING.scenarios) {
     const sc = el('div', { class: 'scenario' });
-    sc.appendChild(el('h3', {}, s.name));
+    sc.appendChild(spkSpeakableHtml(s.name, 'h3'));
     if (s.template) {
-      const ul = el('ul', { class: 'strategy-list' });
-      s.template.forEach(t => ul.appendChild(el('li', { html: t })));
-      sc.appendChild(ul);
+      const tl = el('ul', { class: 'strategy-list' });
+      s.template.forEach(t => tl.appendChild(spkSpeakableHtml(t, 'li')));
+      sc.appendChild(tl);
     }
     if (s.common) {
       const tags = el('div', { class: 'common-tags', style: { marginTop: '8px' } });
-      s.common.forEach(c => tags.appendChild(el('span', { class: 'common-tag' }, c)));
+      s.common.forEach(c => tags.appendChild(el('span', {
+        class: 'common-tag', style: { cursor: 'pointer' }, title: '点击朗读',
+        onclick: () => spkSpeak(spkCleanNl(c), 0.8)
+      }, '🔊 ' + c)));
       sc.appendChild(tags);
     }
     if (s.model_nl) {
-      sc.appendChild(el('div', { class: 'mono muted', style: { fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '10px 0 4px' } }, '范例 Voorbeeld'));
-      sc.appendChild(el('div', { class: 'writing-model', style: { fontSize: '14px' } }, s.model_nl));
-      sc.appendChild(el('div', { style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '13px', color: 'var(--ink-soft)', background: 'var(--bg-2)', padding: '10px 12px', borderRadius: '10px', lineHeight: '1.6' } }, s.model_cn));
+      sc.appendChild(el('div', { class: 'mono muted', style: { fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '10px 0 4px' } }, '范例 Voorbeeld · 点句子单独听'));
+      const mrow = el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '8px' } });
+      mrow.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => spkSpeak(s.model_nl, 0.85) }, '▶︎ 朗读范例'));
+      mrow.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => spkSpeak(s.model_nl, 0.65) }, '🐢 慢速'));
+      mrow.appendChild(el('button', { class: 'btn btn-ghost', onclick: () => { if (window.speechSynthesis) speechSynthesis.cancel(); } }, '■ 停止'));
+      sc.appendChild(mrow);
+      const mbox = el('div', { class: 'writing-model', style: { fontSize: '14px' } });
+      (s.model_nl.match(/[^.!?]+[.!?]+\s*|[^.!?]+$/g) || [s.model_nl]).forEach(zin => {
+        mbox.appendChild(el('span', { class: 'spk-say', title: '点击朗读这一句', onclick: () => spkSpeak(zin.trim(), 0.8) }, zin));
+      });
+      sc.appendChild(mbox);
+      sc.appendChild(el('div', { style: { fontFamily: 'Noto Sans SC, sans-serif', fontSize: '13px', color: 'var(--ink-soft)', background: 'var(--bg-2)', padding: '10px 12px', borderRadius: '10px', lineHeight: '1.6', marginTop: '8px' } }, s.model_cn));
     }
     main.appendChild(sc);
   }
+}
+
+/* -----------------------------------------------------------
+   SPEAKABLE  ·  把中文说明里夹着的荷兰语片段变成可点读
+----------------------------------------------------------- */
+(function () {
+  if (document.getElementById('spk-say-css')) return;
+  const st = document.createElement('style');
+  st.id = 'spk-say-css';
+  st.textContent = `.spk-say{cursor:pointer;border-bottom:1.5px dashed rgba(176,70,58,.55);padding-bottom:1px}
+.spk-say:hover{background:rgba(242,193,74,.28);border-radius:3px}
+.spk-icon::after{content:" 🔊";font-size:.72em;opacity:.6}`;
+  document.head.appendChild(st);
+})();
+
+function spkCleanNl(t) {
+  return String(t || '')
+    .replace(/[『』「」“”"]/g, ' ')
+    .replace(/\[[^\]]*\]/g, ' ')
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/\.{2,}|…/g, ' ')
+    .replace(/\s*\/\s*/g, ', ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function spkSpeakQueue(list, rate) {
+  if (!window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const v = spkVoice();
+  list.map(spkCleanNl).filter(Boolean).forEach(txt => {
+    const u = new SpeechSynthesisUtterance(txt);
+    if (v) u.voice = v;
+    u.lang = 'nl-NL';
+    u.rate = rate || 0.85;
+    speechSynthesis.speak(u);
+  });
+}
+
+// 一段连续的拉丁字母文字(荷兰语),允许中间有空格、标点、斜杠和方括号
+const SPK_LATIN_RUN = /[A-Za-zÀ-ÖØ-öø-ÿ'’][A-Za-zÀ-ÖØ-öø-ÿ'’0-9 ,.!?…\-\/\[\]()]*[A-Za-zÀ-ÖØ-öø-ÿ0-9.!?…\]]|[A-Za-zÀ-ÖØ-öø-ÿ]/g;
+
+function spkSpeakableHtml(html, tag, props) {
+  const box = el(tag || 'div', Object.assign({}, props || {}, { html: html }));
+  const walker = document.createTreeWalker(box, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const txt = node.nodeValue;
+    if (!/[A-Za-zÀ-ÿ]/.test(txt)) return;
+    const frag = document.createDocumentFragment();
+    let last = 0, m;
+    SPK_LATIN_RUN.lastIndex = 0;
+    while ((m = SPK_LATIN_RUN.exec(txt))) {
+      const run = m[0];
+      const spoken = spkCleanNl(run);
+      if (!/[A-Za-zÀ-ÿ]/.test(spoken)) continue;
+      if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
+      frag.appendChild(el('span', {
+        class: 'spk-say' + (run.length > 3 ? ' spk-icon' : ''),
+        title: '点击朗读',
+        onclick: (e) => { e.stopPropagation(); spkSpeak(spoken, 0.8); }
+      }, run));
+      last = m.index + run.length;
+    }
+    if (last === 0) return;
+    if (last < txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  });
+  return box;
 }
 
 /* -----------------------------------------------------------
